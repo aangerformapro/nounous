@@ -2,7 +2,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "run-p start dev:**",
+    "dev": "run-p php:start dev:**",
     "build": "rollup -c",
     "start": "nodemon server -p 8000",
     "dev:rollup": "rollup -c -w",
