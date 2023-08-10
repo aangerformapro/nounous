@@ -1,0 +1,114 @@
+{
+    "files.eol": "\n",
+    "workbench.iconTheme": "material-icon-theme",
+    "scm.inputFontFamily": "Fira Code, Source Code Pro, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontFamily": "Ubuntu Mono, Source Code Pro,Consolas, 'Courier New', monospace",
+    "editor.fontFamily": "Fira Code, Source Code Pro, Consolas, 'Courier New', monospace",
+    "terminal.integrated.fontWeight": 400,
+    "terminal.integrated.fontWeightBold": 700,
+    "scssFormatter.singleQuote": true,
+    "editor.formatOnSave": true,
+    "[php]": {
+        "editor.defaultFormatter": "junstyle.php-cs-fixer",
+        "editor.formatOnSave": true,
+    },
+    "[scss]": {
+        "editor.suggest.insertMode": "replace",
+        "editor.defaultFormatter": "sibiraj-s.vscode-scss-formatter",
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "scm.inputFontSize": 16,
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "git.autofetch": true,
+    "javascript.inlayHints.enumMemberValues.enabled": true,
+    "editor.fontLigatures": true,
+    "editor.snippetSuggestions": "top",
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "code-runner.saveFileBeforeRun": true,
+    "editor.minimap.enabled": false,
+    "autoimport.filesToScan": "**/*.{js,mjs,jsx,ts,tsx}",
+    "path-intellisense.extensionOnImport": true,
+    "css.format.braceStyle": "expand",
+    "php-cs-fixer.rules": {
+        "@PSR12": true,
+        "@Symfony": true,
+        "@PhpCsFixer": true,
+        "blank_line_before_statement": {
+            "statements": [
+                "declare",
+                "do",
+                "exit",
+                "for",
+                "foreach",
+                "goto",
+                "if",
+                "include",
+                "include_once",
+                "require",
+                "require_once",
+                "switch",
+                "try",
+                "while"
+            ]
+        },
+        "declare_strict_types": true,
+        "single_line_comment_style": false,
+        "no_extra_blank_lines": {
+            "tokens": [
+                "curly_brace_block",
+                "extra",
+                "throw",
+                "use"
+            ]
+        },
+        "no_whitespace_before_comma_in_array": true,
+        "whitespace_after_comma_in_array": true,
+        "curly_braces_position": {
+            "control_structures_opening_brace": "next_line_unless_newline_at_signature_end",
+            "functions_opening_brace": "next_line_unless_newline_at_signature_end",
+            "anonymous_functions_opening_brace": "next_line_unless_newline_at_signature_end",
+            "classes_opening_brace": "next_line_unless_newline_at_signature_end",
+            "anonymous_classes_opening_brace": "next_line_unless_newline_at_signature_end",
+            "allow_single_line_empty_anonymous_classes": true,
+            "allow_single_line_anonymous_functions": true
+        },
+        "not_operator_with_space": true,
+        "binary_operator_spaces": {
+            "default": "align_single_space_minimal_by_scope"
+        },
+        "compact_nullable_typehint": false,
+        "concat_space": {
+            "spacing": "one"
+        },
+        "types_spaces": {
+            "space": "none",
+            "space_multiple_catch": "none"
+        },
+        "no_alternative_syntax": {
+            "fix_non_monolithic_code": false
+        },
+        "echo_tag_syntax": {
+            "format": "short",
+            "shorten_simple_statements_only": true
+        }
+    },
+    "php-cs-fixer.allowRisky": true,
+    "php.inlayHints.parameters.enabled": true,
+    "intelephense.diagnostics.undefinedClassConstants": false,
+    "intelephense.diagnostics.undefinedConstants": false,
+    "intelephense.diagnostics.undefinedFunctions": false,
+    "intelephense.diagnostics.undefinedMethods": false,
+    "intelephense.diagnostics.undefinedProperties": false,
+    "intelephense.diagnostics.undefinedTypes": false,
+    "intelephense.trace.server": "messages",
+    "intelephense.telemetry.enabled": false,
+    "editor.fontSize": 15.5,
+    "vscode-edge-devtools.webhint": false,
+    "markdown.preview.fontSize": 16,
+    "phpTools.language": "en",
+    "telemetry.telemetryLevel": "off",
+}
