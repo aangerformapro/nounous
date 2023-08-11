@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 use voku\helper\AntiXSS;
 
-session_start();
-
 require_once __DIR__ . '/constants.php';
 
 function loadView(string $view, array $data = []): string
@@ -23,11 +21,20 @@ function loadView(string $view, array $data = []): string
 
     if (is_file(filename: $file))
     {
-        chdir(dirname($file));
-        extract($data);
+        if (@chdir(dirname($file)))
+        {
+            call_user_func(function ()
+            {
+                extract(func_get_arg(0));
 
-        include $file;
-        chdir($cwd);
+                include func_get_arg(1);
+            }, $data, $file);
+
+            @chdir($cwd);
+        }
+    } else
+    {
+        throw new RuntimeException('View ' . func_get_arg(0) . ' not found in ' . TEMPLATES, 1);
     }
 
     return ob_get_clean() ?: '';
@@ -42,6 +49,12 @@ function formatTimeSQL(DateTime $date): string
 {
     return $date->format('Y-m-d G:i:s');
 }
+
+function formatDateSQL(DateTime $date): string
+{
+    return $date->format('Y-m-d');
+}
+
 /**
  * @return string|string[]
  */
@@ -78,36 +91,6 @@ function getPostdata(string ...$keys)
 function isExpired(string $date)
 {
     return date_create('now')->getTimestamp() > date_create($date)->getTimestamp();
-}
-
-function renderFlashMessage(array $messageData)
-{
-    $type    = $messageData['type'];
-    $message = $messageData['message'];
-
-    return sprintf('<div class="alert alert-%s" role="alert">%s</div>', $type, $message);
-}
-
-function displayFlashMessages()
-{
-    $result = [];
-
-    foreach ($_SESSION['flash'] ?? [] as $item)
-    {
-        $result[] = renderFlashMessage($item);
-    }
-    unset($_SESSION['flash']);
-
-    echo implode('', $result);
-}
-
-function addFlashMessage(string $message, string $type = 'info')
-{
-    $_SESSION['flash'] ??= [];
-    $_SESSION['flash'][] = [
-        'type'    => $type,
-        'message' => $message,
-    ];
 }
 
 function getRequestMethod(): string
