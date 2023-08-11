@@ -21,12 +21,12 @@ function loadView(string $view, array $data = []): string
 
     $file = TEMPLATES . DIRECTORY_SEPARATOR . $view;
 
-    if (is_file(TEMPLATES . DIRECTORY_SEPARATOR . $view))
+    if (is_file(filename: $file))
     {
         chdir(dirname($file));
         extract($data);
 
-        include $view;
+        include $file;
         chdir($cwd);
     }
 

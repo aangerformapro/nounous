@@ -4,4 +4,4 @@ declare(strict_types=1);
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
-echo loadView('home');
+echo loadView('index');
