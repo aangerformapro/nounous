@@ -1,0 +1,19 @@
+AddType text/cache-manifest manifest
+# Deny access to filenames starting with dot(.)
+<FilesMatch "^\.">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+# Disable directory browsing 
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    SetEnv HTTP_MOD_REWRITE On
+    RewriteEngine On
+    RewriteBase /
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php/$1 [QSA,L]
+</IfModule>
+
+ErrorDocument 403 /index.php
