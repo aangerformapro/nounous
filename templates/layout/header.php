@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Utilisateur<?= isset($pagetitle) ? (' - ' . $pagetitle) : ''; ?></title>
+    <title><?= SITE_TITLE; ?><?= isset($pagetitle) ? (' - ' . $pagetitle) : ''; ?></title>
     <meta name="robots" content="index,follow">
-    <meta name="description" content="Espace Utilisateur">
-    <meta name="author" content="Aymeric Anger, Nargis Ayyobi ">
-    <meta name="keywords" content="login">
+    <meta name="description" content="Vous cherchez une nounou pour garder vos enfants ? On est là pour vous aider ! Ce site vous mets en relation avac une assistante maternelle.">
+    <meta name="author" content="Aymeric Anger, Nargis Ayyobi">
+    <meta name="keywords" content="babysitter, nounou, assistant maternel, assistante maternelle, dailysitter">
+
     <link rel="shortcut icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
 
@@ -20,5 +22,18 @@
 
     <link rel="stylesheet" href="./assets/main.css">
     <script src="./assets/main.js" type="module" defer></script>
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#fefcf8">
+    <!-- Register Service Worker -->
+    <script>
+        if ("serviceWorker" in navigator)
+        {
+            navigator.serviceWorker.register("service-worker.js")
+                .then(e => console.log("Service worker registered", e))
+                .catch(e => console.log("service worker failed", e));
+        }
+    </script>
 </head>
 <body>

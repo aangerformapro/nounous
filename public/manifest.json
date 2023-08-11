@@ -1,0 +1,76 @@
+{
+    "name": "DailySitter",
+    "short_name": "DailySitter",
+    "icons": [
+        {
+            "src": "assets/pictures/logo/logox128.webp",
+            "type": "image/webp",
+            "sizes": "128x128",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox16.webp",
+            "type": "image/webp",
+            "sizes": "16x16",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox180.webp",
+            "type": "image/webp",
+            "sizes": "180x180",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox256.webp",
+            "type": "image/webp",
+            "sizes": "256x256",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox300.webp",
+            "type": "image/webp",
+            "sizes": "300x300",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox32.webp",
+            "type": "image/webp",
+            "sizes": "32x32",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox512.webp",
+            "type": "image/webp",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox512.png",
+            "type": "image/png",
+            "sizes": "512x512",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox64.webp",
+            "type": "image/webp",
+            "sizes": "64x64",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/pictures/logo/logox96.webp",
+            "type": "image/webp",
+            "sizes": "96x96",
+            "purpose": "any maskable"
+        }
+    ],
+    "start_url": "/",
+    "scope": "/",
+    "display": "standalone",
+    "background_color": "#181818",
+    "theme_color": "#fefcf8",
+    "serviceworker": {
+        "scope": "/",
+        "src": "service-worker.js",
+        "use_cache": false
+    }
+}
