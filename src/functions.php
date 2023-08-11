@@ -40,12 +40,22 @@ function loadView(string $view, array $data = []): string
     return ob_get_clean() ?: '';
 }
 
-function formatTime(DateTime $date): string
+function formatDateTimeInput(DateTime $date): string
 {
     return $date->format('Y-m-d') . 'T' . $date->format('H:i');
 }
 
-function formatTimeSQL(DateTime $date): string
+function formatDateInput(DateTime $date): string
+{
+    return $date->format('Y-m-d');
+}
+
+function formatTimeInput(DateTime $date): string
+{
+    return $date->format('H:i');
+}
+
+function formatDateTimeSQL(DateTime $date): string
 {
     return $date->format('Y-m-d G:i:s');
 }
@@ -53,6 +63,11 @@ function formatTimeSQL(DateTime $date): string
 function formatDateSQL(DateTime $date): string
 {
     return $date->format('Y-m-d');
+}
+
+function formatTimeSQL(DateTime $date): string
+{
+    return $date->format('G:i:s');
 }
 
 /**
