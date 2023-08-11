@@ -2,11 +2,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "dev": "run-p  dev:** php:start",
+    "dev": "run-p start dev:**",
     "build": "rollup -c",
-    "start": "nodemon server -p 8000",
     "dev:rollup": "rollup -c -w",
-    "php:start": "php -S localhost:9090 -t public"
+    "start": "php -S localhost:9090 -t public",
+    "composer:update": "composer update"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^24.0.1",
@@ -14,12 +14,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.4.3",
     "autoprefixer": "^10.4.14",
-    "connect-livereload": "^0.6.1",
     "cssnano": "^6.0.0",
-    "express": "^4.18.2",
-    "livereload": "^0.9.3",
-    "minimist": "^1.2.8",
-    "nodemon": "^2.0.22",
     "npm-run-all": "^4.1.5",
     "postcss-cli": "^10.1.0",
     "postcss-combine-media-query": "^1.0.1",
