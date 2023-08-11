@@ -4,3 +4,4 @@ vendor
 *-lock.json
 dist
 .env
+.env.local

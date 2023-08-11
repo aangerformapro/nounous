@@ -7,7 +7,9 @@
         "ngsoft/tools": "^3.0",
         "ngsoft/slim-cookie-middleware": "^1.1",
         "selective/basepath": "^2.1",
-        "slim/php-view": "^3.2"
+        "slim/php-view": "^3.2",
+        "oscarotero/env": "^2.1",
+        "vlucas/phpdotenv": "^5.5"
     },
     "autoload": {
         "psr-4": {
