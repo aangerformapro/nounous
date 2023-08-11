@@ -6,7 +6,7 @@
     <title>Espace Utilisateur<?= isset($pagetitle) ? (' - ' . $pagetitle) : ''; ?></title>
     <meta name="robots" content="index,follow">
     <meta name="description" content="Espace Utilisateur">
-    <meta name="author" content="Americ Anger">
+    <meta name="author" content="Aymeric Anger, Nargis Ayyobi ">
     <meta name="keywords" content="login">
     <link rel="shortcut icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
     <link rel="apple-touch-icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
