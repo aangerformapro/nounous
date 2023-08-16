@@ -3,15 +3,9 @@
 namespace Model;
 
 use NGSOFT\Facades\Container;
-use Roots\WPConfig\Config;
 
 abstract class BaseModel
 {
-    /**
-     * Table name.
-     */
-    abstract public static function getTable(): string;
-
     /**
      * Entry point.
      */
@@ -20,18 +14,19 @@ abstract class BaseModel
         return Container::get(\PDO::class);
     }
 
-    /**
-     * Table creation query.
-     */
-    abstract protected static function tableCreate();
+    abstract public static function getTable(): string;
 
-    protected static function getCharset(): string
+    public static function find(string $where = '1', array $bindings = []): array
     {
-        return Config::get('DB_CHARSET');
-    }
+        $stmt = static::getConnection()->prepare(
+            sprintf('SELECT * FROM %s WHERE %s', static::getTable(), $where)
+        );
 
-    protected static function getCollate(): string
-    {
-        return Config::get('DB_COLLATE');
+        if ($stmt->execute($bindings))
+        {
+            return array_map(fn ($data) => new static($data), $stmt->fetchAll(\PDO::FETCH_ASSOC));
+        }
+
+        return [];
     }
 }
