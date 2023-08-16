@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Availabilities extends BaseModel
+class Availability extends BaseModel
 {
     protected int $id_nounou;
     protected \DateTime $start;
