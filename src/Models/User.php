@@ -4,7 +4,6 @@ namespace Models;
 
 class User extends BaseModel
 {
-    protected ?int $id;
     protected string $email;
     protected string $nom;
     protected string $prenom;
@@ -112,5 +111,85 @@ class User extends BaseModel
         }
 
         return false;
+    }
+
+    /**
+     * Get the value of email.
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get the value of nom.
+     */
+    public function getNom()
+    {
+        return $this->nom;
+    }
+
+    /**
+     * Get the value of prenom.
+     */
+    public function getPrenom()
+    {
+        return $this->prenom;
+    }
+
+    /**
+     * Get the value of zip.
+     */
+    public function getZip()
+    {
+        return $this->zip;
+    }
+
+    /**
+     * Get the value of city.
+     */
+    public function getCity()
+    {
+        return $this->city;
+    }
+
+    /**
+     * Get the value of phone.
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Get the value of created_at.
+     */
+    public function getCreated_at()
+    {
+        return $this->created_at;
+    }
+
+    /**
+     * Get the value of updated_at.
+     */
+    public function getUpdated_at()
+    {
+        return $this->updated_at;
+    }
+
+    /**
+     * Get the value of sex.
+     */
+    public function getSex()
+    {
+        return $this->sex;
+    }
+
+    /**
+     * Get the value of type.
+     */
+    public function getType()
+    {
+        return $this->type;
     }
 }
