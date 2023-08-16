@@ -11,7 +11,8 @@
         "oscarotero/env": "^2.1",
         "vlucas/phpdotenv": "^5.5",
         "roots/wp-config": "^1.0",
-        "monolog/monolog": "^3.4"
+        "monolog/monolog": "^3.4",
+        "joseluisq/gimage": "^4.0"
     },
     "autoload": {
         "psr-4": {

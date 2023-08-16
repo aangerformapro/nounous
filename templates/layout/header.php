@@ -10,8 +10,8 @@
     <meta name="author" content="Aymeric Anger, Nargis Ayyobi">
     <meta name="keywords" content="babysitter, nounou, assistant maternel, assistante maternelle, dailysitter">
 
-    <link rel="shortcut icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
-    <link rel="apple-touch-icon" href="./assets/pictures/favicon.png" sizes="32x32" type="image/png">
+    <link rel="shortcut icon" href="./assets/pictures/logo/logox32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon" href="./assets/pictures/logo/logox32.png" sizes="32x32" type="image/png">
 
 
     <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
@@ -25,7 +25,7 @@
 
     <!-- PWA -->
     <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#fefcf8">
+    <meta name="theme-color" content="#ffffff">
     <!-- Register Service Worker -->
     <script>
         if ("serviceWorker" in navigator)

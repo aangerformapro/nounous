@@ -1,0 +1,38 @@
+{
+    "logo": {
+        "alt": "logo.png",
+        "src": "logo.webp"
+    },
+    "logox128": {
+        "alt": "logox128.png",
+        "src": "logox128.webp"
+    },
+    "logox16": {
+        "alt": "logox16.png",
+        "src": "logox16.webp"
+    },
+    "logox180": {
+        "alt": "logox180.png",
+        "src": "logox180.webp"
+    },
+    "logox256": {
+        "alt": "logox256.png",
+        "src": "logox256.webp"
+    },
+    "logox300": {
+        "alt": "logox300.png",
+        "src": "logox300.webp"
+    },
+    "logox32": {
+        "alt": "logox32.png",
+        "src": "logox32.webp"
+    },
+    "logox64": {
+        "alt": "logox64.png",
+        "src": "logox64.webp"
+    },
+    "logox96": {
+        "alt": "logox96.png",
+        "src": "logox96.webp"
+    }
+}
