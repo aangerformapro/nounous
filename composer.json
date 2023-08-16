@@ -9,7 +9,9 @@
         "selective/basepath": "^2.1",
         "slim/php-view": "^3.2",
         "oscarotero/env": "^2.1",
-        "vlucas/phpdotenv": "^5.5"
+        "vlucas/phpdotenv": "^5.5",
+        "roots/wp-config": "^1.0",
+        "monolog/monolog": "^3.4"
     },
     "autoload": {
         "psr-4": {
