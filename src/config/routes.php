@@ -11,6 +11,6 @@ return function (App $app)
         // $session  = $request->getAttribute('session');
 
         // var_dump($session);
-        return $renderer->render($response, 'index.php', $args);
+        return $renderer->render($response, 'hello.php', $args);
     })->setName('hello');
 };
