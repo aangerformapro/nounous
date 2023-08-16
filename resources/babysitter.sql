@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 11 août 2023 à 15:58
+-- Généré le : mer. 16 août 2023 à 15:49
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.1.12
 
@@ -43,9 +43,10 @@ CREATE TABLE `apointments` (
 CREATE TABLE `availabilities` (
   `id` int(11) NOT NULL,
   `id_nounou` int(11) NOT NULL,
-  `start` datetime NOT NULL,
-  `end` datetime NOT NULL,
-  `hourly_rate` float NOT NULL DEFAULT 3.49
+  `start` time NOT NULL,
+  `end` time NOT NULL,
+  `hourly_rate` float NOT NULL DEFAULT 3.49,
+  `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -84,7 +85,7 @@ CREATE TABLE `planing_enfants` (
 CREATE TABLE `sessions` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `session` int(11) NOT NULL
+  `session` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
