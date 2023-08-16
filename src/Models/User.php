@@ -2,8 +2,6 @@
 
 namespace Models;
 
-use Model\BaseModel;
-
 class User extends BaseModel
 {
     protected ?int $id;
