@@ -57,9 +57,13 @@ class Session extends BaseModel
             ]);
         }
 
+        public static function loadSession(string $session): ?static
+        {
+            return static::findOne('session = ?', ['session']);
+        }
 
-
-        public static function loadSession(string $session) :?static{
-            return static::findOne('session = ?', [^session]);
+        public static function getTable(): string
+        {
+            return 'sessions';
         }
 }

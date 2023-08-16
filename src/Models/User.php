@@ -28,8 +28,8 @@ class User extends BaseModel
         $this->zip        = $data['zip']     ?? '';
         $this->city       = $data['city']    ?? '';
         $this->phone      = $data['phone']   ?? '';
-        $this->created_at = date_create($data['created_at'] ?? 'now');
-        $this->updated_at = date_create($data['updated_at'] ?? 'now');
+        $this->created_at = date_create_from_format('Y-m-d G:i:s', $data['created_at']);
+        $this->updated_at = date_create_from_format('Y-m-d G:i:s', $data['updated_at']);
         $this->sex        = Gender::from($data['sex']);
         $this->type       = UserType::from($data['type']);
     }
