@@ -13,6 +13,8 @@ use function Env\env;
 
 require_once dirname(__DIR__) . '/vendor/autoload.php';
 
+date_default_timezone_set('Europe/Paris');
+
 // echo loadView('index', ['pagetitle' => 'Titre de la page', 'name' => $_GET['name'] ?? '']);
 
 /**
