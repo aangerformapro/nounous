@@ -6,10 +6,16 @@ use Monolog\Processor\UidProcessor;
 use NGSOFT\Container\ContainerInterface;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
 use Psr\Log\LoggerInterface;
-use Slim\Views\PhpRenderer;
+use Views\PhpView;
 
 return function (ContainerInterface $container)
 {
+    $view = new PhpView(TEMPLATE_PATH, [
+        'sitetitle' => 'DailySitter',
+    ]);
+
+    $container->alias('view', PhpView::class);
+
     $container->setMany([
         LoggerInterface::class => function (PsrContainerInterface $c)
         {
@@ -25,6 +31,7 @@ return function (ContainerInterface $container)
             return $logger;
         },
 
-        PhpRenderer::class     => new PhpRenderer(TEMPLATES),
+        PhpView::class         => $view,
+
     ]);
 };

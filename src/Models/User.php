@@ -14,7 +14,7 @@ class User extends BaseModel
     protected \DateTime $created_at;
     protected \DateTime $updated_at;
 
-    protected Gender $sex;
+    protected Gender $gender;
 
     protected UserType $type;
 
@@ -30,7 +30,7 @@ class User extends BaseModel
         $this->phone      = $data['phone']   ?? '';
         $this->created_at = date_create_from_format('Y-m-d G:i:s', $data['created_at']);
         $this->updated_at = date_create_from_format('Y-m-d G:i:s', $data['updated_at']);
-        $this->sex        = Gender::from($data['sex']);
+        $this->gender     = Gender::from($data['gender']);
         $this->type       = UserType::from($data['type']);
     }
 
@@ -164,7 +164,7 @@ class User extends BaseModel
     /**
      * Get the value of created_at.
      */
-    public function getCreated_at()
+    public function getCreatedAt()
     {
         return $this->created_at;
     }
@@ -172,7 +172,7 @@ class User extends BaseModel
     /**
      * Get the value of updated_at.
      */
-    public function getUpdated_at()
+    public function getUpdatedAt()
     {
         return $this->updated_at;
     }
@@ -180,9 +180,9 @@ class User extends BaseModel
     /**
      * Get the value of sex.
      */
-    public function getSex()
+    public function getGender()
     {
-        return $this->sex;
+        return $this->gender;
     }
 
     /**

@@ -17,7 +17,7 @@ function loadView(string $view, array $data = []): string
         $view .= '.php';
     }
 
-    $file = TEMPLATES . DIRECTORY_SEPARATOR . $view;
+    $file = TEMPLATE_PATH . DIRECTORY_SEPARATOR . $view;
 
     if (is_file(filename: $file))
     {
@@ -34,7 +34,7 @@ function loadView(string $view, array $data = []): string
         }
     } else
     {
-        throw new RuntimeException('View ' . func_get_arg(0) . ' not found in ' . TEMPLATES, 1);
+        throw new RuntimeException('View ' . func_get_arg(0) . ' not found in ' . TEMPLATE_PATH, 1);
     }
 
     return ob_get_clean() ?: '';
@@ -42,32 +42,32 @@ function loadView(string $view, array $data = []): string
 
 function formatDateTimeInput(DateTime $date): string
 {
-    return $date->format('Y-m-d') . 'T' . $date->format('H:i');
+    return $date->format(FORMAT_DATE_INPUT) . 'T' . $date->format(FORMAT_TIME_INPUT);
 }
 
 function formatDateInput(DateTime $date): string
 {
-    return $date->format('Y-m-d');
+    return $date->format(FORMAT_DATE_INPUT);
 }
 
 function formatTimeInput(DateTime $date): string
 {
-    return $date->format('H:i');
+    return $date->format(FORMAT_TIME_INPUT);
 }
 
 function formatDateTimeSQL(DateTime $date): string
 {
-    return $date->format('Y-m-d G:i:s');
+    return $date->format(FORMAT_DATETIME_SQL);
 }
 
 function formatDateSQL(DateTime $date): string
 {
-    return $date->format('Y-m-d');
+    return $date->format(FORMAT_DATE_INPUT);
 }
 
 function formatTimeSQL(DateTime $date): string
 {
-    return $date->format('G:i:s');
+    return $date->format(FORMAT_TIME_INPUT);
 }
 
 /**
