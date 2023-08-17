@@ -13,7 +13,11 @@ html {
   line-height: 1.2;
   scroll-behavior: smooth;
 }
-body {
+body,
+.page {
   min-height: 100vh;
+}
+.form-login {
+  min-width: 50vw;
 }
 /*# sourceMappingURL=app.css.map */

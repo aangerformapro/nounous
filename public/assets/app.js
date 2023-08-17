@@ -82,8 +82,8 @@ if (typeof document !== 'undefined') {
     registerStylesRoot(document);
 }
 
-var css_248z$1 = ":root{--fc-small-font-size:.85em;--fc-page-bg-color:#fff;--fc-neutral-bg-color:hsla(0,0%,82%,.3);--fc-neutral-text-color:grey;--fc-border-color:#ddd;--fc-button-text-color:#fff;--fc-button-bg-color:#2c3e50;--fc-button-border-color:#2c3e50;--fc-button-hover-bg-color:#1e2b37;--fc-button-hover-border-color:#1a252f;--fc-button-active-bg-color:#1a252f;--fc-button-active-border-color:#151e27;--fc-event-bg-color:#3788d8;--fc-event-border-color:#3788d8;--fc-event-text-color:#fff;--fc-event-selected-overlay-color:rgba(0,0,0,.25);--fc-more-link-bg-color:#d0d0d0;--fc-more-link-text-color:inherit;--fc-event-resizer-thickness:8px;--fc-event-resizer-dot-total-width:8px;--fc-event-resizer-dot-border-width:1px;--fc-non-business-color:hsla(0,0%,84%,.3);--fc-bg-event-color:#8fdf82;--fc-bg-event-opacity:0.3;--fc-highlight-color:rgba(188,232,241,.3);--fc-today-bg-color:rgba(255,220,40,.15);--fc-now-indicator-color:red}.fc-not-allowed,.fc-not-allowed .fc-event{cursor:not-allowed}.fc{display:flex;flex-direction:column;font-size:1em}.fc,.fc *,.fc :after,.fc :before{box-sizing:border-box}.fc table{border-collapse:collapse;border-spacing:0;font-size:1em}.fc th{text-align:center}.fc td,.fc th{padding:0;vertical-align:top}.fc a[data-navlink]{cursor:pointer}.fc a[data-navlink]:hover{text-decoration:underline}.fc-direction-ltr{direction:ltr;text-align:left}.fc-direction-rtl{direction:rtl;text-align:right}.fc-theme-standard td,.fc-theme-standard th{border:1px solid var(--fc-border-color)}.fc-liquid-hack td,.fc-liquid-hack th{position:relative}@font-face{font-family:fcicons;font-style:normal;font-weight:400;src:url(\"data:application/x-font-ttf;charset=utf-8;base64,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\") format(\"truetype\")}.fc-icon{speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-family:fcicons!important;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1;text-align:center;text-transform:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:1em}.fc-icon-chevron-left:before{content:\"\\e900\"}.fc-icon-chevron-right:before{content:\"\\e901\"}.fc-icon-chevrons-left:before{content:\"\\e902\"}.fc-icon-chevrons-right:before{content:\"\\e903\"}.fc-icon-minus-square:before{content:\"\\e904\"}.fc-icon-plus-square:before{content:\"\\e905\"}.fc-icon-x:before{content:\"\\e906\"}.fc .fc-button{border-radius:0;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible;text-transform:none}.fc .fc-button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}.fc .fc-button{-webkit-appearance:button}.fc .fc-button:not(:disabled){cursor:pointer}.fc .fc-button{background-color:transparent;border:1px solid transparent;border-radius:.25em;display:inline-block;font-size:1em;font-weight:400;line-height:1.5;padding:.4em .65em;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;vertical-align:middle}.fc .fc-button:hover{text-decoration:none}.fc .fc-button:focus{box-shadow:0 0 0 .2rem rgba(44,62,80,.25);outline:0}.fc .fc-button:disabled{opacity:.65}.fc .fc-button-primary{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:hover{background-color:var(--fc-button-hover-bg-color);border-color:var(--fc-button-hover-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:disabled{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button-primary:not(:disabled).fc-button-active,.fc .fc-button-primary:not(:disabled):active{background-color:var(--fc-button-active-bg-color);border-color:var(--fc-button-active-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:not(:disabled).fc-button-active:focus,.fc .fc-button-primary:not(:disabled):active:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button .fc-icon{font-size:1.5em;vertical-align:middle}.fc .fc-button-group{display:inline-flex;position:relative;vertical-align:middle}.fc .fc-button-group>.fc-button{flex:1 1 auto;position:relative}.fc .fc-button-group>.fc-button.fc-button-active,.fc .fc-button-group>.fc-button:active,.fc .fc-button-group>.fc-button:focus,.fc .fc-button-group>.fc-button:hover{z-index:1}.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child){border-bottom-left-radius:0;border-top-left-radius:0;margin-left:-1px}.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child){border-bottom-right-radius:0;border-top-right-radius:0}.fc-direction-rtl .fc-button-group>.fc-button:not(:first-child){border-bottom-right-radius:0;border-top-right-radius:0;margin-right:-1px}.fc-direction-rtl .fc-button-group>.fc-button:not(:last-child){border-bottom-left-radius:0;border-top-left-radius:0}.fc .fc-toolbar{align-items:center;display:flex;justify-content:space-between}.fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.5em}.fc .fc-toolbar.fc-footer-toolbar{margin-top:1.5em}.fc .fc-toolbar-title{font-size:1.75em;margin:0}.fc-direction-ltr .fc-toolbar>*>:not(:first-child){margin-left:.75em}.fc-direction-rtl .fc-toolbar>*>:not(:first-child){margin-right:.75em}.fc-direction-rtl .fc-toolbar-ltr{flex-direction:row-reverse}.fc .fc-scroller{-webkit-overflow-scrolling:touch;position:relative}.fc .fc-scroller-liquid{height:100%}.fc .fc-scroller-liquid-absolute{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-scroller-harness{direction:ltr;overflow:hidden;position:relative}.fc .fc-scroller-harness-liquid{height:100%}.fc-direction-rtl .fc-scroller-harness>.fc-scroller{direction:rtl}.fc-theme-standard .fc-scrollgrid{border:1px solid var(--fc-border-color)}.fc .fc-scrollgrid,.fc .fc-scrollgrid table{table-layout:fixed;width:100%}.fc .fc-scrollgrid table{border-left-style:hidden;border-right-style:hidden;border-top-style:hidden}.fc .fc-scrollgrid{border-bottom-width:0;border-collapse:separate;border-right-width:0}.fc .fc-scrollgrid-liquid{height:100%}.fc .fc-scrollgrid-section,.fc .fc-scrollgrid-section table,.fc .fc-scrollgrid-section>td{height:1px}.fc .fc-scrollgrid-section-liquid>td{height:100%}.fc .fc-scrollgrid-section>*{border-left-width:0;border-top-width:0}.fc .fc-scrollgrid-section-footer>*,.fc .fc-scrollgrid-section-header>*{border-bottom-width:0}.fc .fc-scrollgrid-section-body table,.fc .fc-scrollgrid-section-footer table{border-bottom-style:hidden}.fc .fc-scrollgrid-section-sticky>*{background:var(--fc-page-bg-color);position:sticky;z-index:3}.fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky>*{top:0}.fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky>*{bottom:0}.fc .fc-scrollgrid-sticky-shim{height:1px;margin-bottom:-1px}.fc-sticky{position:sticky}.fc .fc-view-harness{flex-grow:1;position:relative}.fc .fc-view-harness-active>.fc-view{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-col-header-cell-cushion{display:inline-block;padding:2px 4px}.fc .fc-bg-event,.fc .fc-highlight,.fc .fc-non-business{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-non-business{background:var(--fc-non-business-color)}.fc .fc-bg-event{background:var(--fc-bg-event-color);opacity:var(--fc-bg-event-opacity)}.fc .fc-bg-event .fc-event-title{font-size:var(--fc-small-font-size);font-style:italic;margin:.5em}.fc .fc-highlight{background:var(--fc-highlight-color)}.fc .fc-cell-shaded,.fc .fc-day-disabled{background:var(--fc-neutral-bg-color)}a.fc-event,a.fc-event:hover{text-decoration:none}.fc-event.fc-event-draggable,.fc-event[href]{cursor:pointer}.fc-event .fc-event-main{position:relative;z-index:2}.fc-event-dragging:not(.fc-event-selected){opacity:.75}.fc-event-dragging.fc-event-selected{box-shadow:0 2px 7px rgba(0,0,0,.3)}.fc-event .fc-event-resizer{display:none;position:absolute;z-index:4}.fc-event-selected .fc-event-resizer,.fc-event:hover .fc-event-resizer{display:block}.fc-event-selected .fc-event-resizer{background:var(--fc-page-bg-color);border-color:inherit;border-radius:calc(var(--fc-event-resizer-dot-total-width)/2);border-style:solid;border-width:var(--fc-event-resizer-dot-border-width);height:var(--fc-event-resizer-dot-total-width);width:var(--fc-event-resizer-dot-total-width)}.fc-event-selected .fc-event-resizer:before{bottom:-20px;content:\"\";left:-20px;position:absolute;right:-20px;top:-20px}.fc-event-selected,.fc-event:focus{box-shadow:0 2px 5px rgba(0,0,0,.2)}.fc-event-selected:before,.fc-event:focus:before{bottom:0;content:\"\";left:0;position:absolute;right:0;top:0;z-index:3}.fc-event-selected:after,.fc-event:focus:after{background:var(--fc-event-selected-overlay-color);bottom:-1px;content:\"\";left:-1px;position:absolute;right:-1px;top:-1px;z-index:1}.fc-h-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-h-event .fc-event-main{color:var(--fc-event-text-color)}.fc-h-event .fc-event-main-frame{display:flex}.fc-h-event .fc-event-time{max-width:100%;overflow:hidden}.fc-h-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-width:0}.fc-h-event .fc-event-title{display:inline-block;left:0;max-width:100%;overflow:hidden;right:0;vertical-align:top}.fc-h-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end){border-bottom-left-radius:0;border-left-width:0;border-top-left-radius:0}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start){border-bottom-right-radius:0;border-right-width:0;border-top-right-radius:0}.fc-h-event:not(.fc-event-selected) .fc-event-resizer{bottom:0;top:0;width:var(--fc-event-resizer-thickness)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end{cursor:w-resize;left:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start{cursor:e-resize;right:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-h-event.fc-event-selected .fc-event-resizer{margin-top:calc(var(--fc-event-resizer-dot-total-width)*-.5);top:50%}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end{left:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start{right:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc .fc-popover{box-shadow:0 2px 6px rgba(0,0,0,.15);position:absolute;z-index:9999}.fc .fc-popover-header{align-items:center;display:flex;flex-direction:row;justify-content:space-between;padding:3px 4px}.fc .fc-popover-title{margin:0 2px}.fc .fc-popover-close{cursor:pointer;font-size:1.1em;opacity:.65}.fc-theme-standard .fc-popover{background:var(--fc-page-bg-color);border:1px solid var(--fc-border-color)}.fc-theme-standard .fc-popover-header{background:var(--fc-neutral-bg-color)}";
-injectStyles(css_248z$1);
+var css_248z$2 = ":root{--fc-small-font-size:.85em;--fc-page-bg-color:#fff;--fc-neutral-bg-color:hsla(0,0%,82%,.3);--fc-neutral-text-color:grey;--fc-border-color:#ddd;--fc-button-text-color:#fff;--fc-button-bg-color:#2c3e50;--fc-button-border-color:#2c3e50;--fc-button-hover-bg-color:#1e2b37;--fc-button-hover-border-color:#1a252f;--fc-button-active-bg-color:#1a252f;--fc-button-active-border-color:#151e27;--fc-event-bg-color:#3788d8;--fc-event-border-color:#3788d8;--fc-event-text-color:#fff;--fc-event-selected-overlay-color:rgba(0,0,0,.25);--fc-more-link-bg-color:#d0d0d0;--fc-more-link-text-color:inherit;--fc-event-resizer-thickness:8px;--fc-event-resizer-dot-total-width:8px;--fc-event-resizer-dot-border-width:1px;--fc-non-business-color:hsla(0,0%,84%,.3);--fc-bg-event-color:#8fdf82;--fc-bg-event-opacity:0.3;--fc-highlight-color:rgba(188,232,241,.3);--fc-today-bg-color:rgba(255,220,40,.15);--fc-now-indicator-color:red}.fc-not-allowed,.fc-not-allowed .fc-event{cursor:not-allowed}.fc{display:flex;flex-direction:column;font-size:1em}.fc,.fc *,.fc :after,.fc :before{box-sizing:border-box}.fc table{border-collapse:collapse;border-spacing:0;font-size:1em}.fc th{text-align:center}.fc td,.fc th{padding:0;vertical-align:top}.fc a[data-navlink]{cursor:pointer}.fc a[data-navlink]:hover{text-decoration:underline}.fc-direction-ltr{direction:ltr;text-align:left}.fc-direction-rtl{direction:rtl;text-align:right}.fc-theme-standard td,.fc-theme-standard th{border:1px solid var(--fc-border-color)}.fc-liquid-hack td,.fc-liquid-hack th{position:relative}@font-face{font-family:fcicons;font-style:normal;font-weight:400;src:url(\"data:application/x-font-ttf;charset=utf-8;base64,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\") format(\"truetype\")}.fc-icon{speak:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-family:fcicons!important;font-style:normal;font-variant:normal;font-weight:400;height:1em;line-height:1;text-align:center;text-transform:none;-webkit-user-select:none;-moz-user-select:none;user-select:none;width:1em}.fc-icon-chevron-left:before{content:\"\\e900\"}.fc-icon-chevron-right:before{content:\"\\e901\"}.fc-icon-chevrons-left:before{content:\"\\e902\"}.fc-icon-chevrons-right:before{content:\"\\e903\"}.fc-icon-minus-square:before{content:\"\\e904\"}.fc-icon-plus-square:before{content:\"\\e905\"}.fc-icon-x:before{content:\"\\e906\"}.fc .fc-button{border-radius:0;font-family:inherit;font-size:inherit;line-height:inherit;margin:0;overflow:visible;text-transform:none}.fc .fc-button:focus{outline:1px dotted;outline:5px auto -webkit-focus-ring-color}.fc .fc-button{-webkit-appearance:button}.fc .fc-button:not(:disabled){cursor:pointer}.fc .fc-button{background-color:transparent;border:1px solid transparent;border-radius:.25em;display:inline-block;font-size:1em;font-weight:400;line-height:1.5;padding:.4em .65em;text-align:center;-webkit-user-select:none;-moz-user-select:none;user-select:none;vertical-align:middle}.fc .fc-button:hover{text-decoration:none}.fc .fc-button:focus{box-shadow:0 0 0 .2rem rgba(44,62,80,.25);outline:0}.fc .fc-button:disabled{opacity:.65}.fc .fc-button-primary{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:hover{background-color:var(--fc-button-hover-bg-color);border-color:var(--fc-button-hover-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:disabled{background-color:var(--fc-button-bg-color);border-color:var(--fc-button-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button-primary:not(:disabled).fc-button-active,.fc .fc-button-primary:not(:disabled):active{background-color:var(--fc-button-active-bg-color);border-color:var(--fc-button-active-border-color);color:var(--fc-button-text-color)}.fc .fc-button-primary:not(:disabled).fc-button-active:focus,.fc .fc-button-primary:not(:disabled):active:focus{box-shadow:0 0 0 .2rem rgba(76,91,106,.5)}.fc .fc-button .fc-icon{font-size:1.5em;vertical-align:middle}.fc .fc-button-group{display:inline-flex;position:relative;vertical-align:middle}.fc .fc-button-group>.fc-button{flex:1 1 auto;position:relative}.fc .fc-button-group>.fc-button.fc-button-active,.fc .fc-button-group>.fc-button:active,.fc .fc-button-group>.fc-button:focus,.fc .fc-button-group>.fc-button:hover{z-index:1}.fc-direction-ltr .fc-button-group>.fc-button:not(:first-child){border-bottom-left-radius:0;border-top-left-radius:0;margin-left:-1px}.fc-direction-ltr .fc-button-group>.fc-button:not(:last-child){border-bottom-right-radius:0;border-top-right-radius:0}.fc-direction-rtl .fc-button-group>.fc-button:not(:first-child){border-bottom-right-radius:0;border-top-right-radius:0;margin-right:-1px}.fc-direction-rtl .fc-button-group>.fc-button:not(:last-child){border-bottom-left-radius:0;border-top-left-radius:0}.fc .fc-toolbar{align-items:center;display:flex;justify-content:space-between}.fc .fc-toolbar.fc-header-toolbar{margin-bottom:1.5em}.fc .fc-toolbar.fc-footer-toolbar{margin-top:1.5em}.fc .fc-toolbar-title{font-size:1.75em;margin:0}.fc-direction-ltr .fc-toolbar>*>:not(:first-child){margin-left:.75em}.fc-direction-rtl .fc-toolbar>*>:not(:first-child){margin-right:.75em}.fc-direction-rtl .fc-toolbar-ltr{flex-direction:row-reverse}.fc .fc-scroller{-webkit-overflow-scrolling:touch;position:relative}.fc .fc-scroller-liquid{height:100%}.fc .fc-scroller-liquid-absolute{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-scroller-harness{direction:ltr;overflow:hidden;position:relative}.fc .fc-scroller-harness-liquid{height:100%}.fc-direction-rtl .fc-scroller-harness>.fc-scroller{direction:rtl}.fc-theme-standard .fc-scrollgrid{border:1px solid var(--fc-border-color)}.fc .fc-scrollgrid,.fc .fc-scrollgrid table{table-layout:fixed;width:100%}.fc .fc-scrollgrid table{border-left-style:hidden;border-right-style:hidden;border-top-style:hidden}.fc .fc-scrollgrid{border-bottom-width:0;border-collapse:separate;border-right-width:0}.fc .fc-scrollgrid-liquid{height:100%}.fc .fc-scrollgrid-section,.fc .fc-scrollgrid-section table,.fc .fc-scrollgrid-section>td{height:1px}.fc .fc-scrollgrid-section-liquid>td{height:100%}.fc .fc-scrollgrid-section>*{border-left-width:0;border-top-width:0}.fc .fc-scrollgrid-section-footer>*,.fc .fc-scrollgrid-section-header>*{border-bottom-width:0}.fc .fc-scrollgrid-section-body table,.fc .fc-scrollgrid-section-footer table{border-bottom-style:hidden}.fc .fc-scrollgrid-section-sticky>*{background:var(--fc-page-bg-color);position:sticky;z-index:3}.fc .fc-scrollgrid-section-header.fc-scrollgrid-section-sticky>*{top:0}.fc .fc-scrollgrid-section-footer.fc-scrollgrid-section-sticky>*{bottom:0}.fc .fc-scrollgrid-sticky-shim{height:1px;margin-bottom:-1px}.fc-sticky{position:sticky}.fc .fc-view-harness{flex-grow:1;position:relative}.fc .fc-view-harness-active>.fc-view{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-col-header-cell-cushion{display:inline-block;padding:2px 4px}.fc .fc-bg-event,.fc .fc-highlight,.fc .fc-non-business{bottom:0;left:0;position:absolute;right:0;top:0}.fc .fc-non-business{background:var(--fc-non-business-color)}.fc .fc-bg-event{background:var(--fc-bg-event-color);opacity:var(--fc-bg-event-opacity)}.fc .fc-bg-event .fc-event-title{font-size:var(--fc-small-font-size);font-style:italic;margin:.5em}.fc .fc-highlight{background:var(--fc-highlight-color)}.fc .fc-cell-shaded,.fc .fc-day-disabled{background:var(--fc-neutral-bg-color)}a.fc-event,a.fc-event:hover{text-decoration:none}.fc-event.fc-event-draggable,.fc-event[href]{cursor:pointer}.fc-event .fc-event-main{position:relative;z-index:2}.fc-event-dragging:not(.fc-event-selected){opacity:.75}.fc-event-dragging.fc-event-selected{box-shadow:0 2px 7px rgba(0,0,0,.3)}.fc-event .fc-event-resizer{display:none;position:absolute;z-index:4}.fc-event-selected .fc-event-resizer,.fc-event:hover .fc-event-resizer{display:block}.fc-event-selected .fc-event-resizer{background:var(--fc-page-bg-color);border-color:inherit;border-radius:calc(var(--fc-event-resizer-dot-total-width)/2);border-style:solid;border-width:var(--fc-event-resizer-dot-border-width);height:var(--fc-event-resizer-dot-total-width);width:var(--fc-event-resizer-dot-total-width)}.fc-event-selected .fc-event-resizer:before{bottom:-20px;content:\"\";left:-20px;position:absolute;right:-20px;top:-20px}.fc-event-selected,.fc-event:focus{box-shadow:0 2px 5px rgba(0,0,0,.2)}.fc-event-selected:before,.fc-event:focus:before{bottom:0;content:\"\";left:0;position:absolute;right:0;top:0;z-index:3}.fc-event-selected:after,.fc-event:focus:after{background:var(--fc-event-selected-overlay-color);bottom:-1px;content:\"\";left:-1px;position:absolute;right:-1px;top:-1px;z-index:1}.fc-h-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-h-event .fc-event-main{color:var(--fc-event-text-color)}.fc-h-event .fc-event-main-frame{display:flex}.fc-h-event .fc-event-time{max-width:100%;overflow:hidden}.fc-h-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-width:0}.fc-h-event .fc-event-title{display:inline-block;left:0;max-width:100%;overflow:hidden;right:0;vertical-align:top}.fc-h-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-start),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-end){border-bottom-left-radius:0;border-left-width:0;border-top-left-radius:0}.fc-direction-ltr .fc-daygrid-block-event:not(.fc-event-end),.fc-direction-rtl .fc-daygrid-block-event:not(.fc-event-start){border-bottom-right-radius:0;border-right-width:0;border-top-right-radius:0}.fc-h-event:not(.fc-event-selected) .fc-event-resizer{bottom:0;top:0;width:var(--fc-event-resizer-thickness)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end{cursor:w-resize;left:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-direction-ltr .fc-h-event:not(.fc-event-selected) .fc-event-resizer-end,.fc-direction-rtl .fc-h-event:not(.fc-event-selected) .fc-event-resizer-start{cursor:e-resize;right:calc(var(--fc-event-resizer-thickness)*-.5)}.fc-h-event.fc-event-selected .fc-event-resizer{margin-top:calc(var(--fc-event-resizer-dot-total-width)*-.5);top:50%}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-start,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-end{left:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc-direction-ltr .fc-h-event.fc-event-selected .fc-event-resizer-end,.fc-direction-rtl .fc-h-event.fc-event-selected .fc-event-resizer-start{right:calc(var(--fc-event-resizer-dot-total-width)*-.5)}.fc .fc-popover{box-shadow:0 2px 6px rgba(0,0,0,.15);position:absolute;z-index:9999}.fc .fc-popover-header{align-items:center;display:flex;flex-direction:row;justify-content:space-between;padding:3px 4px}.fc .fc-popover-title{margin:0 2px}.fc .fc-popover-close{cursor:pointer;font-size:1.1em;opacity:.65}.fc-theme-standard .fc-popover{background:var(--fc-page-bg-color);border:1px solid var(--fc-border-color)}.fc-theme-standard .fc-popover-header{background:var(--fc-neutral-bg-color)}";
+injectStyles(css_248z$2);
 
 function removeElement(el) {
     if (el.parentNode) {
@@ -367,6 +367,8 @@ function computeSmallestCellWidth(cellEl) {
     return cellEl.getBoundingClientRect().width - allWidthEl.getBoundingClientRect().width + // the cell padding+border
         contentWidthEl.getBoundingClientRect().width;
 }
+
+const INTERNAL_UNITS = ['years', 'months', 'days', 'milliseconds'];
 const PARSE_RE = /^(-?)(?:(\d+)\.)?(\d+):(\d\d)(?::(\d\d)(?:\.(\d\d\d))?)?/;
 // Parsing and Creation
 function createDuration(input, unit) {
@@ -422,12 +424,29 @@ function durationsEqual(d0, d1) {
         d0.days === d1.days &&
         d0.milliseconds === d1.milliseconds;
 }
+// Simple Math
+function addDurations(d0, d1) {
+    return {
+        years: d0.years + d1.years,
+        months: d0.months + d1.months,
+        days: d0.days + d1.days,
+        milliseconds: d0.milliseconds + d1.milliseconds,
+    };
+}
 function subtractDurations(d1, d0) {
     return {
         years: d1.years - d0.years,
         months: d1.months - d0.months,
         days: d1.days - d0.days,
         milliseconds: d1.milliseconds - d0.milliseconds,
+    };
+}
+function multiplyDuration(d, n) {
+    return {
+        years: d.years * n,
+        months: d.months * n,
+        days: d.days * n,
+        milliseconds: d.milliseconds * n,
     };
 }
 // Conversions
@@ -446,6 +465,25 @@ function asRoughMs(dur) {
         dur.months * (30 * 864e5) +
         dur.days * 864e5 +
         dur.milliseconds;
+}
+// Advanced Math
+function wholeDivideDurations(numerator, denominator) {
+    let res = null;
+    for (let i = 0; i < INTERNAL_UNITS.length; i += 1) {
+        let unit = INTERNAL_UNITS[i];
+        if (denominator[unit]) {
+            let localRes = numerator[unit] / denominator[unit];
+            if (!isInt(localRes) || (res !== null && res !== localRes)) {
+                return null;
+            }
+            res = localRes;
+        }
+        else if (numerator[unit]) {
+            // needs to divide by something but can't!
+            return null;
+        }
+    }
+    return res;
 }
 function greatestDurationDenominator(dur) {
     let ms = dur.milliseconds;
@@ -848,6 +886,12 @@ function formatDayString(marker) {
 }
 function formatIsoMonthStr(marker) {
     return marker.toISOString().match(/^\d{4}-\d{2}/)[0];
+}
+// TODO: use Date::toISOString and use everything after the T?
+function formatIsoTimeString(marker) {
+    return padStart(marker.getUTCHours(), 2) + ':' +
+        padStart(marker.getUTCMinutes(), 2) + ':' +
+        padStart(marker.getUTCSeconds(), 2);
 }
 function formatTimeZoneOffset(minutes, doIso = false) {
     let sign = minutes < 0 ? '-' : '+';
@@ -2091,6 +2135,134 @@ function computeCanVGrowWithinCell() {
     let possible = div.offsetHeight > 0;
     document.body.removeChild(el);
     return possible;
+}
+
+const EMPTY_EVENT_STORE = createEmptyEventStore(); // for purecomponents. TODO: keep elsewhere
+class Splitter {
+    constructor() {
+        this.getKeysForEventDefs = memoize(this._getKeysForEventDefs);
+        this.splitDateSelection = memoize(this._splitDateSpan);
+        this.splitEventStore = memoize(this._splitEventStore);
+        this.splitIndividualUi = memoize(this._splitIndividualUi);
+        this.splitEventDrag = memoize(this._splitInteraction);
+        this.splitEventResize = memoize(this._splitInteraction);
+        this.eventUiBuilders = {}; // TODO: typescript protection
+    }
+    splitProps(props) {
+        let keyInfos = this.getKeyInfo(props);
+        let defKeys = this.getKeysForEventDefs(props.eventStore);
+        let dateSelections = this.splitDateSelection(props.dateSelection);
+        let individualUi = this.splitIndividualUi(props.eventUiBases, defKeys); // the individual *bases*
+        let eventStores = this.splitEventStore(props.eventStore, defKeys);
+        let eventDrags = this.splitEventDrag(props.eventDrag);
+        let eventResizes = this.splitEventResize(props.eventResize);
+        let splitProps = {};
+        this.eventUiBuilders = mapHash(keyInfos, (info, key) => this.eventUiBuilders[key] || memoize(buildEventUiForKey));
+        for (let key in keyInfos) {
+            let keyInfo = keyInfos[key];
+            let eventStore = eventStores[key] || EMPTY_EVENT_STORE;
+            let buildEventUi = this.eventUiBuilders[key];
+            splitProps[key] = {
+                businessHours: keyInfo.businessHours || props.businessHours,
+                dateSelection: dateSelections[key] || null,
+                eventStore,
+                eventUiBases: buildEventUi(props.eventUiBases[''], keyInfo.ui, individualUi[key]),
+                eventSelection: eventStore.instances[props.eventSelection] ? props.eventSelection : '',
+                eventDrag: eventDrags[key] || null,
+                eventResize: eventResizes[key] || null,
+            };
+        }
+        return splitProps;
+    }
+    _splitDateSpan(dateSpan) {
+        let dateSpans = {};
+        if (dateSpan) {
+            let keys = this.getKeysForDateSpan(dateSpan);
+            for (let key of keys) {
+                dateSpans[key] = dateSpan;
+            }
+        }
+        return dateSpans;
+    }
+    _getKeysForEventDefs(eventStore) {
+        return mapHash(eventStore.defs, (eventDef) => this.getKeysForEventDef(eventDef));
+    }
+    _splitEventStore(eventStore, defKeys) {
+        let { defs, instances } = eventStore;
+        let splitStores = {};
+        for (let defId in defs) {
+            for (let key of defKeys[defId]) {
+                if (!splitStores[key]) {
+                    splitStores[key] = createEmptyEventStore();
+                }
+                splitStores[key].defs[defId] = defs[defId];
+            }
+        }
+        for (let instanceId in instances) {
+            let instance = instances[instanceId];
+            for (let key of defKeys[instance.defId]) {
+                if (splitStores[key]) { // must have already been created
+                    splitStores[key].instances[instanceId] = instance;
+                }
+            }
+        }
+        return splitStores;
+    }
+    _splitIndividualUi(eventUiBases, defKeys) {
+        let splitHashes = {};
+        for (let defId in eventUiBases) {
+            if (defId) { // not the '' key
+                for (let key of defKeys[defId]) {
+                    if (!splitHashes[key]) {
+                        splitHashes[key] = {};
+                    }
+                    splitHashes[key][defId] = eventUiBases[defId];
+                }
+            }
+        }
+        return splitHashes;
+    }
+    _splitInteraction(interaction) {
+        let splitStates = {};
+        if (interaction) {
+            let affectedStores = this._splitEventStore(interaction.affectedEvents, this._getKeysForEventDefs(interaction.affectedEvents));
+            // can't rely on defKeys because event data is mutated
+            let mutatedKeysByDefId = this._getKeysForEventDefs(interaction.mutatedEvents);
+            let mutatedStores = this._splitEventStore(interaction.mutatedEvents, mutatedKeysByDefId);
+            let populate = (key) => {
+                if (!splitStates[key]) {
+                    splitStates[key] = {
+                        affectedEvents: affectedStores[key] || EMPTY_EVENT_STORE,
+                        mutatedEvents: mutatedStores[key] || EMPTY_EVENT_STORE,
+                        isEvent: interaction.isEvent,
+                    };
+                }
+            };
+            for (let key in affectedStores) {
+                populate(key);
+            }
+            for (let key in mutatedStores) {
+                populate(key);
+            }
+        }
+        return splitStates;
+    }
+}
+function buildEventUiForKey(allUi, eventUiForKey, individualUi) {
+    let baseParts = [];
+    if (allUi) {
+        baseParts.push(allUi);
+    }
+    if (eventUiForKey) {
+        baseParts.push(eventUiForKey);
+    }
+    let stuff = {
+        '': combineEventUis(baseParts),
+    };
+    if (individualUi) {
+        Object.assign(stuff, individualUi);
+    }
+    return stuff;
 }
 
 function parseRange(input, dateEnv) {
@@ -3842,6 +4014,9 @@ function sliceEventStore(eventStore, eventUiBases, framingRange, nextDayThreshol
     }
     return { bg: bgRanges, fg: fgRanges };
 }
+function hasBgRendering(def) {
+    return def.ui.display === 'background' || def.ui.display === 'inverse-background';
+}
 function setElSeg(el, seg) {
     el.fcSeg = seg;
 }
@@ -4632,6 +4807,37 @@ function getEntrySpanEnd(entry) {
 }
 function buildEntryKey(entry) {
     return entry.index + ':' + entry.span.start;
+}
+// returns groups with entries sorted by input order
+function groupIntersectingEntries(entries) {
+    let merges = [];
+    for (let entry of entries) {
+        let filteredMerges = [];
+        let hungryMerge = {
+            span: entry.span,
+            entries: [entry],
+        };
+        for (let merge of merges) {
+            if (intersectSpans(merge.span, hungryMerge.span)) {
+                hungryMerge = {
+                    entries: merge.entries.concat(hungryMerge.entries),
+                    span: joinSpans(merge.span, hungryMerge.span),
+                };
+            }
+            else {
+                filteredMerges.push(merge);
+            }
+        }
+        filteredMerges.push(hungryMerge);
+        merges = filteredMerges;
+    }
+    return merges;
+}
+function joinSpans(span0, span1) {
+    return {
+        start: Math.min(span0.start, span1.start),
+        end: Math.max(span0.end, span1.end),
+    };
 }
 function intersectSpans(span0, span1) {
     let start = Math.max(span0.start, span1.start);
@@ -6251,18 +6457,28 @@ class StandardEvent extends BaseComponent {
         return (y(EventContainer, Object.assign({}, props /* includes elRef */, { elTag: "a", elStyle: {
                 borderColor: ui.borderColor,
                 backgroundColor: ui.backgroundColor,
-            }, elAttrs: getSegAnchorAttrs(seg, context), defaultGenerator: renderInnerContent$1, timeText: timeText }), (InnerContent, eventContentArg) => (y(_, null,
+            }, elAttrs: getSegAnchorAttrs(seg, context), defaultGenerator: renderInnerContent$1$1, timeText: timeText }), (InnerContent, eventContentArg) => (y(_, null,
             y(InnerContent, { elTag: "div", elClasses: ['fc-event-main'], elStyle: { color: eventContentArg.textColor } }),
             Boolean(eventContentArg.isStartResizable) && (y("div", { className: "fc-event-resizer fc-event-resizer-start" })),
             Boolean(eventContentArg.isEndResizable) && (y("div", { className: "fc-event-resizer fc-event-resizer-end" }))))));
     }
 }
-function renderInnerContent$1(innerProps) {
+function renderInnerContent$1$1(innerProps) {
     return (y("div", { className: "fc-event-main-frame" },
         innerProps.timeText && (y("div", { className: "fc-event-time" }, innerProps.timeText)),
         y("div", { className: "fc-event-title-container" },
             y("div", { className: "fc-event-title fc-sticky" }, innerProps.event.title || y(_, null, "\u00A0")))));
 }
+
+const NowIndicatorContainer = (props) => (y(ViewContextType.Consumer, null, (context) => {
+    let { options } = context;
+    let renderProps = {
+        isAxis: props.isAxis,
+        date: context.dateEnv.toDate(props.date),
+        view: context.viewApi,
+    };
+    return (y(ContentContainer, Object.assign({}, props /* includes children */, { elTag: props.elTag || 'div', renderProps: renderProps, generatorName: "nowIndicatorContent", customGenerator: options.nowIndicatorContent, classNameGenerator: options.nowIndicatorClassNames, didMount: options.nowIndicatorDidMount, willUnmount: options.nowIndicatorWillUnmount })));
+}));
 
 const DAY_NUM_FORMAT = createFormatter({ day: 'numeric' });
 class DayCellContainer extends BaseComponent {
@@ -6530,7 +6746,7 @@ class MoreLinkContainer extends BaseComponent {
                 Boolean(props.moreCnt) && (y(ContentContainer, { elTag: props.elTag || 'a', elRef: this.handleLinkEl, elClasses: [
                         ...(props.elClasses || []),
                         'fc-more-link',
-                    ], elStyle: props.elStyle, elAttrs: Object.assign(Object.assign(Object.assign({}, props.elAttrs), createAriaClickAttrs(this.handleClick)), { title: hint, 'aria-expanded': state.isPopoverOpen, 'aria-controls': state.isPopoverOpen ? state.popoverId : '' }), renderProps: renderProps, generatorName: "moreLinkContent", customGenerator: options.moreLinkContent, defaultGenerator: props.defaultGenerator || renderMoreLinkInner, classNameGenerator: options.moreLinkClassNames, didMount: options.moreLinkDidMount, willUnmount: options.moreLinkWillUnmount }, props.children)),
+                    ], elStyle: props.elStyle, elAttrs: Object.assign(Object.assign(Object.assign({}, props.elAttrs), createAriaClickAttrs(this.handleClick)), { title: hint, 'aria-expanded': state.isPopoverOpen, 'aria-controls': state.isPopoverOpen ? state.popoverId : '' }), renderProps: renderProps, generatorName: "moreLinkContent", customGenerator: options.moreLinkContent, defaultGenerator: props.defaultGenerator || renderMoreLinkInner$1, classNameGenerator: options.moreLinkClassNames, didMount: options.moreLinkDidMount, willUnmount: options.moreLinkWillUnmount }, props.children)),
                 state.isPopoverOpen && (y(MorePopover, { id: state.popoverId, startDate: range.start, endDate: range.end, dateProfile: props.dateProfile, todayRange: props.todayRange, extraDateSpan: props.extraDateSpan, parentEl: this.parentEl, alignmentEl: props.alignmentElRef ?
                         props.alignmentElRef.current :
                         this.linkEl, alignGridTop: props.alignGridTop, forceTimed: props.forceTimed, onClose: this.handlePopoverClose }, props.popoverContent()))));
@@ -6548,7 +6764,7 @@ class MoreLinkContainer extends BaseComponent {
         }
     }
 }
-function renderMoreLinkInner(props) {
+function renderMoreLinkInner$1(props) {
     return props.text;
 }
 function computeRange(props) {
@@ -10883,7 +11099,7 @@ class UnselectAuto {
     }
 }
 
-const OPTION_REFINERS = {
+const OPTION_REFINERS$1 = {
     fixedMirrorParent: identity,
 };
 const LISTENER_REFINERS = {
@@ -10900,17 +11116,17 @@ const LISTENER_REFINERS = {
 };
 config.dataAttrPrefix = '';
 
-var index$1 = createPlugin({
+var index$2 = createPlugin({
     name: '@fullcalendar/interaction',
     componentInteractions: [DateClicking, DateSelecting, EventDragging, EventResizing],
     calendarInteractions: [UnselectAuto],
     elementDraggingImpl: FeaturefulElementDragging,
-    optionRefiners: OPTION_REFINERS,
+    optionRefiners: OPTION_REFINERS$1,
     listenerRefiners: LISTENER_REFINERS,
 });
 
-var css_248z = ":root{--fc-daygrid-event-dot-width:8px}.fc-daygrid-day-events:after,.fc-daygrid-day-events:before,.fc-daygrid-day-frame:after,.fc-daygrid-day-frame:before,.fc-daygrid-event-harness:after,.fc-daygrid-event-harness:before{clear:both;content:\"\";display:table}.fc .fc-daygrid-body{position:relative;z-index:1}.fc .fc-daygrid-day.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-daygrid-day-frame{min-height:100%;position:relative}.fc .fc-daygrid-day-top{display:flex;flex-direction:row-reverse}.fc .fc-day-other .fc-daygrid-day-top{opacity:.3}.fc .fc-daygrid-day-number{padding:4px;position:relative;z-index:4}.fc .fc-daygrid-month-start{font-size:1.1em;font-weight:700}.fc .fc-daygrid-day-events{margin-top:1px}.fc .fc-daygrid-body-balanced .fc-daygrid-day-events{left:0;position:absolute;right:0}.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{min-height:2em;position:relative}.fc .fc-daygrid-body-natural .fc-daygrid-day-events{margin-bottom:1em}.fc .fc-daygrid-event-harness{position:relative}.fc .fc-daygrid-event-harness-abs{left:0;position:absolute;right:0;top:0}.fc .fc-daygrid-bg-harness{bottom:0;position:absolute;top:0}.fc .fc-daygrid-day-bg .fc-non-business{z-index:1}.fc .fc-daygrid-day-bg .fc-bg-event{z-index:2}.fc .fc-daygrid-day-bg .fc-highlight{z-index:3}.fc .fc-daygrid-event{margin-top:1px;z-index:6}.fc .fc-daygrid-event.fc-event-mirror{z-index:7}.fc .fc-daygrid-day-bottom{font-size:.85em;margin:0 2px}.fc .fc-daygrid-day-bottom:after,.fc .fc-daygrid-day-bottom:before{clear:both;content:\"\";display:table}.fc .fc-daygrid-more-link{border-radius:3px;cursor:pointer;line-height:1;margin-top:1px;max-width:100%;overflow:hidden;padding:2px;position:relative;white-space:nowrap;z-index:4}.fc .fc-daygrid-more-link:hover{background-color:rgba(0,0,0,.1)}.fc .fc-daygrid-week-number{background-color:var(--fc-neutral-bg-color);color:var(--fc-neutral-text-color);min-width:1.5em;padding:2px;position:absolute;text-align:center;top:0;z-index:5}.fc .fc-more-popover .fc-popover-body{min-width:220px;padding:10px}.fc-direction-ltr .fc-daygrid-event.fc-event-start,.fc-direction-rtl .fc-daygrid-event.fc-event-end{margin-left:2px}.fc-direction-ltr .fc-daygrid-event.fc-event-end,.fc-direction-rtl .fc-daygrid-event.fc-event-start{margin-right:2px}.fc-direction-ltr .fc-daygrid-more-link{float:left}.fc-direction-ltr .fc-daygrid-week-number{border-radius:0 0 3px 0;left:0}.fc-direction-rtl .fc-daygrid-more-link{float:right}.fc-direction-rtl .fc-daygrid-week-number{border-radius:0 0 0 3px;right:0}.fc-liquid-hack .fc-daygrid-day-frame{position:static}.fc-daygrid-event{border-radius:3px;font-size:var(--fc-small-font-size);position:relative;white-space:nowrap}.fc-daygrid-block-event .fc-event-time{font-weight:700}.fc-daygrid-block-event .fc-event-time,.fc-daygrid-block-event .fc-event-title{padding:1px}.fc-daygrid-dot-event{align-items:center;display:flex;padding:2px 0}.fc-daygrid-dot-event .fc-event-title{flex-grow:1;flex-shrink:1;font-weight:700;min-width:0;overflow:hidden}.fc-daygrid-dot-event.fc-event-mirror,.fc-daygrid-dot-event:hover{background:rgba(0,0,0,.1)}.fc-daygrid-dot-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-daygrid-event-dot{border:calc(var(--fc-daygrid-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-daygrid-event-dot-width)/2);box-sizing:content-box;height:0;margin:0 4px;width:0}.fc-direction-ltr .fc-daygrid-event .fc-event-time{margin-right:3px}.fc-direction-rtl .fc-daygrid-event .fc-event-time{margin-left:3px}";
-injectStyles(css_248z);
+var css_248z$1 = ":root{--fc-daygrid-event-dot-width:8px}.fc-daygrid-day-events:after,.fc-daygrid-day-events:before,.fc-daygrid-day-frame:after,.fc-daygrid-day-frame:before,.fc-daygrid-event-harness:after,.fc-daygrid-event-harness:before{clear:both;content:\"\";display:table}.fc .fc-daygrid-body{position:relative;z-index:1}.fc .fc-daygrid-day.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-daygrid-day-frame{min-height:100%;position:relative}.fc .fc-daygrid-day-top{display:flex;flex-direction:row-reverse}.fc .fc-day-other .fc-daygrid-day-top{opacity:.3}.fc .fc-daygrid-day-number{padding:4px;position:relative;z-index:4}.fc .fc-daygrid-month-start{font-size:1.1em;font-weight:700}.fc .fc-daygrid-day-events{margin-top:1px}.fc .fc-daygrid-body-balanced .fc-daygrid-day-events{left:0;position:absolute;right:0}.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events{min-height:2em;position:relative}.fc .fc-daygrid-body-natural .fc-daygrid-day-events{margin-bottom:1em}.fc .fc-daygrid-event-harness{position:relative}.fc .fc-daygrid-event-harness-abs{left:0;position:absolute;right:0;top:0}.fc .fc-daygrid-bg-harness{bottom:0;position:absolute;top:0}.fc .fc-daygrid-day-bg .fc-non-business{z-index:1}.fc .fc-daygrid-day-bg .fc-bg-event{z-index:2}.fc .fc-daygrid-day-bg .fc-highlight{z-index:3}.fc .fc-daygrid-event{margin-top:1px;z-index:6}.fc .fc-daygrid-event.fc-event-mirror{z-index:7}.fc .fc-daygrid-day-bottom{font-size:.85em;margin:0 2px}.fc .fc-daygrid-day-bottom:after,.fc .fc-daygrid-day-bottom:before{clear:both;content:\"\";display:table}.fc .fc-daygrid-more-link{border-radius:3px;cursor:pointer;line-height:1;margin-top:1px;max-width:100%;overflow:hidden;padding:2px;position:relative;white-space:nowrap;z-index:4}.fc .fc-daygrid-more-link:hover{background-color:rgba(0,0,0,.1)}.fc .fc-daygrid-week-number{background-color:var(--fc-neutral-bg-color);color:var(--fc-neutral-text-color);min-width:1.5em;padding:2px;position:absolute;text-align:center;top:0;z-index:5}.fc .fc-more-popover .fc-popover-body{min-width:220px;padding:10px}.fc-direction-ltr .fc-daygrid-event.fc-event-start,.fc-direction-rtl .fc-daygrid-event.fc-event-end{margin-left:2px}.fc-direction-ltr .fc-daygrid-event.fc-event-end,.fc-direction-rtl .fc-daygrid-event.fc-event-start{margin-right:2px}.fc-direction-ltr .fc-daygrid-more-link{float:left}.fc-direction-ltr .fc-daygrid-week-number{border-radius:0 0 3px 0;left:0}.fc-direction-rtl .fc-daygrid-more-link{float:right}.fc-direction-rtl .fc-daygrid-week-number{border-radius:0 0 0 3px;right:0}.fc-liquid-hack .fc-daygrid-day-frame{position:static}.fc-daygrid-event{border-radius:3px;font-size:var(--fc-small-font-size);position:relative;white-space:nowrap}.fc-daygrid-block-event .fc-event-time{font-weight:700}.fc-daygrid-block-event .fc-event-time,.fc-daygrid-block-event .fc-event-title{padding:1px}.fc-daygrid-dot-event{align-items:center;display:flex;padding:2px 0}.fc-daygrid-dot-event .fc-event-title{flex-grow:1;flex-shrink:1;font-weight:700;min-width:0;overflow:hidden}.fc-daygrid-dot-event.fc-event-mirror,.fc-daygrid-dot-event:hover{background:rgba(0,0,0,.1)}.fc-daygrid-dot-event.fc-event-selected:before{bottom:-10px;top:-10px}.fc-daygrid-event-dot{border:calc(var(--fc-daygrid-event-dot-width)/2) solid var(--fc-event-border-color);border-radius:calc(var(--fc-daygrid-event-dot-width)/2);box-sizing:content-box;height:0;margin:0 4px;width:0}.fc-direction-ltr .fc-daygrid-event .fc-event-time{margin-right:3px}.fc-direction-rtl .fc-daygrid-event .fc-event-time{margin-left:3px}";
+injectStyles(css_248z$1);
 
 function splitSegsByRow(segs, rowCnt) {
     let byRow = [];
@@ -10984,10 +11200,10 @@ class TableListItemEvent extends BaseComponent {
         let { seg } = props;
         let timeFormat = options.eventTimeFormat || DEFAULT_TABLE_EVENT_TIME_FORMAT;
         let timeText = buildSegTimeText(seg, timeFormat, context, true, props.defaultDisplayEventEnd);
-        return (y(EventContainer, Object.assign({}, props, { elTag: "a", elClasses: ['fc-daygrid-event', 'fc-daygrid-dot-event'], elAttrs: getSegAnchorAttrs(props.seg, context), defaultGenerator: renderInnerContent, timeText: timeText, isResizing: false, isDateSelecting: false })));
+        return (y(EventContainer, Object.assign({}, props, { elTag: "a", elClasses: ['fc-daygrid-event', 'fc-daygrid-dot-event'], elAttrs: getSegAnchorAttrs(props.seg, context), defaultGenerator: renderInnerContent$1, timeText: timeText, isResizing: false, isDateSelecting: false })));
     }
 }
-function renderInnerContent(renderProps) {
+function renderInnerContent$1(renderProps) {
     return (y(_, null,
         y("div", { className: "fc-daygrid-event-dot", style: { borderColor: renderProps.borderColor || renderProps.backgroundColor } }),
         renderProps.timeText && (y("div", { className: "fc-event-time" }, renderProps.timeText)),
@@ -11027,7 +11243,7 @@ function compileSegs(singlePlacements) {
     return { allSegs, invisibleSegs };
 }
 
-const DEFAULT_WEEK_NUM_FORMAT = createFormatter({ week: 'narrow' });
+const DEFAULT_WEEK_NUM_FORMAT$1 = createFormatter({ week: 'narrow' });
 class TableCell extends DateComponent {
     constructor() {
         super(...arguments);
@@ -11051,7 +11267,7 @@ class TableCell extends DateComponent {
                 'fc-daygrid-day',
                 ...(props.extraClassNames || []),
             ], elAttrs: Object.assign(Object.assign(Object.assign({}, props.extraDataAttrs), (props.showDayNumber ? { 'aria-labelledby': state.dayNumberId } : {})), { role: 'gridcell' }), defaultGenerator: renderTopInner, date: date, dateProfile: dateProfile, todayRange: props.todayRange, showDayNumber: props.showDayNumber, isMonthStart: isMonthStart, extraRenderProps: props.extraRenderProps }, (InnerContent, renderProps) => (y("div", { ref: props.innerElRef, className: "fc-daygrid-day-frame fc-scrollgrid-sync-inner", style: { minHeight: props.minHeight } },
-            props.showWeekNumber && (y(WeekNumberContainer, { elTag: "a", elClasses: ['fc-daygrid-week-number'], elAttrs: buildNavLinkAttrs(context, date, 'week'), date: date, defaultFormat: DEFAULT_WEEK_NUM_FORMAT })),
+            props.showWeekNumber && (y(WeekNumberContainer, { elTag: "a", elClasses: ['fc-daygrid-week-number'], elAttrs: buildNavLinkAttrs(context, date, 'week'), date: date, defaultFormat: DEFAULT_WEEK_NUM_FORMAT$1 })),
             !renderProps.isDisabled &&
                 (props.showDayNumber || hasCustomDayCellContent(options) || props.forceDayTop) ? (y("div", { className: "fc-daygrid-day-top" },
                 y(InnerContent, { elTag: "a", elClasses: [
@@ -11865,7 +12081,7 @@ function buildDayTableModel(dateProfile, dateProfileGenerator) {
     return new DayTableModel(daySeries, /year|month|week/.test(dateProfile.currentRangeUnit));
 }
 
-var index = createPlugin({
+var index$1 = createPlugin({
     name: '@fullcalendar/daygrid',
     initialView: 'dayGridMonth',
     views: {
@@ -11893,34 +12109,1213 @@ var index = createPlugin({
     },
 });
 
-const calendar = new Calendar(document.getElementById('calendar'), {
-    plugins: [
+var css_248z = ".fc-v-event{background-color:var(--fc-event-bg-color);border:1px solid var(--fc-event-border-color);display:block}.fc-v-event .fc-event-main{color:var(--fc-event-text-color);height:100%}.fc-v-event .fc-event-main-frame{display:flex;flex-direction:column;height:100%}.fc-v-event .fc-event-time{flex-grow:0;flex-shrink:0;max-height:100%;overflow:hidden}.fc-v-event .fc-event-title-container{flex-grow:1;flex-shrink:1;min-height:0}.fc-v-event .fc-event-title{bottom:0;max-height:100%;overflow:hidden;top:0}.fc-v-event:not(.fc-event-start){border-top-left-radius:0;border-top-right-radius:0;border-top-width:0}.fc-v-event:not(.fc-event-end){border-bottom-left-radius:0;border-bottom-right-radius:0;border-bottom-width:0}.fc-v-event.fc-event-selected:before{left:-10px;right:-10px}.fc-v-event .fc-event-resizer-start{cursor:n-resize}.fc-v-event .fc-event-resizer-end{cursor:s-resize}.fc-v-event:not(.fc-event-selected) .fc-event-resizer{height:var(--fc-event-resizer-thickness);left:0;right:0}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-start{top:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event:not(.fc-event-selected) .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-thickness)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer{left:50%;margin-left:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-start{top:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc-v-event.fc-event-selected .fc-event-resizer-end{bottom:calc(var(--fc-event-resizer-dot-total-width)/-2)}.fc .fc-timegrid .fc-daygrid-body{z-index:2}.fc .fc-timegrid-divider{padding:0 0 2px}.fc .fc-timegrid-body{min-height:100%;position:relative;z-index:1}.fc .fc-timegrid-axis-chunk{position:relative}.fc .fc-timegrid-axis-chunk>table,.fc .fc-timegrid-slots{position:relative;z-index:1}.fc .fc-timegrid-slot{border-bottom:0;height:1.5em}.fc .fc-timegrid-slot:empty:before{content:\"\\00a0\"}.fc .fc-timegrid-slot-minor{border-top-style:dotted}.fc .fc-timegrid-slot-label-cushion{display:inline-block;white-space:nowrap}.fc .fc-timegrid-slot-label{vertical-align:middle}.fc .fc-timegrid-axis-cushion,.fc .fc-timegrid-slot-label-cushion{padding:0 4px}.fc .fc-timegrid-axis-frame-liquid{height:100%}.fc .fc-timegrid-axis-frame{align-items:center;display:flex;justify-content:flex-end;overflow:hidden}.fc .fc-timegrid-axis-cushion{flex-shrink:0;max-width:60px}.fc-direction-ltr .fc-timegrid-slot-label-frame{text-align:right}.fc-direction-rtl .fc-timegrid-slot-label-frame{text-align:left}.fc-liquid-hack .fc-timegrid-axis-frame-liquid{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col.fc-day-today{background-color:var(--fc-today-bg-color)}.fc .fc-timegrid-col-frame{min-height:100%;position:relative}.fc-media-screen.fc-liquid-hack .fc-timegrid-col-frame{bottom:0;height:auto;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols{bottom:0;left:0;position:absolute;right:0;top:0}.fc-media-screen .fc-timegrid-cols>table{height:100%}.fc-media-screen .fc-timegrid-col-bg,.fc-media-screen .fc-timegrid-col-events,.fc-media-screen .fc-timegrid-now-indicator-container{left:0;position:absolute;right:0;top:0}.fc .fc-timegrid-col-bg{z-index:2}.fc .fc-timegrid-col-bg .fc-non-business{z-index:1}.fc .fc-timegrid-col-bg .fc-bg-event{z-index:2}.fc .fc-timegrid-col-bg .fc-highlight{z-index:3}.fc .fc-timegrid-bg-harness{left:0;position:absolute;right:0}.fc .fc-timegrid-col-events{z-index:3}.fc .fc-timegrid-now-indicator-container{bottom:0;overflow:hidden}.fc-direction-ltr .fc-timegrid-col-events{margin:0 2.5% 0 2px}.fc-direction-rtl .fc-timegrid-col-events{margin:0 2px 0 2.5%}.fc-timegrid-event-harness{position:absolute}.fc-timegrid-event-harness>.fc-timegrid-event{bottom:0;left:0;position:absolute;right:0;top:0}.fc-timegrid-event-harness-inset .fc-timegrid-event,.fc-timegrid-event.fc-event-mirror,.fc-timegrid-more-link{box-shadow:0 0 0 1px var(--fc-page-bg-color)}.fc-timegrid-event,.fc-timegrid-more-link{border-radius:3px;font-size:var(--fc-small-font-size)}.fc-timegrid-event{margin-bottom:1px}.fc-timegrid-event .fc-event-main{padding:1px 1px 0}.fc-timegrid-event .fc-event-time{font-size:var(--fc-small-font-size);margin-bottom:1px;white-space:nowrap}.fc-timegrid-event-short .fc-event-main-frame{flex-direction:row;overflow:hidden}.fc-timegrid-event-short .fc-event-time:after{content:\"\\00a0-\\00a0\"}.fc-timegrid-event-short .fc-event-title{font-size:var(--fc-small-font-size)}.fc-timegrid-more-link{background:var(--fc-more-link-bg-color);color:var(--fc-more-link-text-color);cursor:pointer;margin-bottom:1px;position:absolute;z-index:9999}.fc-timegrid-more-link-inner{padding:3px 2px;top:0}.fc-direction-ltr .fc-timegrid-more-link{right:0}.fc-direction-rtl .fc-timegrid-more-link{left:0}.fc .fc-timegrid-now-indicator-line{border-color:var(--fc-now-indicator-color);border-style:solid;border-width:1px 0 0;left:0;position:absolute;right:0;z-index:4}.fc .fc-timegrid-now-indicator-arrow{border-color:var(--fc-now-indicator-color);border-style:solid;margin-top:-5px;position:absolute;z-index:4}.fc-direction-ltr .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 0 5px 6px;left:0}.fc-direction-rtl .fc-timegrid-now-indicator-arrow{border-bottom-color:transparent;border-top-color:transparent;border-width:5px 6px 5px 0;right:0}";
+injectStyles(css_248z);
 
-        index$1,
-        index
-    ],
-
-    initialView: 'dayGridWeek',
-    editable: true,
-    selectable: true,
-    events: [
-        { title: 'Meeting', start: new Date() }
-    ],
-    headerToolbar: {
-        start: 'title',
-        center: 'dayGridWeek dayGridMonth dayGridYear',
-        end: 'today prev,next'
-    },
-    buttonText: {
-        today: "aujourd'hui",
-        month: 'mois',
-        week: 'semaine',
-        day: 'jour',
-        list: 'liste'
+class AllDaySplitter extends Splitter {
+    getKeyInfo() {
+        return {
+            allDay: {},
+            timed: {},
+        };
     }
+    getKeysForDateSpan(dateSpan) {
+        if (dateSpan.allDay) {
+            return ['allDay'];
+        }
+        return ['timed'];
+    }
+    getKeysForEventDef(eventDef) {
+        if (!eventDef.allDay) {
+            return ['timed'];
+        }
+        if (hasBgRendering(eventDef)) {
+            return ['timed', 'allDay'];
+        }
+        return ['allDay'];
+    }
+}
+
+const DEFAULT_SLAT_LABEL_FORMAT = createFormatter({
+    hour: 'numeric',
+    minute: '2-digit',
+    omitZeroMinute: true,
+    meridiem: 'short',
 });
-calendar.setOption('locale', 'fr');
-calendar.render();
+function TimeColsAxisCell(props) {
+    let classNames = [
+        'fc-timegrid-slot',
+        'fc-timegrid-slot-label',
+        props.isLabeled ? 'fc-scrollgrid-shrink' : 'fc-timegrid-slot-minor',
+    ];
+    return (y(ViewContextType.Consumer, null, (context) => {
+        if (!props.isLabeled) {
+            return (y("td", { className: classNames.join(' '), "data-time": props.isoTimeStr }));
+        }
+        let { dateEnv, options, viewApi } = context;
+        let labelFormat = // TODO: fully pre-parse
+         options.slotLabelFormat == null ? DEFAULT_SLAT_LABEL_FORMAT :
+            Array.isArray(options.slotLabelFormat) ? createFormatter(options.slotLabelFormat[0]) :
+                createFormatter(options.slotLabelFormat);
+        let renderProps = {
+            level: 0,
+            time: props.time,
+            date: dateEnv.toDate(props.date),
+            view: viewApi,
+            text: dateEnv.format(props.date, labelFormat),
+        };
+        return (y(ContentContainer, { elTag: "td", elClasses: classNames, elAttrs: {
+                'data-time': props.isoTimeStr,
+            }, renderProps: renderProps, generatorName: "slotLabelContent", customGenerator: options.slotLabelContent, defaultGenerator: renderInnerContent, classNameGenerator: options.slotLabelClassNames, didMount: options.slotLabelDidMount, willUnmount: options.slotLabelWillUnmount }, (InnerContent) => (y("div", { className: "fc-timegrid-slot-label-frame fc-scrollgrid-shrink-frame" },
+            y(InnerContent, { elTag: "div", elClasses: [
+                    'fc-timegrid-slot-label-cushion',
+                    'fc-scrollgrid-shrink-cushion',
+                ] })))));
+    }));
+}
+function renderInnerContent(props) {
+    return props.text;
+}
+
+class TimeBodyAxis extends BaseComponent {
+    render() {
+        return this.props.slatMetas.map((slatMeta) => (y("tr", { key: slatMeta.key },
+            y(TimeColsAxisCell, Object.assign({}, slatMeta)))));
+    }
+}
+
+const DEFAULT_WEEK_NUM_FORMAT = createFormatter({ week: 'short' });
+const AUTO_ALL_DAY_MAX_EVENT_ROWS = 5;
+class TimeColsView extends DateComponent {
+    constructor() {
+        super(...arguments);
+        this.allDaySplitter = new AllDaySplitter(); // for use by subclasses
+        this.headerElRef = d();
+        this.rootElRef = d();
+        this.scrollerElRef = d();
+        this.state = {
+            slatCoords: null,
+        };
+        this.handleScrollTopRequest = (scrollTop) => {
+            let scrollerEl = this.scrollerElRef.current;
+            if (scrollerEl) { // TODO: not sure how this could ever be null. weirdness with the reducer
+                scrollerEl.scrollTop = scrollTop;
+            }
+        };
+        /* Header Render Methods
+        ------------------------------------------------------------------------------------------------------------------*/
+        this.renderHeadAxis = (rowKey, frameHeight = '') => {
+            let { options } = this.context;
+            let { dateProfile } = this.props;
+            let range = dateProfile.renderRange;
+            let dayCnt = diffDays(range.start, range.end);
+            // only do in day views (to avoid doing in week views that dont need it)
+            let navLinkAttrs = (dayCnt === 1)
+                ? buildNavLinkAttrs(this.context, range.start, 'week')
+                : {};
+            if (options.weekNumbers && rowKey === 'day') {
+                return (y(WeekNumberContainer, { elTag: "th", elClasses: [
+                        'fc-timegrid-axis',
+                        'fc-scrollgrid-shrink',
+                    ], elAttrs: {
+                        'aria-hidden': true,
+                    }, date: range.start, defaultFormat: DEFAULT_WEEK_NUM_FORMAT }, (InnerContent) => (y("div", { className: [
+                        'fc-timegrid-axis-frame',
+                        'fc-scrollgrid-shrink-frame',
+                        'fc-timegrid-axis-frame-liquid',
+                    ].join(' '), style: { height: frameHeight } },
+                    y(InnerContent, { elTag: "a", elClasses: [
+                            'fc-timegrid-axis-cushion',
+                            'fc-scrollgrid-shrink-cushion',
+                            'fc-scrollgrid-sync-inner',
+                        ], elAttrs: navLinkAttrs })))));
+            }
+            return (y("th", { "aria-hidden": true, className: "fc-timegrid-axis" },
+                y("div", { className: "fc-timegrid-axis-frame", style: { height: frameHeight } })));
+        };
+        /* Table Component Render Methods
+        ------------------------------------------------------------------------------------------------------------------*/
+        // only a one-way height sync. we don't send the axis inner-content height to the DayGrid,
+        // but DayGrid still needs to have classNames on inner elements in order to measure.
+        this.renderTableRowAxis = (rowHeight) => {
+            let { options, viewApi } = this.context;
+            let renderProps = {
+                text: options.allDayText,
+                view: viewApi,
+            };
+            return (
+            // TODO: make reusable hook. used in list view too
+            y(ContentContainer, { elTag: "td", elClasses: [
+                    'fc-timegrid-axis',
+                    'fc-scrollgrid-shrink',
+                ], elAttrs: {
+                    'aria-hidden': true,
+                }, renderProps: renderProps, generatorName: "allDayContent", customGenerator: options.allDayContent, defaultGenerator: renderAllDayInner, classNameGenerator: options.allDayClassNames, didMount: options.allDayDidMount, willUnmount: options.allDayWillUnmount }, (InnerContent) => (y("div", { className: [
+                    'fc-timegrid-axis-frame',
+                    'fc-scrollgrid-shrink-frame',
+                    rowHeight == null ? ' fc-timegrid-axis-frame-liquid' : '',
+                ].join(' '), style: { height: rowHeight } },
+                y(InnerContent, { elTag: "span", elClasses: [
+                        'fc-timegrid-axis-cushion',
+                        'fc-scrollgrid-shrink-cushion',
+                        'fc-scrollgrid-sync-inner',
+                    ] })))));
+        };
+        this.handleSlatCoords = (slatCoords) => {
+            this.setState({ slatCoords });
+        };
+    }
+    // rendering
+    // ----------------------------------------------------------------------------------------------------
+    renderSimpleLayout(headerRowContent, allDayContent, timeContent) {
+        let { context, props } = this;
+        let sections = [];
+        let stickyHeaderDates = getStickyHeaderDates(context.options);
+        if (headerRowContent) {
+            sections.push({
+                type: 'header',
+                key: 'header',
+                isSticky: stickyHeaderDates,
+                chunk: {
+                    elRef: this.headerElRef,
+                    tableClassName: 'fc-col-header',
+                    rowContent: headerRowContent,
+                },
+            });
+        }
+        if (allDayContent) {
+            sections.push({
+                type: 'body',
+                key: 'all-day',
+                chunk: { content: allDayContent },
+            });
+            sections.push({
+                type: 'body',
+                key: 'all-day-divider',
+                outerContent: ( // TODO: rename to cellContent so don't need to define <tr>?
+                y("tr", { role: "presentation", className: "fc-scrollgrid-section" },
+                    y("td", { className: 'fc-timegrid-divider ' + context.theme.getClass('tableCellShaded') }))),
+            });
+        }
+        sections.push({
+            type: 'body',
+            key: 'body',
+            liquid: true,
+            expandRows: Boolean(context.options.expandRows),
+            chunk: {
+                scrollerElRef: this.scrollerElRef,
+                content: timeContent,
+            },
+        });
+        return (y(ViewContainer, { elRef: this.rootElRef, elClasses: ['fc-timegrid'], viewSpec: context.viewSpec },
+            y(SimpleScrollGrid, { liquid: !props.isHeightAuto && !props.forPrint, collapsibleWidth: props.forPrint, cols: [{ width: 'shrink' }], sections: sections })));
+    }
+    renderHScrollLayout(headerRowContent, allDayContent, timeContent, colCnt, dayMinWidth, slatMetas, slatCoords) {
+        let ScrollGrid = this.context.pluginHooks.scrollGridImpl;
+        if (!ScrollGrid) {
+            throw new Error('No ScrollGrid implementation');
+        }
+        let { context, props } = this;
+        let stickyHeaderDates = !props.forPrint && getStickyHeaderDates(context.options);
+        let stickyFooterScrollbar = !props.forPrint && getStickyFooterScrollbar(context.options);
+        let sections = [];
+        if (headerRowContent) {
+            sections.push({
+                type: 'header',
+                key: 'header',
+                isSticky: stickyHeaderDates,
+                syncRowHeights: true,
+                chunks: [
+                    {
+                        key: 'axis',
+                        rowContent: (arg) => (y("tr", { role: "presentation" }, this.renderHeadAxis('day', arg.rowSyncHeights[0]))),
+                    },
+                    {
+                        key: 'cols',
+                        elRef: this.headerElRef,
+                        tableClassName: 'fc-col-header',
+                        rowContent: headerRowContent,
+                    },
+                ],
+            });
+        }
+        if (allDayContent) {
+            sections.push({
+                type: 'body',
+                key: 'all-day',
+                syncRowHeights: true,
+                chunks: [
+                    {
+                        key: 'axis',
+                        rowContent: (contentArg) => (y("tr", { role: "presentation" }, this.renderTableRowAxis(contentArg.rowSyncHeights[0]))),
+                    },
+                    {
+                        key: 'cols',
+                        content: allDayContent,
+                    },
+                ],
+            });
+            sections.push({
+                key: 'all-day-divider',
+                type: 'body',
+                outerContent: ( // TODO: rename to cellContent so don't need to define <tr>?
+                y("tr", { role: "presentation", className: "fc-scrollgrid-section" },
+                    y("td", { colSpan: 2, className: 'fc-timegrid-divider ' + context.theme.getClass('tableCellShaded') }))),
+            });
+        }
+        let isNowIndicator = context.options.nowIndicator;
+        sections.push({
+            type: 'body',
+            key: 'body',
+            liquid: true,
+            expandRows: Boolean(context.options.expandRows),
+            chunks: [
+                {
+                    key: 'axis',
+                    content: (arg) => (
+                    // TODO: make this now-indicator arrow more DRY with TimeColsContent
+                    y("div", { className: "fc-timegrid-axis-chunk" },
+                        y("table", { "aria-hidden": true, style: { height: arg.expandRows ? arg.clientHeight : '' } },
+                            arg.tableColGroupNode,
+                            y("tbody", null,
+                                y(TimeBodyAxis, { slatMetas: slatMetas }))),
+                        y("div", { className: "fc-timegrid-now-indicator-container" },
+                            y(NowTimer, { unit: isNowIndicator ? 'minute' : 'day' /* hacky */ }, (nowDate) => {
+                                let nowIndicatorTop = isNowIndicator &&
+                                    slatCoords &&
+                                    slatCoords.safeComputeTop(nowDate); // might return void
+                                if (typeof nowIndicatorTop === 'number') {
+                                    return (y(NowIndicatorContainer, { elClasses: ['fc-timegrid-now-indicator-arrow'], elStyle: { top: nowIndicatorTop }, isAxis: true, date: nowDate }));
+                                }
+                                return null;
+                            })))),
+                },
+                {
+                    key: 'cols',
+                    scrollerElRef: this.scrollerElRef,
+                    content: timeContent,
+                },
+            ],
+        });
+        if (stickyFooterScrollbar) {
+            sections.push({
+                key: 'footer',
+                type: 'footer',
+                isSticky: true,
+                chunks: [
+                    {
+                        key: 'axis',
+                        content: renderScrollShim,
+                    },
+                    {
+                        key: 'cols',
+                        content: renderScrollShim,
+                    },
+                ],
+            });
+        }
+        return (y(ViewContainer, { elRef: this.rootElRef, elClasses: ['fc-timegrid'], viewSpec: context.viewSpec },
+            y(ScrollGrid, { liquid: !props.isHeightAuto && !props.forPrint, forPrint: props.forPrint, collapsibleWidth: false, colGroups: [
+                    { width: 'shrink', cols: [{ width: 'shrink' }] },
+                    { cols: [{ span: colCnt, minWidth: dayMinWidth }] },
+                ], sections: sections })));
+    }
+    /* Dimensions
+    ------------------------------------------------------------------------------------------------------------------*/
+    getAllDayMaxEventProps() {
+        let { dayMaxEvents, dayMaxEventRows } = this.context.options;
+        if (dayMaxEvents === true || dayMaxEventRows === true) { // is auto?
+            dayMaxEvents = undefined;
+            dayMaxEventRows = AUTO_ALL_DAY_MAX_EVENT_ROWS; // make sure "auto" goes to a real number
+        }
+        return { dayMaxEvents, dayMaxEventRows };
+    }
+}
+function renderAllDayInner(renderProps) {
+    return renderProps.text;
+}
+
+class TimeColsSlatsCoords {
+    constructor(positions, dateProfile, slotDuration) {
+        this.positions = positions;
+        this.dateProfile = dateProfile;
+        this.slotDuration = slotDuration;
+    }
+    safeComputeTop(date) {
+        let { dateProfile } = this;
+        if (rangeContainsMarker(dateProfile.currentRange, date)) {
+            let startOfDayDate = startOfDay(date);
+            let timeMs = date.valueOf() - startOfDayDate.valueOf();
+            if (timeMs >= asRoughMs(dateProfile.slotMinTime) &&
+                timeMs < asRoughMs(dateProfile.slotMaxTime)) {
+                return this.computeTimeTop(createDuration(timeMs));
+            }
+        }
+        return null;
+    }
+    // Computes the top coordinate, relative to the bounds of the grid, of the given date.
+    // A `startOfDayDate` must be given for avoiding ambiguity over how to treat midnight.
+    computeDateTop(when, startOfDayDate) {
+        if (!startOfDayDate) {
+            startOfDayDate = startOfDay(when);
+        }
+        return this.computeTimeTop(createDuration(when.valueOf() - startOfDayDate.valueOf()));
+    }
+    // Computes the top coordinate, relative to the bounds of the grid, of the given time (a Duration).
+    // This is a makeshify way to compute the time-top. Assumes all slatMetas dates are uniform.
+    // Eventually allow computation with arbirary slat dates.
+    computeTimeTop(duration) {
+        let { positions, dateProfile } = this;
+        let len = positions.els.length;
+        // floating-point value of # of slots covered
+        let slatCoverage = (duration.milliseconds - asRoughMs(dateProfile.slotMinTime)) / asRoughMs(this.slotDuration);
+        let slatIndex;
+        let slatRemainder;
+        // compute a floating-point number for how many slats should be progressed through.
+        // from 0 to number of slats (inclusive)
+        // constrained because slotMinTime/slotMaxTime might be customized.
+        slatCoverage = Math.max(0, slatCoverage);
+        slatCoverage = Math.min(len, slatCoverage);
+        // an integer index of the furthest whole slat
+        // from 0 to number slats (*exclusive*, so len-1)
+        slatIndex = Math.floor(slatCoverage);
+        slatIndex = Math.min(slatIndex, len - 1);
+        // how much further through the slatIndex slat (from 0.0-1.0) must be covered in addition.
+        // could be 1.0 if slatCoverage is covering *all* the slots
+        slatRemainder = slatCoverage - slatIndex;
+        return positions.tops[slatIndex] +
+            positions.getHeight(slatIndex) * slatRemainder;
+    }
+}
+
+class TimeColsSlatsBody extends BaseComponent {
+    render() {
+        let { props, context } = this;
+        let { options } = context;
+        let { slatElRefs } = props;
+        return (y("tbody", null, props.slatMetas.map((slatMeta, i) => {
+            let renderProps = {
+                time: slatMeta.time,
+                date: context.dateEnv.toDate(slatMeta.date),
+                view: context.viewApi,
+            };
+            return (y("tr", { key: slatMeta.key, ref: slatElRefs.createRef(slatMeta.key) },
+                props.axis && (y(TimeColsAxisCell, Object.assign({}, slatMeta))),
+                y(ContentContainer, { elTag: "td", elClasses: [
+                        'fc-timegrid-slot',
+                        'fc-timegrid-slot-lane',
+                        !slatMeta.isLabeled && 'fc-timegrid-slot-minor',
+                    ], elAttrs: {
+                        'data-time': slatMeta.isoTimeStr,
+                    }, renderProps: renderProps, generatorName: "slotLaneContent", customGenerator: options.slotLaneContent, classNameGenerator: options.slotLaneClassNames, didMount: options.slotLaneDidMount, willUnmount: options.slotLaneWillUnmount })));
+        })));
+    }
+}
+
+/*
+for the horizontal "slats" that run width-wise. Has a time axis on a side. Depends on RTL.
+*/
+class TimeColsSlats extends BaseComponent {
+    constructor() {
+        super(...arguments);
+        this.rootElRef = d();
+        this.slatElRefs = new RefMap();
+    }
+    render() {
+        let { props, context } = this;
+        return (y("div", { ref: this.rootElRef, className: "fc-timegrid-slots" },
+            y("table", { "aria-hidden": true, className: context.theme.getClass('table'), style: {
+                    minWidth: props.tableMinWidth,
+                    width: props.clientWidth,
+                    height: props.minHeight,
+                } },
+                props.tableColGroupNode /* relies on there only being a single <col> for the axis */,
+                y(TimeColsSlatsBody, { slatElRefs: this.slatElRefs, axis: props.axis, slatMetas: props.slatMetas }))));
+    }
+    componentDidMount() {
+        this.updateSizing();
+    }
+    componentDidUpdate() {
+        this.updateSizing();
+    }
+    componentWillUnmount() {
+        if (this.props.onCoords) {
+            this.props.onCoords(null);
+        }
+    }
+    updateSizing() {
+        let { context, props } = this;
+        if (props.onCoords &&
+            props.clientWidth !== null // means sizing has stabilized
+        ) {
+            let rootEl = this.rootElRef.current;
+            if (rootEl.offsetHeight) { // not hidden by css
+                props.onCoords(new TimeColsSlatsCoords(new PositionCache(this.rootElRef.current, collectSlatEls(this.slatElRefs.currentMap, props.slatMetas), false, true), this.props.dateProfile, context.options.slotDuration));
+            }
+        }
+    }
+}
+function collectSlatEls(elMap, slatMetas) {
+    return slatMetas.map((slatMeta) => elMap[slatMeta.key]);
+}
+
+function splitSegsByCol(segs, colCnt) {
+    let segsByCol = [];
+    let i;
+    for (i = 0; i < colCnt; i += 1) {
+        segsByCol.push([]);
+    }
+    if (segs) {
+        for (i = 0; i < segs.length; i += 1) {
+            segsByCol[segs[i].col].push(segs[i]);
+        }
+    }
+    return segsByCol;
+}
+function splitInteractionByCol(ui, colCnt) {
+    let byRow = [];
+    if (!ui) {
+        for (let i = 0; i < colCnt; i += 1) {
+            byRow[i] = null;
+        }
+    }
+    else {
+        for (let i = 0; i < colCnt; i += 1) {
+            byRow[i] = {
+                affectedInstances: ui.affectedInstances,
+                isEvent: ui.isEvent,
+                segs: [],
+            };
+        }
+        for (let seg of ui.segs) {
+            byRow[seg.col].segs.push(seg);
+        }
+    }
+    return byRow;
+}
+
+class TimeColMoreLink extends BaseComponent {
+    render() {
+        let { props } = this;
+        return (y(MoreLinkContainer, { elClasses: ['fc-timegrid-more-link'], elStyle: {
+                top: props.top,
+                bottom: props.bottom,
+            }, allDayDate: null, moreCnt: props.hiddenSegs.length, allSegs: props.hiddenSegs, hiddenSegs: props.hiddenSegs, extraDateSpan: props.extraDateSpan, dateProfile: props.dateProfile, todayRange: props.todayRange, popoverContent: () => renderPlainFgSegs(props.hiddenSegs, props), defaultGenerator: renderMoreLinkInner, forceTimed: true }, (InnerContent) => (y(InnerContent, { elTag: "div", elClasses: ['fc-timegrid-more-link-inner', 'fc-sticky'] }))));
+    }
+}
+function renderMoreLinkInner(props) {
+    return props.shortText;
+}
+
+// segInputs assumed sorted
+function buildPositioning(segInputs, strictOrder, maxStackCnt) {
+    let hierarchy = new SegHierarchy();
+    if (strictOrder != null) {
+        hierarchy.strictOrder = strictOrder;
+    }
+    if (maxStackCnt != null) {
+        hierarchy.maxStackCnt = maxStackCnt;
+    }
+    let hiddenEntries = hierarchy.addSegs(segInputs);
+    let hiddenGroups = groupIntersectingEntries(hiddenEntries);
+    let web = buildWeb(hierarchy);
+    web = stretchWeb(web, 1); // all levelCoords/thickness will have 0.0-1.0
+    let segRects = webToRects(web);
+    return { segRects, hiddenGroups };
+}
+function buildWeb(hierarchy) {
+    const { entriesByLevel } = hierarchy;
+    const buildNode = cacheable((level, lateral) => level + ':' + lateral, (level, lateral) => {
+        let siblingRange = findNextLevelSegs(hierarchy, level, lateral);
+        let nextLevelRes = buildNodes(siblingRange, buildNode);
+        let entry = entriesByLevel[level][lateral];
+        return [
+            Object.assign(Object.assign({}, entry), { nextLevelNodes: nextLevelRes[0] }),
+            entry.thickness + nextLevelRes[1], // the pressure builds
+        ];
+    });
+    return buildNodes(entriesByLevel.length
+        ? { level: 0, lateralStart: 0, lateralEnd: entriesByLevel[0].length }
+        : null, buildNode)[0];
+}
+function buildNodes(siblingRange, buildNode) {
+    if (!siblingRange) {
+        return [[], 0];
+    }
+    let { level, lateralStart, lateralEnd } = siblingRange;
+    let lateral = lateralStart;
+    let pairs = [];
+    while (lateral < lateralEnd) {
+        pairs.push(buildNode(level, lateral));
+        lateral += 1;
+    }
+    pairs.sort(cmpDescPressures);
+    return [
+        pairs.map(extractNode),
+        pairs[0][1], // first item's pressure
+    ];
+}
+function cmpDescPressures(a, b) {
+    return b[1] - a[1];
+}
+function extractNode(a) {
+    return a[0];
+}
+function findNextLevelSegs(hierarchy, subjectLevel, subjectLateral) {
+    let { levelCoords, entriesByLevel } = hierarchy;
+    let subjectEntry = entriesByLevel[subjectLevel][subjectLateral];
+    let afterSubject = levelCoords[subjectLevel] + subjectEntry.thickness;
+    let levelCnt = levelCoords.length;
+    let level = subjectLevel;
+    // skip past levels that are too high up
+    for (; level < levelCnt && levelCoords[level] < afterSubject; level += 1)
+        ; // do nothing
+    for (; level < levelCnt; level += 1) {
+        let entries = entriesByLevel[level];
+        let entry;
+        let searchIndex = binarySearch(entries, subjectEntry.span.start, getEntrySpanEnd);
+        let lateralStart = searchIndex[0] + searchIndex[1]; // if exact match (which doesn't collide), go to next one
+        let lateralEnd = lateralStart;
+        while ( // loop through entries that horizontally intersect
+        (entry = entries[lateralEnd]) && // but not past the whole seg list
+            entry.span.start < subjectEntry.span.end) {
+            lateralEnd += 1;
+        }
+        if (lateralStart < lateralEnd) {
+            return { level, lateralStart, lateralEnd };
+        }
+    }
+    return null;
+}
+function stretchWeb(topLevelNodes, totalThickness) {
+    const stretchNode = cacheable((node, startCoord, prevThickness) => buildEntryKey(node), (node, startCoord, prevThickness) => {
+        let { nextLevelNodes, thickness } = node;
+        let allThickness = thickness + prevThickness;
+        let thicknessFraction = thickness / allThickness;
+        let endCoord;
+        let newChildren = [];
+        if (!nextLevelNodes.length) {
+            endCoord = totalThickness;
+        }
+        else {
+            for (let childNode of nextLevelNodes) {
+                if (endCoord === undefined) {
+                    let res = stretchNode(childNode, startCoord, allThickness);
+                    endCoord = res[0];
+                    newChildren.push(res[1]);
+                }
+                else {
+                    let res = stretchNode(childNode, endCoord, 0);
+                    newChildren.push(res[1]);
+                }
+            }
+        }
+        let newThickness = (endCoord - startCoord) * thicknessFraction;
+        return [endCoord - newThickness, Object.assign(Object.assign({}, node), { thickness: newThickness, nextLevelNodes: newChildren })];
+    });
+    return topLevelNodes.map((node) => stretchNode(node, 0, 0)[1]);
+}
+// not sorted in any particular order
+function webToRects(topLevelNodes) {
+    let rects = [];
+    const processNode = cacheable((node, levelCoord, stackDepth) => buildEntryKey(node), (node, levelCoord, stackDepth) => {
+        let rect = Object.assign(Object.assign({}, node), { levelCoord,
+            stackDepth, stackForward: 0 });
+        rects.push(rect);
+        return (rect.stackForward = processNodes(node.nextLevelNodes, levelCoord + node.thickness, stackDepth + 1) + 1);
+    });
+    function processNodes(nodes, levelCoord, stackDepth) {
+        let stackForward = 0;
+        for (let node of nodes) {
+            stackForward = Math.max(processNode(node, levelCoord, stackDepth), stackForward);
+        }
+        return stackForward;
+    }
+    processNodes(topLevelNodes, 0, 0);
+    return rects; // TODO: sort rects by levelCoord to be consistent with toRects?
+}
+// TODO: move to general util
+function cacheable(keyFunc, workFunc) {
+    const cache = {};
+    return (...args) => {
+        let key = keyFunc(...args);
+        return (key in cache)
+            ? cache[key]
+            : (cache[key] = workFunc(...args));
+    };
+}
+
+function computeSegVCoords(segs, colDate, slatCoords = null, eventMinHeight = 0) {
+    let vcoords = [];
+    if (slatCoords) {
+        for (let i = 0; i < segs.length; i += 1) {
+            let seg = segs[i];
+            let spanStart = slatCoords.computeDateTop(seg.start, colDate);
+            let spanEnd = Math.max(spanStart + (eventMinHeight || 0), // :(
+            slatCoords.computeDateTop(seg.end, colDate));
+            vcoords.push({
+                start: Math.round(spanStart),
+                end: Math.round(spanEnd), //
+            });
+        }
+    }
+    return vcoords;
+}
+function computeFgSegPlacements(segs, segVCoords, // might not have for every seg
+eventOrderStrict, eventMaxStack) {
+    let segInputs = [];
+    let dumbSegs = []; // segs without coords
+    for (let i = 0; i < segs.length; i += 1) {
+        let vcoords = segVCoords[i];
+        if (vcoords) {
+            segInputs.push({
+                index: i,
+                thickness: 1,
+                span: vcoords,
+            });
+        }
+        else {
+            dumbSegs.push(segs[i]);
+        }
+    }
+    let { segRects, hiddenGroups } = buildPositioning(segInputs, eventOrderStrict, eventMaxStack);
+    let segPlacements = [];
+    for (let segRect of segRects) {
+        segPlacements.push({
+            seg: segs[segRect.index],
+            rect: segRect,
+        });
+    }
+    for (let dumbSeg of dumbSegs) {
+        segPlacements.push({ seg: dumbSeg, rect: null });
+    }
+    return { segPlacements, hiddenGroups };
+}
+
+const DEFAULT_TIME_FORMAT = createFormatter({
+    hour: 'numeric',
+    minute: '2-digit',
+    meridiem: false,
+});
+class TimeColEvent extends BaseComponent {
+    render() {
+        return (y(StandardEvent, Object.assign({}, this.props, { elClasses: [
+                'fc-timegrid-event',
+                'fc-v-event',
+                this.props.isShort && 'fc-timegrid-event-short',
+            ], defaultTimeFormat: DEFAULT_TIME_FORMAT })));
+    }
+}
+
+class TimeCol extends BaseComponent {
+    constructor() {
+        super(...arguments);
+        this.sortEventSegs = memoize(sortEventSegs);
+    }
+    // TODO: memoize event-placement?
+    render() {
+        let { props, context } = this;
+        let { options } = context;
+        let isSelectMirror = options.selectMirror;
+        let mirrorSegs = // yuck
+         (props.eventDrag && props.eventDrag.segs) ||
+            (props.eventResize && props.eventResize.segs) ||
+            (isSelectMirror && props.dateSelectionSegs) ||
+            [];
+        let interactionAffectedInstances = // TODO: messy way to compute this
+         (props.eventDrag && props.eventDrag.affectedInstances) ||
+            (props.eventResize && props.eventResize.affectedInstances) ||
+            {};
+        let sortedFgSegs = this.sortEventSegs(props.fgEventSegs, options.eventOrder);
+        return (y(DayCellContainer, { elTag: "td", elRef: props.elRef, elClasses: [
+                'fc-timegrid-col',
+                ...(props.extraClassNames || []),
+            ], elAttrs: Object.assign({ role: 'gridcell' }, props.extraDataAttrs), date: props.date, dateProfile: props.dateProfile, todayRange: props.todayRange, extraRenderProps: props.extraRenderProps }, (InnerContent) => (y("div", { className: "fc-timegrid-col-frame" },
+            y("div", { className: "fc-timegrid-col-bg" },
+                this.renderFillSegs(props.businessHourSegs, 'non-business'),
+                this.renderFillSegs(props.bgEventSegs, 'bg-event'),
+                this.renderFillSegs(props.dateSelectionSegs, 'highlight')),
+            y("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(sortedFgSegs, interactionAffectedInstances, false, false, false)),
+            y("div", { className: "fc-timegrid-col-events" }, this.renderFgSegs(mirrorSegs, {}, Boolean(props.eventDrag), Boolean(props.eventResize), Boolean(isSelectMirror), 'mirror')),
+            y("div", { className: "fc-timegrid-now-indicator-container" }, this.renderNowIndicator(props.nowIndicatorSegs)),
+            hasCustomDayCellContent(options) && (y(InnerContent, { elTag: "div", elClasses: ['fc-timegrid-col-misc'] }))))));
+    }
+    renderFgSegs(sortedFgSegs, segIsInvisible, isDragging, isResizing, isDateSelecting, forcedKey) {
+        let { props } = this;
+        if (props.forPrint) {
+            return renderPlainFgSegs(sortedFgSegs, props);
+        }
+        return this.renderPositionedFgSegs(sortedFgSegs, segIsInvisible, isDragging, isResizing, isDateSelecting, forcedKey);
+    }
+    renderPositionedFgSegs(segs, // if not mirror, needs to be sorted
+    segIsInvisible, isDragging, isResizing, isDateSelecting, forcedKey) {
+        let { eventMaxStack, eventShortHeight, eventOrderStrict, eventMinHeight } = this.context.options;
+        let { date, slatCoords, eventSelection, todayRange, nowDate } = this.props;
+        let isMirror = isDragging || isResizing || isDateSelecting;
+        let segVCoords = computeSegVCoords(segs, date, slatCoords, eventMinHeight);
+        let { segPlacements, hiddenGroups } = computeFgSegPlacements(segs, segVCoords, eventOrderStrict, eventMaxStack);
+        return (y(_, null,
+            this.renderHiddenGroups(hiddenGroups, segs),
+            segPlacements.map((segPlacement) => {
+                let { seg, rect } = segPlacement;
+                let instanceId = seg.eventRange.instance.instanceId;
+                let isVisible = isMirror || Boolean(!segIsInvisible[instanceId] && rect);
+                let vStyle = computeSegVStyle(rect && rect.span);
+                let hStyle = (!isMirror && rect) ? this.computeSegHStyle(rect) : { left: 0, right: 0 };
+                let isInset = Boolean(rect) && rect.stackForward > 0;
+                let isShort = Boolean(rect) && (rect.span.end - rect.span.start) < eventShortHeight; // look at other places for this problem
+                return (y("div", { className: 'fc-timegrid-event-harness' +
+                        (isInset ? ' fc-timegrid-event-harness-inset' : ''), key: forcedKey || instanceId, style: Object.assign(Object.assign({ visibility: isVisible ? '' : 'hidden' }, vStyle), hStyle) },
+                    y(TimeColEvent, Object.assign({ seg: seg, isDragging: isDragging, isResizing: isResizing, isDateSelecting: isDateSelecting, isSelected: instanceId === eventSelection, isShort: isShort }, getSegMeta(seg, todayRange, nowDate)))));
+            })));
+    }
+    // will already have eventMinHeight applied because segInputs already had it
+    renderHiddenGroups(hiddenGroups, segs) {
+        let { extraDateSpan, dateProfile, todayRange, nowDate, eventSelection, eventDrag, eventResize } = this.props;
+        return (y(_, null, hiddenGroups.map((hiddenGroup) => {
+            let positionCss = computeSegVStyle(hiddenGroup.span);
+            let hiddenSegs = compileSegsFromEntries(hiddenGroup.entries, segs);
+            return (y(TimeColMoreLink, { key: buildIsoString(computeEarliestSegStart(hiddenSegs)), hiddenSegs: hiddenSegs, top: positionCss.top, bottom: positionCss.bottom, extraDateSpan: extraDateSpan, dateProfile: dateProfile, todayRange: todayRange, nowDate: nowDate, eventSelection: eventSelection, eventDrag: eventDrag, eventResize: eventResize }));
+        })));
+    }
+    renderFillSegs(segs, fillType) {
+        let { props, context } = this;
+        let segVCoords = computeSegVCoords(segs, props.date, props.slatCoords, context.options.eventMinHeight); // don't assume all populated
+        let children = segVCoords.map((vcoords, i) => {
+            let seg = segs[i];
+            return (y("div", { key: buildEventRangeKey(seg.eventRange), className: "fc-timegrid-bg-harness", style: computeSegVStyle(vcoords) }, fillType === 'bg-event' ?
+                y(BgEvent, Object.assign({ seg: seg }, getSegMeta(seg, props.todayRange, props.nowDate))) :
+                renderFill(fillType)));
+        });
+        return y(_, null, children);
+    }
+    renderNowIndicator(segs) {
+        let { slatCoords, date } = this.props;
+        if (!slatCoords) {
+            return null;
+        }
+        return segs.map((seg, i) => (y(NowIndicatorContainer
+        // key doesn't matter. will only ever be one
+        , { 
+            // key doesn't matter. will only ever be one
+            key: i, elClasses: ['fc-timegrid-now-indicator-line'], elStyle: {
+                top: slatCoords.computeDateTop(seg.start, date),
+            }, isAxis: false, date: date })));
+    }
+    computeSegHStyle(segHCoords) {
+        let { isRtl, options } = this.context;
+        let shouldOverlap = options.slotEventOverlap;
+        let nearCoord = segHCoords.levelCoord; // the left side if LTR. the right side if RTL. floating-point
+        let farCoord = segHCoords.levelCoord + segHCoords.thickness; // the right side if LTR. the left side if RTL. floating-point
+        let left; // amount of space from left edge, a fraction of the total width
+        let right; // amount of space from right edge, a fraction of the total width
+        if (shouldOverlap) {
+            // double the width, but don't go beyond the maximum forward coordinate (1.0)
+            farCoord = Math.min(1, nearCoord + (farCoord - nearCoord) * 2);
+        }
+        if (isRtl) {
+            left = 1 - farCoord;
+            right = nearCoord;
+        }
+        else {
+            left = nearCoord;
+            right = 1 - farCoord;
+        }
+        let props = {
+            zIndex: segHCoords.stackDepth + 1,
+            left: left * 100 + '%',
+            right: right * 100 + '%',
+        };
+        if (shouldOverlap && !segHCoords.stackForward) {
+            // add padding to the edge so that forward stacked events don't cover the resizer's icon
+            props[isRtl ? 'marginLeft' : 'marginRight'] = 10 * 2; // 10 is a guesstimate of the icon's width
+        }
+        return props;
+    }
+}
+function renderPlainFgSegs(sortedFgSegs, { todayRange, nowDate, eventSelection, eventDrag, eventResize }) {
+    let hiddenInstances = (eventDrag ? eventDrag.affectedInstances : null) ||
+        (eventResize ? eventResize.affectedInstances : null) ||
+        {};
+    return (y(_, null, sortedFgSegs.map((seg) => {
+        let instanceId = seg.eventRange.instance.instanceId;
+        return (y("div", { key: instanceId, style: { visibility: hiddenInstances[instanceId] ? 'hidden' : '' } },
+            y(TimeColEvent, Object.assign({ seg: seg, isDragging: false, isResizing: false, isDateSelecting: false, isSelected: instanceId === eventSelection, isShort: false }, getSegMeta(seg, todayRange, nowDate)))));
+    })));
+}
+function computeSegVStyle(segVCoords) {
+    if (!segVCoords) {
+        return { top: '', bottom: '' };
+    }
+    return {
+        top: segVCoords.start,
+        bottom: -segVCoords.end,
+    };
+}
+function compileSegsFromEntries(segEntries, allSegs) {
+    return segEntries.map((segEntry) => allSegs[segEntry.index]);
+}
+
+class TimeColsContent extends BaseComponent {
+    constructor() {
+        super(...arguments);
+        this.splitFgEventSegs = memoize(splitSegsByCol);
+        this.splitBgEventSegs = memoize(splitSegsByCol);
+        this.splitBusinessHourSegs = memoize(splitSegsByCol);
+        this.splitNowIndicatorSegs = memoize(splitSegsByCol);
+        this.splitDateSelectionSegs = memoize(splitSegsByCol);
+        this.splitEventDrag = memoize(splitInteractionByCol);
+        this.splitEventResize = memoize(splitInteractionByCol);
+        this.rootElRef = d();
+        this.cellElRefs = new RefMap();
+    }
+    render() {
+        let { props, context } = this;
+        let nowIndicatorTop = context.options.nowIndicator &&
+            props.slatCoords &&
+            props.slatCoords.safeComputeTop(props.nowDate); // might return void
+        let colCnt = props.cells.length;
+        let fgEventSegsByRow = this.splitFgEventSegs(props.fgEventSegs, colCnt);
+        let bgEventSegsByRow = this.splitBgEventSegs(props.bgEventSegs, colCnt);
+        let businessHourSegsByRow = this.splitBusinessHourSegs(props.businessHourSegs, colCnt);
+        let nowIndicatorSegsByRow = this.splitNowIndicatorSegs(props.nowIndicatorSegs, colCnt);
+        let dateSelectionSegsByRow = this.splitDateSelectionSegs(props.dateSelectionSegs, colCnt);
+        let eventDragByRow = this.splitEventDrag(props.eventDrag, colCnt);
+        let eventResizeByRow = this.splitEventResize(props.eventResize, colCnt);
+        return (y("div", { className: "fc-timegrid-cols", ref: this.rootElRef },
+            y("table", { role: "presentation", style: {
+                    minWidth: props.tableMinWidth,
+                    width: props.clientWidth,
+                } },
+                props.tableColGroupNode,
+                y("tbody", { role: "presentation" },
+                    y("tr", { role: "row" },
+                        props.axis && (y("td", { "aria-hidden": true, className: "fc-timegrid-col fc-timegrid-axis" },
+                            y("div", { className: "fc-timegrid-col-frame" },
+                                y("div", { className: "fc-timegrid-now-indicator-container" }, typeof nowIndicatorTop === 'number' && (y(NowIndicatorContainer, { elClasses: ['fc-timegrid-now-indicator-arrow'], elStyle: { top: nowIndicatorTop }, isAxis: true, date: props.nowDate })))))),
+                        props.cells.map((cell, i) => (y(TimeCol, { key: cell.key, elRef: this.cellElRefs.createRef(cell.key), dateProfile: props.dateProfile, date: cell.date, nowDate: props.nowDate, todayRange: props.todayRange, extraRenderProps: cell.extraRenderProps, extraDataAttrs: cell.extraDataAttrs, extraClassNames: cell.extraClassNames, extraDateSpan: cell.extraDateSpan, fgEventSegs: fgEventSegsByRow[i], bgEventSegs: bgEventSegsByRow[i], businessHourSegs: businessHourSegsByRow[i], nowIndicatorSegs: nowIndicatorSegsByRow[i], dateSelectionSegs: dateSelectionSegsByRow[i], eventDrag: eventDragByRow[i], eventResize: eventResizeByRow[i], slatCoords: props.slatCoords, eventSelection: props.eventSelection, forPrint: props.forPrint }))))))));
+    }
+    componentDidMount() {
+        this.updateCoords();
+    }
+    componentDidUpdate() {
+        this.updateCoords();
+    }
+    updateCoords() {
+        let { props } = this;
+        if (props.onColCoords &&
+            props.clientWidth !== null // means sizing has stabilized
+        ) {
+            props.onColCoords(new PositionCache(this.rootElRef.current, collectCellEls(this.cellElRefs.currentMap, props.cells), true, // horizontal
+            false));
+        }
+    }
+}
+function collectCellEls(elMap, cells) {
+    return cells.map((cell) => elMap[cell.key]);
+}
+
+/* A component that renders one or more columns of vertical time slots
+----------------------------------------------------------------------------------------------------------------------*/
+class TimeCols extends DateComponent {
+    constructor() {
+        super(...arguments);
+        this.processSlotOptions = memoize(processSlotOptions);
+        this.state = {
+            slatCoords: null,
+        };
+        this.handleRootEl = (el) => {
+            if (el) {
+                this.context.registerInteractiveComponent(this, {
+                    el,
+                    isHitComboAllowed: this.props.isHitComboAllowed,
+                });
+            }
+            else {
+                this.context.unregisterInteractiveComponent(this);
+            }
+        };
+        this.handleScrollRequest = (request) => {
+            let { onScrollTopRequest } = this.props;
+            let { slatCoords } = this.state;
+            if (onScrollTopRequest && slatCoords) {
+                if (request.time) {
+                    let top = slatCoords.computeTimeTop(request.time);
+                    top = Math.ceil(top); // zoom can give weird floating-point values. rather scroll a little bit further
+                    if (top) {
+                        top += 1; // to overcome top border that slots beyond the first have. looks better
+                    }
+                    onScrollTopRequest(top);
+                }
+                return true;
+            }
+            return false;
+        };
+        this.handleColCoords = (colCoords) => {
+            this.colCoords = colCoords;
+        };
+        this.handleSlatCoords = (slatCoords) => {
+            this.setState({ slatCoords });
+            if (this.props.onSlatCoords) {
+                this.props.onSlatCoords(slatCoords);
+            }
+        };
+    }
+    render() {
+        let { props, state } = this;
+        return (y("div", { className: "fc-timegrid-body", ref: this.handleRootEl, style: {
+                // these props are important to give this wrapper correct dimensions for interactions
+                // TODO: if we set it here, can we avoid giving to inner tables?
+                width: props.clientWidth,
+                minWidth: props.tableMinWidth,
+            } },
+            y(TimeColsSlats, { axis: props.axis, dateProfile: props.dateProfile, slatMetas: props.slatMetas, clientWidth: props.clientWidth, minHeight: props.expandRows ? props.clientHeight : '', tableMinWidth: props.tableMinWidth, tableColGroupNode: props.axis ? props.tableColGroupNode : null /* axis depends on the colgroup's shrinking */, onCoords: this.handleSlatCoords }),
+            y(TimeColsContent, { cells: props.cells, axis: props.axis, dateProfile: props.dateProfile, businessHourSegs: props.businessHourSegs, bgEventSegs: props.bgEventSegs, fgEventSegs: props.fgEventSegs, dateSelectionSegs: props.dateSelectionSegs, eventSelection: props.eventSelection, eventDrag: props.eventDrag, eventResize: props.eventResize, todayRange: props.todayRange, nowDate: props.nowDate, nowIndicatorSegs: props.nowIndicatorSegs, clientWidth: props.clientWidth, tableMinWidth: props.tableMinWidth, tableColGroupNode: props.tableColGroupNode, slatCoords: state.slatCoords, onColCoords: this.handleColCoords, forPrint: props.forPrint })));
+    }
+    componentDidMount() {
+        this.scrollResponder = this.context.createScrollResponder(this.handleScrollRequest);
+    }
+    componentDidUpdate(prevProps) {
+        this.scrollResponder.update(prevProps.dateProfile !== this.props.dateProfile);
+    }
+    componentWillUnmount() {
+        this.scrollResponder.detach();
+    }
+    queryHit(positionLeft, positionTop) {
+        let { dateEnv, options } = this.context;
+        let { colCoords } = this;
+        let { dateProfile } = this.props;
+        let { slatCoords } = this.state;
+        let { snapDuration, snapsPerSlot } = this.processSlotOptions(this.props.slotDuration, options.snapDuration);
+        let colIndex = colCoords.leftToIndex(positionLeft);
+        let slatIndex = slatCoords.positions.topToIndex(positionTop);
+        if (colIndex != null && slatIndex != null) {
+            let cell = this.props.cells[colIndex];
+            let slatTop = slatCoords.positions.tops[slatIndex];
+            let slatHeight = slatCoords.positions.getHeight(slatIndex);
+            let partial = (positionTop - slatTop) / slatHeight; // floating point number between 0 and 1
+            let localSnapIndex = Math.floor(partial * snapsPerSlot); // the snap # relative to start of slat
+            let snapIndex = slatIndex * snapsPerSlot + localSnapIndex;
+            let dayDate = this.props.cells[colIndex].date;
+            let time = addDurations(dateProfile.slotMinTime, multiplyDuration(snapDuration, snapIndex));
+            let start = dateEnv.add(dayDate, time);
+            let end = dateEnv.add(start, snapDuration);
+            return {
+                dateProfile,
+                dateSpan: Object.assign({ range: { start, end }, allDay: false }, cell.extraDateSpan),
+                dayEl: colCoords.els[colIndex],
+                rect: {
+                    left: colCoords.lefts[colIndex],
+                    right: colCoords.rights[colIndex],
+                    top: slatTop,
+                    bottom: slatTop + slatHeight,
+                },
+                layer: 0,
+            };
+        }
+        return null;
+    }
+}
+function processSlotOptions(slotDuration, snapDurationOverride) {
+    let snapDuration = snapDurationOverride || slotDuration;
+    let snapsPerSlot = wholeDivideDurations(slotDuration, snapDuration);
+    if (snapsPerSlot === null) {
+        snapDuration = slotDuration;
+        snapsPerSlot = 1;
+        // TODO: say warning?
+    }
+    return { snapDuration, snapsPerSlot };
+}
+
+class DayTimeColsSlicer extends Slicer {
+    sliceRange(range, dayRanges) {
+        let segs = [];
+        for (let col = 0; col < dayRanges.length; col += 1) {
+            let segRange = intersectRanges(range, dayRanges[col]);
+            if (segRange) {
+                segs.push({
+                    start: segRange.start,
+                    end: segRange.end,
+                    isStart: segRange.start.valueOf() === range.start.valueOf(),
+                    isEnd: segRange.end.valueOf() === range.end.valueOf(),
+                    col,
+                });
+            }
+        }
+        return segs;
+    }
+}
+
+class DayTimeCols extends DateComponent {
+    constructor() {
+        super(...arguments);
+        this.buildDayRanges = memoize(buildDayRanges);
+        this.slicer = new DayTimeColsSlicer();
+        this.timeColsRef = d();
+    }
+    render() {
+        let { props, context } = this;
+        let { dateProfile, dayTableModel } = props;
+        let { nowIndicator, nextDayThreshold } = context.options;
+        let dayRanges = this.buildDayRanges(dayTableModel, dateProfile, context.dateEnv);
+        // give it the first row of cells
+        // TODO: would move this further down hierarchy, but sliceNowDate needs it
+        return (y(NowTimer, { unit: nowIndicator ? 'minute' : 'day' }, (nowDate, todayRange) => (y(TimeCols, Object.assign({ ref: this.timeColsRef }, this.slicer.sliceProps(props, dateProfile, null, context, dayRanges), { forPrint: props.forPrint, axis: props.axis, dateProfile: dateProfile, slatMetas: props.slatMetas, slotDuration: props.slotDuration, cells: dayTableModel.cells[0], tableColGroupNode: props.tableColGroupNode, tableMinWidth: props.tableMinWidth, clientWidth: props.clientWidth, clientHeight: props.clientHeight, expandRows: props.expandRows, nowDate: nowDate, nowIndicatorSegs: nowIndicator && this.slicer.sliceNowDate(nowDate, dateProfile, nextDayThreshold, context, dayRanges), todayRange: todayRange, onScrollTopRequest: props.onScrollTopRequest, onSlatCoords: props.onSlatCoords })))));
+    }
+}
+function buildDayRanges(dayTableModel, dateProfile, dateEnv) {
+    let ranges = [];
+    for (let date of dayTableModel.headerDates) {
+        ranges.push({
+            start: dateEnv.add(date, dateProfile.slotMinTime),
+            end: dateEnv.add(date, dateProfile.slotMaxTime),
+        });
+    }
+    return ranges;
+}
+
+// potential nice values for the slot-duration and interval-duration
+// from largest to smallest
+const STOCK_SUB_DURATIONS = [
+    { hours: 1 },
+    { minutes: 30 },
+    { minutes: 15 },
+    { seconds: 30 },
+    { seconds: 15 },
+];
+function buildSlatMetas(slotMinTime, slotMaxTime, explicitLabelInterval, slotDuration, dateEnv) {
+    let dayStart = new Date(0);
+    let slatTime = slotMinTime;
+    let slatIterator = createDuration(0);
+    let labelInterval = explicitLabelInterval || computeLabelInterval(slotDuration);
+    let metas = [];
+    while (asRoughMs(slatTime) < asRoughMs(slotMaxTime)) {
+        let date = dateEnv.add(dayStart, slatTime);
+        let isLabeled = wholeDivideDurations(slatIterator, labelInterval) !== null;
+        metas.push({
+            date,
+            time: slatTime,
+            key: date.toISOString(),
+            isoTimeStr: formatIsoTimeString(date),
+            isLabeled,
+        });
+        slatTime = addDurations(slatTime, slotDuration);
+        slatIterator = addDurations(slatIterator, slotDuration);
+    }
+    return metas;
+}
+// Computes an automatic value for slotLabelInterval
+function computeLabelInterval(slotDuration) {
+    let i;
+    let labelInterval;
+    let slotsPerLabel;
+    // find the smallest stock label interval that results in more than one slots-per-label
+    for (i = STOCK_SUB_DURATIONS.length - 1; i >= 0; i -= 1) {
+        labelInterval = createDuration(STOCK_SUB_DURATIONS[i]);
+        slotsPerLabel = wholeDivideDurations(labelInterval, slotDuration);
+        if (slotsPerLabel !== null && slotsPerLabel > 1) {
+            return labelInterval;
+        }
+    }
+    return slotDuration; // fall back
+}
+
+class DayTimeColsView extends TimeColsView {
+    constructor() {
+        super(...arguments);
+        this.buildTimeColsModel = memoize(buildTimeColsModel);
+        this.buildSlatMetas = memoize(buildSlatMetas);
+    }
+    render() {
+        let { options, dateEnv, dateProfileGenerator } = this.context;
+        let { props } = this;
+        let { dateProfile } = props;
+        let dayTableModel = this.buildTimeColsModel(dateProfile, dateProfileGenerator);
+        let splitProps = this.allDaySplitter.splitProps(props);
+        let slatMetas = this.buildSlatMetas(dateProfile.slotMinTime, dateProfile.slotMaxTime, options.slotLabelInterval, options.slotDuration, dateEnv);
+        let { dayMinWidth } = options;
+        let hasAttachedAxis = !dayMinWidth;
+        let hasDetachedAxis = dayMinWidth;
+        let headerContent = options.dayHeaders && (y(DayHeader, { dates: dayTableModel.headerDates, dateProfile: dateProfile, datesRepDistinctDays: true, renderIntro: hasAttachedAxis ? this.renderHeadAxis : null }));
+        let allDayContent = (options.allDaySlot !== false) && ((contentArg) => (y(DayTable, Object.assign({}, splitProps.allDay, { dateProfile: dateProfile, dayTableModel: dayTableModel, nextDayThreshold: options.nextDayThreshold, tableMinWidth: contentArg.tableMinWidth, colGroupNode: contentArg.tableColGroupNode, renderRowIntro: hasAttachedAxis ? this.renderTableRowAxis : null, showWeekNumbers: false, expandRows: false, headerAlignElRef: this.headerElRef, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, forPrint: props.forPrint }, this.getAllDayMaxEventProps()))));
+        let timeGridContent = (contentArg) => (y(DayTimeCols, Object.assign({}, splitProps.timed, { dayTableModel: dayTableModel, dateProfile: dateProfile, axis: hasAttachedAxis, slotDuration: options.slotDuration, slatMetas: slatMetas, forPrint: props.forPrint, tableColGroupNode: contentArg.tableColGroupNode, tableMinWidth: contentArg.tableMinWidth, clientWidth: contentArg.clientWidth, clientHeight: contentArg.clientHeight, onSlatCoords: this.handleSlatCoords, expandRows: contentArg.expandRows, onScrollTopRequest: this.handleScrollTopRequest })));
+        return hasDetachedAxis
+            ? this.renderHScrollLayout(headerContent, allDayContent, timeGridContent, dayTableModel.colCnt, dayMinWidth, slatMetas, this.state.slatCoords)
+            : this.renderSimpleLayout(headerContent, allDayContent, timeGridContent);
+    }
+}
+function buildTimeColsModel(dateProfile, dateProfileGenerator) {
+    let daySeries = new DaySeriesModel(dateProfile.renderRange, dateProfileGenerator);
+    return new DayTableModel(daySeries, false);
+}
+
+const OPTION_REFINERS = {
+    allDaySlot: Boolean,
+};
+
+var index = createPlugin({
+    name: '@fullcalendar/timegrid',
+    initialView: 'timeGridWeek',
+    optionRefiners: OPTION_REFINERS,
+    views: {
+        timeGrid: {
+            component: DayTimeColsView,
+            usesMinMaxTime: true,
+            allDaySlot: true,
+            slotDuration: '00:30:00',
+            slotEventOverlap: true, // a bad name. confused with overlap/constraint system
+        },
+        timeGridDay: {
+            type: 'timeGrid',
+            duration: { days: 1 },
+        },
+        timeGridWeek: {
+            type: 'timeGrid',
+            duration: { weeks: 1 },
+        },
+    },
+});
+
+const calendarElement = document.getElementById('calendar');
+
+if (calendarElement)
+{
+    const calendar = new Calendar(calendarElement, {
+        plugins: [
+            index$2,
+            index$1,
+            index,
+        ],
+
+        initialView: 'timeGridWeek',
+        editable: true,
+        selectable: true,
+        events: [
+            {
+                title: 'Meeting',
+                start: new Date(),
+                end: new Date((new Date()).getTime() + 2 * 60 * 60 * 1000)
+            }
+        ],
+        headerToolbar: {
+            start: 'title',
+            center: 'timeGridDay timeGridWeek dayGridMonth dayGridYear',
+            end: 'today prev,next'
+        },
+        buttonText: {
+            today: "aujourd'hui",
+            month: 'mois',
+            week: 'semaine',
+            day: 'jour',
+            list: 'liste'
+        }
+    });
+    calendar.setOption('locale', 'fr');
+    calendar.render();
+}
+
+
+
 
 /**
  * Event Object - Docs | FullCalendar
