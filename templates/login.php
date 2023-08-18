@@ -2,6 +2,7 @@
 
 <div class="page d-flex justify-content-center align-items-center">
 <form method="post" action="/login" class="form-login">
+<h1 class="p-3">Connexion</h1>
     <div class="form-floating mb-3">
     <input type="email" class="form-control" name="email" placeholder="Email" placeholder="Votre adresse Email" required>
     <label for="floatingInput">Votre adresse Email</label>
