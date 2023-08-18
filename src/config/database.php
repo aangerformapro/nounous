@@ -13,7 +13,7 @@ return function (ContainerInterface $container)
                 Config::get('DB_HOST'),
                 Config::get('DB_PORT'),
                 Config::get('DB_NAME'),
-                Config::get(key: 'DB_CHARSET'),
+                Config::get('DB_CHARSET'),
             ),
             Config::get('DB_USER'),
             Config::get('DB_PASSWORD'),
