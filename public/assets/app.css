@@ -1,6 +1,9 @@
-/**
- * Simple Reset
- */
+@font-face {
+  font-family: "PoetsenOne";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PoetsenOne"), url("./fonts/PoetsenOne-Regular.woff") format("woff");
+}
 *,
 ::before,
 ::after {
@@ -12,6 +15,9 @@ html {
   font-size: 16px;
   line-height: 1.2;
   scroll-behavior: smooth;
+}
+body {
+  font-family: "PoetsenOne" sans-serif;
 }
 body,
 .page {
