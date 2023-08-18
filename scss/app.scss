@@ -26,6 +26,8 @@ body,
     background-repeat: no-repeat;
     background-position:center center;
 }
+
+//***** form-login*****//
 .form-login {
     min-width: 50vw;
     background: rgba(224, 106, 90, 0.71);
@@ -37,4 +39,13 @@ body,
     .btn{
         color:#EA523D;
     }
+}
+
+//***** form-register*****//
+
+.form-register{
+    background: rgba(224, 106, 90, 0.71);
+    padding:3%;
+    margin:100px 4% ;
+
 }

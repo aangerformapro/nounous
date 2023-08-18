@@ -2,13 +2,13 @@
 
 <div class="page d-flex justify-content-center align-items-center">
 <form method="post" action="/login" class="form-register">
-    <h1 class="text-center mb-4">S'enregister</h1>
+    <h1 class="text-center mb-4 text-white">S'enregister</h1>
     <div class="form-floating mb-3">
         <input type="email" class="form-control" name="email" placeholder="Email" placeholder="Votre adresse Email" required>
         <label for="floatingInput">Votre adresse Email</label>
     </div>
     <hr>
-    <div class="d-flex align-items-center mb-3">
+    <div class="d-flex align-items-center mb-3 text-white">
         <span class="me-3">Vous êtes :</span>
         <div class="me-3">
             <input type="radio" class="btn-check" name="type" id="type-parent" value="PARENT" autocomplete="off" checked>
@@ -63,7 +63,7 @@
 
     <hr>
   
-    <div class="d-flex align-items-center mb-3">
+    <div class="d-flex align-items-center mb-3 text-white">
         <span class="me-3">Vous êtes :</span>
         <div class="me-3">
             <input type="radio" class="btn-check" name="gender" id="gender-female" value="FEMALE" autocomplete="off" checked>
@@ -94,7 +94,7 @@
     </div>
 
     <div class="">
-        <a href="/login" title="Créer un compte">Se connecter</a>
+        <a href="/login" title="Créer un compte" class="text-white">Se connecter</a>
 
     </div>
  
