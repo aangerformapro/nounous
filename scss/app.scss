@@ -1,6 +1,4 @@
-/**
- * Simple Reset
- */
+@use 'components/fonts';
 
 *,
 ::before,
@@ -14,6 +12,10 @@ html {
     font-size: 16px;
     line-height: 1.2;
     scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'PoetsenOne', sans-serif;
 }
 
 body,
