@@ -13,10 +13,8 @@
 
 <nav class="navbar ">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="64" height="64" class="">
-      DailySitter
-    </a>
+    <a class="navbar-brand">
+      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="60" height="60" class="p-0">DailySitter</a>
   </div>
 </nav>
     

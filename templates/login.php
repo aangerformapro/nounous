@@ -1,4 +1,7 @@
-
+<div class="container-fluid fixed-top ">
+    <a class="navbar-brand">
+      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="60" height="60" class="p-0">DailySitter</a>
+</div>
 
 <div class="page d-flex justify-content-center align-items-center">
 <form method="post" action="/login" class="form-login">
