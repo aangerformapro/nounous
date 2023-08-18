@@ -1,6 +1,4 @@
-<?php declare(strict_types=1);
 
-include_once 'layout/header.php'; ?>
 
 <div class="page d-flex justify-content-center align-items-center">
 <form method="post" action="/login" class="form-login">
@@ -29,6 +27,3 @@ include_once 'layout/header.php'; ?>
  
 </form>
 </div>
-<?php
-
-include_once 'layout/footer.php';

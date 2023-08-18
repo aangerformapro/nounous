@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 16 août 2023 à 15:49
+-- Généré le : ven. 18 août 2023 à 10:40
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.1.12
 
@@ -24,10 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Structure de la table `apointments`
+-- Structure de la table `appointments`
 --
 
-CREATE TABLE `apointments` (
+CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
   `id_enfant` int(11) DEFAULT NULL,
   `id_availability` int(11) NOT NULL,
@@ -85,7 +85,8 @@ CREATE TABLE `planing_enfants` (
 CREATE TABLE `sessions` (
   `id` int(11) NOT NULL,
   `id_user` int(11) NOT NULL,
-  `session` varchar(255) NOT NULL
+  `session` varchar(255) NOT NULL,
+  `expires` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -105,7 +106,7 @@ CREATE TABLE `users` (
   `zip` varchar(5) NOT NULL,
   `city` varchar(255) NOT NULL,
   `phone` varchar(10) NOT NULL,
-  `sex` enum('MALE','FEMALE') NOT NULL,
+  `gender` enum('MALE','FEMALE') NOT NULL,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -115,9 +116,9 @@ CREATE TABLE `users` (
 --
 
 --
--- Index pour la table `apointments`
+-- Index pour la table `appointments`
 --
-ALTER TABLE `apointments`
+ALTER TABLE `appointments`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_enfant` (`id_enfant`),
   ADD KEY `id_availability` (`id_availability`);
@@ -161,9 +162,9 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT pour la table `apointments`
+-- AUTO_INCREMENT pour la table `appointments`
 --
-ALTER TABLE `apointments`
+ALTER TABLE `appointments`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -201,11 +202,11 @@ ALTER TABLE `users`
 --
 
 --
--- Contraintes pour la table `apointments`
+-- Contraintes pour la table `appointments`
 --
-ALTER TABLE `apointments`
-  ADD CONSTRAINT `apointments_ibfk_1` FOREIGN KEY (`id_enfant`) REFERENCES `enfants` (`id`) ON DELETE SET NULL,
-  ADD CONSTRAINT `apointments_ibfk_2` FOREIGN KEY (`id_availability`) REFERENCES `availabilities` (`id`);
+ALTER TABLE `appointments`
+  ADD CONSTRAINT `appointments_ibfk_1` FOREIGN KEY (`id_enfant`) REFERENCES `enfants` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `appointments_ibfk_2` FOREIGN KEY (`id_availability`) REFERENCES `availabilities` (`id`);
 
 --
 -- Contraintes pour la table `availabilities`

@@ -1,6 +1,7 @@
 <?php
 
 use Models\User;
+use NGSOFT\Facades\Container;
 use NGSOFT\Middlewares\CookieMiddleware;
 use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
@@ -13,7 +14,9 @@ return function (App $app)
 
         if ($session->hasItem('user'))
         {
-            $request->setAttribute('user', new User($session->getItem('user')));
+            $request->setAttribute('user', $user = new User($session->getItem('user')));
+
+            Container::set('user', $user);
         }
         return $next->handle($request);
     });

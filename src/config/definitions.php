@@ -12,7 +12,7 @@ return function (ContainerInterface $container)
 {
     $view = new PhpView(TEMPLATE_PATH, [
         'sitetitle' => 'DailySitter',
-    ]);
+    ], 'layout/layout.php');
 
     $container->alias('view', PhpView::class);
 
