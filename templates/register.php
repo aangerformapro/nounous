@@ -1,4 +1,7 @@
-
+<div class="container-fluid fixed-top ">
+    <a class="navbar-brand">
+      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="60" height="60" class="p-0">DailySitter</a>
+</div>
 
 <div class="page d-flex justify-content-center align-items-center">
 <form method="post" action="/register" class="form-register">
@@ -8,11 +11,11 @@
         <label for="floatingInput">Votre adresse Email</label>
     </div>
     <hr>
-    <div class="d-flex align-items-center mb-3">
+    <div class="d-flex align-items-center mb-3 text-white">
         <span class="me-3">Vous êtes :</span>
         <div class="me-3">
             <input type="radio" class="btn-check" name="type" id="type-parent" value="PARENT" autocomplete="off" checked>
-            <label class="btn" for="type-parent">Un parent</label>
+            <label class="btn " for="type-parent">Un parent</label>
         </div>
         
         <div class="">
@@ -63,7 +66,7 @@
 
     <hr>
   
-    <div class="d-flex align-items-center mb-3">
+    <div class="d-flex align-items-center mb-3 text-white">
         <span class="me-3">Vous êtes :</span>
         <div class="me-3">
             <input type="radio" class="btn-check" name="gender" id="gender-female" value="FEMALE" autocomplete="off" checked>
@@ -94,7 +97,7 @@
     </div>
 
     <div class="">
-        <a href="/login" title="Créer un compte">Se connecter</a>
+        <a href="/login" title="Créer un compte" class="text-white">Se connecter</a>
 
     </div>
  
