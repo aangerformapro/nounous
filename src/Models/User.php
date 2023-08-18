@@ -21,13 +21,13 @@ class User extends BaseModel
     public function __construct(array $data = [])
     {
         $this->id         = (int) ($data['id'] ?? 0);
-        $this->email      = $data['email']   ?? '';
-        $this->nom        = $data['nom']     ?? '';
-        $this->prenom     = $data['prenom']  ?? '';
-        $this->address    = $data['address'] ?? '';
-        $this->zip        = $data['zip']     ?? '';
-        $this->city       = $data['city']    ?? '';
-        $this->phone      = $data['phone']   ?? '';
+        $this->email      = $data['email'];
+        $this->nom        = $data['nom'];
+        $this->prenom     = $data['prenom'];
+        $this->address    = $data['address'];
+        $this->zip        = $data['zip'];
+        $this->city       = $data['city'];
+        $this->phone      = $data['phone'];
         $this->created_at = date_create_from_format('Y-m-d G:i:s', $data['created_at']);
         $this->updated_at = date_create_from_format('Y-m-d G:i:s', $data['updated_at']);
         $this->gender     = Gender::from($data['gender']);

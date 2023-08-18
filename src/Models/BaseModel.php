@@ -4,6 +4,8 @@ namespace Models;
 
 use NGSOFT\Facades\Container;
 
+use function NGSOFT\Tools\map;
+
 abstract class BaseModel
 {
     protected int $id;
@@ -35,6 +37,27 @@ abstract class BaseModel
 
         return [];
     }
+
+    public static function describe()
+    {
+        $stmt   = static::getConnection()->query(sprintf('DESCRIBE %s', static::getTable()));
+        $result = [];
+
+        foreach ($stmt->fetchAll() as $item)
+        {
+            $result[$item['Field']] = map(function ($value, &$key)
+            {
+                $key = strtolower($key);
+                return $value;
+            }, $item);
+        }
+        return $result;
+    }
+
+   public static function findById(int|string $id): ?static
+   {
+       return static::findOne('id = ?', [$id]);
+   }
 
     public static function findOne(string $where = '1', array $bindings = []): ?static
     {

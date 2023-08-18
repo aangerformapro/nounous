@@ -28,7 +28,7 @@ return function (App $app)
 
     $app->any('/login', function ($request, $response)
     {
-        if ($user = $request->getAttribute('user'))
+        if ($request->getAttribute('user'))
         {
             return $response
                 ->withStatus(302)
@@ -45,7 +45,7 @@ return function (App $app)
     });
     $app->any('/login/recover', function ($request, $response)
     {
-        if ($user = $request->getAttribute('user'))
+        if ($request->getAttribute('user'))
         {
             return $response
                 ->withStatus(302)
@@ -53,18 +53,16 @@ return function (App $app)
             ;
         }
         return $this->get('view')->render($response, 'login');
-    })->setName('login');
+    })->setName('recover_password');
     $app->any('/register', function ($request, $response, $args)
     {
-        if ($user = $request->getAttribute('user'))
+        if ($request->getAttribute('user'))
         {
             return $response
                 ->withStatus(302)
                 ->withHeader('Location', '/')
             ;
         }
-
-        $method = strtolower($request->getMethod());
 
         if ('POST' === $request->getMethod())
         {
