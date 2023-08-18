@@ -11,10 +11,10 @@
 
 
 
-<nav class="navbar bg-body-tertiary">
+<nav class="navbar ">
   <div class="container-fluid">
     <a class="navbar-brand" href="#">
-      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="64" height="64" class="d-inline-block align-text-top">
+      <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="64" height="64" class="">
       DailySitter
     </a>
   </div>
