@@ -29,8 +29,13 @@ body,
 .form-login {
     min-width: 50vw;
     background: rgba(224, 106, 90, 0.71);
-    padding:30px ;
+    padding:4% ;
     width: 527px;
-    height: 514px;
+    height: 500px;
+    margin:4%;
 
+    .btn{
+        color:#EA523D;
+    }
 }
+

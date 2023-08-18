@@ -17,10 +17,10 @@
   </div>
 
   <div class="text-center">
-     <button type="submit" class="btn btn-outline-danger ">Se connecter</button>
+     <button type="submit" class="btn bg-white">Se connecter</button>
   </div>
 
-  <div class="">
+  <div class="link">
     <a href="/register" title="Créer un compte" class="text-white">Créer un compte</a><br>
     <a href="/login/recover" title="Mot de passe oublié?" class="text-white">Mot de passe oublié?</a>
 
