@@ -43,6 +43,7 @@ return function (App $app)
 
     $app->post('/register', function ($request, $response)
     {
+        var_dump($request->getParams());
         return $this->get('view')->render($response, 'register', []);
     });
 

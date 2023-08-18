@@ -1,7 +1,7 @@
 
 
 <div class="page d-flex justify-content-center align-items-center">
-<form method="post" action="/login" class="form-register">
+<form method="post" action="/register" class="form-register">
     <h1 class="text-center mb-4">S'enregister</h1>
     <div class="form-floating mb-3">
         <input type="email" class="form-control" name="email" placeholder="Email" placeholder="Votre adresse Email" required>
@@ -45,13 +45,13 @@
     <div class="d-flex flex-column flex-lg-row justify-content-lg-between">
 
         <div class="form-floating mb-3 me-lg-3 col-lg-4">
-            <input type="number" class="form-control" name="zip"  placeholder="CP" maxlength="5" required>
+            <input type="text" class="form-control" name="zip"  placeholder="CP" maxlength="5" required>
             <label for="floatingInput">CP</label>
         </div>
 
 
         <div class="form-floating mb-3 col-lg-7">
-            <input type="text" class="form-control" name="prenom"  placeholder="Ville" required>
+            <input type="text" class="form-control" name="city"  placeholder="Ville" required>
             <label for="floatingInput">Ville</label>
         </div>
     </div>
@@ -71,7 +71,7 @@
         </div>
         
         <div class="">
-            <input type="radio" class="btn-check"  id="gender-male" name="gender" value="MALE" autocomplete="off">
+            <input type="radio" class="a"  id="gender-male" name="gender" value="MALE" autocomplete="off">
             <label class="btn" for="gender-male">Un Homme</label>
         </div>
     
@@ -79,12 +79,12 @@
 
     <hr>
     <div class="form-floating mb-3">
-        <input type="password" class="form-control" name="password" placeholder="Votre mot de passe">
+        <input type="password" class="form-control" name="password" placeholder="Votre mot de passe" required>
         <label for="password">Votre mot de passe</label>
     </div>
 
     <div class="form-floating mb-3">
-        <input type="password" class="form-control" name="confirmpassword" placeholder="Confirmer votre mot de passe">
+        <input type="password" class="form-control" name="confirmpassword" placeholder="Confirmer votre mot de passe" required>
         <label for="confirmpassword">Confirmer votre mot de passe</label>
     </div>
  
