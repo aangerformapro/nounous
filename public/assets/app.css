@@ -17,7 +17,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family: "PoetsenOne" sans-serif;
+  font-family: "PoetsenOne", sans-serif;
 }
 body,
 .page {
