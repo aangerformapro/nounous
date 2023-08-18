@@ -25,7 +25,7 @@ body,
   background-image: url(./pictures/login.webp);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center center;
 }
 .form-login {
   min-width: 50vw;
