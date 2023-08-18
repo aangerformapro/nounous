@@ -26,4 +26,10 @@ body,
 .form-login {
   min-width: 50vw;
 }
+@media (min-width: 992px) {
+  .form-register {
+    min-width: 50vw;
+    max-width: 992px;
+  }
+}
 /*# sourceMappingURL=app.css.map */
