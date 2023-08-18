@@ -1,1 +1,72 @@
-@font-face{font-family:PoetsenOne;font-style:normal;font-weight:400;src:local("PoetsenOne"),url(fonts/PoetsenOne-Regular.woff) format("woff")}*,:after,:before{box-sizing:border-box;margin:0;padding:0}html{font-size:16px;line-height:1.2;scroll-behavior:smooth}body{font-family:PoetsenOne,sans-serif}.page,body{background-image:url(pictures/login.webp);background-position:50%;background-repeat:no-repeat;background-size:cover;min-height:100vh}.page .navbar-brand,body .navbar-brand{color:#ea523d;font-family:PoetsenOne;font-size:68px;font-style:normal;font-weight:400;line-height:normal;padding:10px;text-shadow:0 4px 4px rgba(0,0,0,.25)}.form-login{background:hsla(7,68%,62%,.71);height:514px;margin:4%;min-width:50vw;padding:4%;width:427px}.form-login .btn{color:#ea523d;height:46px;width:158px}.form-register{background:hsla(7,68%,62%,.71);margin:100px 4%;padding:3%}.b-home{background:#fff}.b-home .navbar-brand{color:#ea523d;font-family:PoetsenOne;font-size:68px;font-style:normal;font-weight:400;line-height:normal;padding:10px;text-shadow:0 4px 4px rgba(0,0,0,.25)}
+@font-face {
+  font-family: "PoetsenOne";
+  font-style: normal;
+  font-weight: normal;
+  src: local("PoetsenOne"), url("./fonts/PoetsenOne-Regular.woff") format("woff");
+}
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+  line-height: 1.2;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "PoetsenOne", sans-serif;
+}
+body,
+.page {
+  min-height: 100vh;
+  background-image: url(./pictures/login.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+body .navbar-brand,
+.page .navbar-brand {
+  color: #EA523D;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: PoetsenOne;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+}
+.form-login {
+  min-width: 50vw;
+  background: rgba(224, 106, 90, 0.71);
+  padding: 4%;
+  width: 527px;
+  height: 514px;
+  margin: 4%;
+}
+.form-login .btn {
+  color: #EA523D;
+  width: 158px;
+  height: 46px;
+}
+.form-register {
+  background: rgba(224, 106, 90, 0.71);
+  padding: 3%;
+  margin: 100px 4%;
+}
+.b-home {
+  background: #fff;
+}
+.b-home .navbar-brand {
+  color: #EA523D;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: PoetsenOne;
+  font-size: 68px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px;
+}
+/*# sourceMappingURL=app.css.map */
