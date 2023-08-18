@@ -15,7 +15,7 @@
         <span class="me-3">Vous êtes :</span>
         <div class="me-3">
             <input type="radio" class="btn-check" name="type" id="type-parent" value="PARENT" autocomplete="off" checked>
-            <label class="btn" for="type-parent">Un parent</label>
+            <label class="btn " for="type-parent">Un parent</label>
         </div>
         
         <div class="">
