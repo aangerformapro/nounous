@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use NGSOFT\Facades\Container;
 use voku\helper\AntiXSS;
 
 require_once __DIR__ . '/constants.php';
@@ -128,4 +129,9 @@ function isSecurePassword(string $password)
     }
 
     return mb_strlen($password) >= 8;
+}
+
+function isLoggedIn(): bool
+{
+    return Container::has('user');
 }

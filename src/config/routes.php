@@ -4,15 +4,6 @@ use Slim\App;
 
 return function (App $app)
 {
-    $app->get('/hello/{name}', function ($request, $response, $args)
-    {
-        $renderer = $this->get('view');
-        // $session  = $request->getAttribute('session');
-
-        // var_dump($session);
-        return $renderer->render($response, 'hello.php', $args);
-    })->setName('hello');
-
     // $app->group('/api', function () use ($app)
     // {
     //     // Library group
@@ -35,19 +26,24 @@ return function (App $app)
     //     });
     // });
 
-    $app->post('/login', function ($request, $response, $args)
+    $app->any('/login', function ($request, $response)
     {
-        // var_dump($request->getParams());
-        return $this->get('view')->render($response, 'login', $args);
-    });
+        if ($user = $request->getAttribute('user'))
+        {
+            return $response
+                ->withStatus(302)
+                ->withHeader('Location', '/')
+            ;
+        }
 
-    $app->post('/register', function ($request, $response)
-    {
-        var_dump($request->getParams());
-        return $this->get('view')->render($response, 'register', []);
-    });
+        if ('POST' === $request->getMethod())
+        {
+            $params = $request->getParams();
+        }
 
-    $app->get('/login', function ($request, $response)
+        return $this->get('view')->render($response, 'login');
+    });
+    $app->any('/login/recover', function ($request, $response)
     {
         if ($user = $request->getAttribute('user'))
         {
@@ -57,8 +53,8 @@ return function (App $app)
             ;
         }
         return $this->get('view')->render($response, 'login');
-    });
-    $app->get('/login/recover', function ($request, $response)
+    })->setName('login');
+    $app->any('/register', function ($request, $response, $args)
     {
         if ($user = $request->getAttribute('user'))
         {
@@ -67,15 +63,19 @@ return function (App $app)
                 ->withHeader('Location', '/')
             ;
         }
-        return $this->get('view')->render($response, 'login');
-    });
-    $app->get('/register', function ($request, $response, $args)
-    {
+
+        $method = strtolower($request->getMethod());
+
+        if ('POST' === $request->getMethod())
+        {
+            $params = $request->getParams();
+        }
+
         return $this->get('view')->render($response, 'register', $args);
-    });
+    })->setName('register');
 
     $app->get('/', function ($request, $response, $args)
     {
         return $this->get('view')->render($response, 'home', $args);
-    });
+    })->setName('home');
 };

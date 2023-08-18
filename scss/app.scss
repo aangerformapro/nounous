@@ -1,5 +1,12 @@
 @use 'components/fonts';
 
+// https://www.color-name.com/hex/ea523d
+$cpink: #ea523d;
+
+.text-cpink {
+    color: $cpink imo !important;
+}
+
 *,
 ::before,
 ::after {
@@ -16,25 +23,32 @@ html {
 
 body {
     font-family: 'PoetsenOne', sans-serif;
+    min-height: 100vh;
 }
 
-body,
+.app {
+    min-height: 100vh;
+}
+
+.page-login {
+    background-image: url(./pictures/login.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 .page {
     min-height: 100vh;
-    background-image:url(./pictures/login.webp);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-position:center center;
-
-    .navbar-brand{
-        color: #EA523D;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: PoetsenOne;
-        font-size: 68px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        padding: 10px;
+    & > form {
+        width: 90%;
+        max-width: 900px;
+        .form-floating label {
+            font-weight: 400;
+            color: rgb(126, 117, 117);
+        }
+        .btn-check ~ .btn {
+            color: #fff;
+        }
     }
 }
 
@@ -42,14 +56,12 @@ body,
 .form-login {
     min-width: 50vw;
     background: rgba(224, 106, 90, 0.71);
-    padding:4% ;
-    width: 527px;
-    height: 514px;
-    margin:4%;
+    padding: 4%;
+    // margin: 4%;
     border-radius: 20px;
 
-    .btn{
-        color:#EA523D;
+    .btn {
+        color: $cpink;
         width: 158px;
         height: 46px;
     }
@@ -57,34 +69,37 @@ body,
 
 //***** form-register*****//
 
-.form-register{
-    min-width: 50vw;
+.form-register {
     background: rgba(224, 106, 90, 0.71);
-    padding:3%;
-    margin:100px 4% ;
+    padding: 3%;
+    margin: 100px 4%;
     border-radius: 20px;
-
 }
 
 //*****Home*****//
-.b-home{
-    background:#fff;
 
-    .navbar-brand{
-        color: #EA523D;
-        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        font-family: PoetsenOne;
-        font-size: 68px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
+.navbar-brand {
+    color: $cpink;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: PoetsenOne;
+    font-size: 68px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $cpink;
+    }
+
+    @media (max-width: 992px) {
+        transform: scale(0.58);
     }
 }
 
-.form-floating label{
-    font-weight: 400;
-    color:rgb(126, 117, 117);
-}
-.btn-check ~ .btn{
-    color:#fff;
+.navbar {
+    min-height: 96px;
+    & + .page {
+        min-height: calc(100vh - 96px);
+    }
 }
