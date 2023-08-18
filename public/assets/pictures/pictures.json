@@ -1,0 +1,14 @@
+{
+    "favicon": {
+        "alt": "favicon.png",
+        "src": "favicon.webp"
+    },
+    "home": {
+        "alt": "home.jpg",
+        "src": "home.webp"
+    },
+    "login": {
+        "alt": "login.jpg",
+        "src": "login.webp"
+    }
+}

@@ -22,7 +22,10 @@ body {
 body,
 .page {
   min-height: 100vh;
-  background-image: url(./);
+  background-image: url(./pictures/login.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
 }
 .form-login {
   min-width: 50vw;
