@@ -72,4 +72,9 @@ return function (App $app)
     {
         return $this->get('view')->render($response, 'register', $args);
     });
+
+    $app->get('/', function ($request, $response, $args)
+    {
+        return $this->get('view')->render($response, 'home', $args);
+    });
 };
