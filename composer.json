@@ -14,9 +14,14 @@
         "monolog/monolog": "^3.4",
         "joseluisq/gimage": "^4.0"
     },
+    "config": {
+        "process-timeout": 0,
+        "sort-packages": true
+    },
     "autoload": {
         "psr-4": {
-            "": "src/"
+            "": "src/",
+            "App\\": "app/"
         },
         "files": [
             "src/functions.php"

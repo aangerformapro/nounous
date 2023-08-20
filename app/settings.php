@@ -1,20 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 use Monolog\Level;
 use NGSOFT\Container\ContainerInterface;
-
-use function Env\env;
+use Roots\WPConfig\Config;
 
 return function (ContainerInterface $container)
 {
-    $container->set('Settings', [
+    $container->set('settings', [
         'displayErrorDetails' => true, // Should be set to false in production
-        'logError'            => false,
-        'logErrorDetails'     => false,
+        'logError'            => true,
+        'logErrorDetails'     => true,
         'logger'              => [
             'name'  => 'app',
-            'path'  => env('ROOT_DIR') . '/logs/app.log',
+            'path'  => Config::get('LOG_PATH') . '/app.log',
             'level' => Level::Debug,
+        ],
+        'attributes'          => [
+            'sitename' => 'DailySitter',
         ],
     ]);
 };

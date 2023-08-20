@@ -1,6 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 use Slim\App;
+use Slim\Http\Response;
+use Slim\Http\ServerRequest;
 
 return function (App $app)
 {
@@ -26,7 +30,7 @@ return function (App $app)
     //     });
     // });
 
-    $app->any('/login', function ($request, $response)
+    $app->map(['GET', 'POST'], '/login', function (ServerRequest $request, Response $response)
     {
         if ($request->getAttribute('user'))
         {
@@ -43,7 +47,8 @@ return function (App $app)
 
         return $this->get('view')->render($response, 'login');
     });
-    $app->any('/login/recover', function ($request, $response)
+
+    $app->map(['GET', 'POST'], '/login/recover', function ($request, $response)
     {
         if ($request->getAttribute('user'))
         {
@@ -54,7 +59,8 @@ return function (App $app)
         }
         return $this->get('view')->render($response, 'login');
     })->setName('recover_password');
-    $app->any('/register', function ($request, $response, $args)
+
+    $app->map(['GET', 'POST'], '/register', function ($request, $response, $args)
     {
         if ($request->getAttribute('user'))
         {

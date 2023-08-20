@@ -4,7 +4,7 @@
     <base href="/">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?= SITE_TITLE; ?><?= isset($pagetitle) ? (' - ' . $pagetitle) : ''; ?></title>
+    <title><?= $sitename ?? ''; ?><?= isset($pagetitle) ? (' - ' . $pagetitle) : ''; ?></title>
     <meta name="robots" content="index,follow">
     <meta name="description" content="Vous cherchez une nounou pour garder vos enfants ? On est là pour vous aider ! Ce site vous mets en relation avac une assistante maternelle.">
     <meta name="author" content="Aymeric Anger, Nargis Ayyobi">
@@ -36,5 +36,5 @@
         }
     </script>
 </head>
-<body><?= $content ?? ''; ?></body>
+<body><?= $content; ?></body>
 </html>
