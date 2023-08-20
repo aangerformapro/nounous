@@ -63,12 +63,12 @@ function formatDateTimeSQL(DateTime $date): string
 
 function formatDateSQL(DateTime $date): string
 {
-    return $date->format(FORMAT_DATE_INPUT);
+    return $date->format(FORMAT_DATE_SQL);
 }
 
 function formatTimeSQL(DateTime $date): string
 {
-    return $date->format(FORMAT_TIME_INPUT);
+    return $date->format(FORMAT_TIME_SQL);
 }
 
 /**
