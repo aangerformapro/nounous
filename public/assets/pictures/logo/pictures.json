@@ -27,6 +27,10 @@
         "alt": "logox32.png",
         "src": "logox32.webp"
     },
+    "logox512": {
+        "alt": "logox512.png",
+        "src": "logox512.webp"
+    },
     "logox64": {
         "alt": "logox64.png",
         "src": "logox64.webp"
