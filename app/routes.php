@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Actions\EspaceUtilisateur;
 use Actions\LoginActions;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
@@ -95,6 +96,18 @@ return function (App $app)
     {
         return $this->get('view')->render($response, 'contact');
     })->setName('contact');
+
+    $app->get('/espace-utilisateur', function (ServerRequest $request, Response $response)
+    {
+        if ( ! $request->getAttribute('user'))
+        {
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+        }
+
+        $controller = $this->get(EspaceUtilisateur::class);
+
+        return $controller->display($request, $response);
+    })->setName('espace-utilisateur');
 
     $app->get('/', function ($request, $response, $args)
     {

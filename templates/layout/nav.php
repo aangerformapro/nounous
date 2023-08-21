@@ -18,6 +18,9 @@
           <li class="nav-item active">
             <a class="nav-link" href="<?= urlFor('home'); ?>">Accueil</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="<?= urlFor('contact'); ?>">Contact</a>
+          </li>
           <?php if( ! isLoggedIn()):?>
           <li class="nav-item">
             <a class="nav-link" href="<?= urlFor('login'); ?>">Connexion</a>
@@ -27,12 +30,13 @@
           </li>
           <?php else: ?>
             <li class="nav-item">
+              <a class="nav-link" href="<?= urlFor('espace-utilisateur'); ?>">Votre Espace</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="<?= urlFor('logout'); ?>">Se déconnecter</a>
             </li>
           <?php endif; ?>
-          <li class="nav-item">
-            <a class="nav-link" href="<?= urlFor('contact'); ?>">Contact</a>
-          </li>
+         
         </ul>
       </div>
     </div>
