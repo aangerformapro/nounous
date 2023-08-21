@@ -11,7 +11,7 @@
         </div>
       </div>
       <div class="home-img d-flex flex-column justify-content-center align-items-center overflow-hidden">
-        <img src="/assets/pictures/home.webp" alt="home-img" width="572" height="456">
+        <img src="/assets/pictures/home.webp" alt="home-img" >
       </div>
   </div>
 </div>

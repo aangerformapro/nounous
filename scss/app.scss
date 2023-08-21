@@ -106,13 +106,14 @@ body {
 .home-img{
     img{
             max-width: 572px;
-            max-height: 456px; 
-            aspect-ratio: 572/456;
-            margin: auto;
-            object-fit: cover;
-            // object-position: -10% 0%;
+            // max-height: 456px; 
+            // aspect-ratio: 3970/4190;
+            // margin: auto;
+            // object-fit: cover;
+            //  object-position: top center;
             @media (max-width(640px)) {
                 max-width: 320px;
+                
             }
         }
     }
