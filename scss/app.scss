@@ -80,7 +80,7 @@ body {
     color: $cpink;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: PoetsenOne;
-    font-size: 68px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -91,28 +91,70 @@ body {
     }
 
     @media (max-width: 992px) {
-        transform: scale(0.58);
+        font-size: 34px;
+        img {
+            width: 34px;
+            height: 34px;
+        }
+        // transform: scale(0.58);
     }
 }
 .navbar {
-    .nav-link{
+    // background-color: #fcfcfc80;
+
+    backdrop-filter: blur(2px);
+
+    .nav-link {
         color: $cpink;
+        font-size: 22px;
+    }
+    .navbar-toggler {
+        color: $cpink;
+        border-color: $cpink;
     }
     min-height: 96px;
     & + .page {
         min-height: calc(100vh - 96px);
     }
 }
-.home-img{
-    img{
-            max-width: 572px;
-            max-height: 456px; 
-            aspect-ratio: 572/456;
-            margin: auto;
-            object-fit: cover;
-            // object-position: -10% 0%;
-            @media (max-width(640px)) {
-                max-width: 320px;
+
+.page-home {
+    .home-img {
+        img {
+            width: 100%;
+            max-height: 590px;
+            aspect-ratio: 559/590;
+        }
+
+        @media (max-width: 992px) {
+            position: absolute;
+            z-index: -1;
+            max-width: 70vw;
+        }
+    }
+    .intro {
+        @media (max-width: 992px) {
+            overflow: hidden;
+            aspect-ratio: 559/590;
+
+            font-size: 30px;
+            color: $cpink;
+
+            background: url(./pictures/home-resized.webp) no-repeat;
+            background-size: cover;
+
+            margin: {
+                left: auto;
+                right: auto;
+            }
+
+            h2 {
+                max-width: 50vw;
+                padding-left: 2rem;
+            }
+            .btn {
+                margin-left: 2rem;
             }
         }
     }
+}
