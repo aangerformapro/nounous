@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Application\Handlers\HttpErrorHandler;
 use App\Application\Handlers\ShutdownHandler;
 use App\Application\Middlewares\ValidationMiddleware;
+use Models\Session;
 use Models\User;
 use NGSOFT\Facades\Container;
 use NGSOFT\Middlewares\CookieMiddleware;
@@ -32,6 +33,7 @@ return function (App $app): ServerRequest
     $app->add(function (ServerRequestInterface $request, RequestHandlerInterface $next): ResponseInterface
     {
         $session = $request->getAttribute('session');
+        $cookies = $request->getAttribute('cookies');
 
         if ($userId = $session->getItem('user'))
         {
@@ -42,6 +44,15 @@ return function (App $app): ServerRequest
             } else
             {
                 $session->removeItem('user');
+            }
+        } elseif ($sessid = $cookies->readCookie('usersession'))
+        {
+            if (
+                $session = Session::loadSession($sessid)
+                && $user = $session->getUser()
+            ) {
+                $request = $request->withAttribute('user', $user);
+                Container::set('user', $user);
             }
         }
 

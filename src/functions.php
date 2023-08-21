@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use NGSOFT\Facades\Container;
+use Slim\Interfaces\RouteParserInterface;
 
 require_once __DIR__ . '/constants.php';
 
@@ -60,4 +61,11 @@ function formatDateSQL(DateTime $date): string
 function formatTimeSQL(DateTime $date): string
 {
     return $date->format(FORMAT_TIME_SQL);
+}
+
+function urlFor(string $routeName, array $data = [], array $queryParams = []): string
+{
+    static $routeParser;
+    $routeParser ??= Container::get(RouteParserInterface::class);
+    return $routeParser->urlFor($routeName, $data, $queryParams);
 }

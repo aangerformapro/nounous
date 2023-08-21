@@ -48,7 +48,7 @@ return function (App $app)
         }
 
         return $controller->display($request, $response);
-    });
+    })->setName('login');
 
     // $app->map(['GET', 'POST'], '/login/recover', function ($request, $response)
     // {
@@ -82,6 +82,11 @@ return function (App $app)
 
         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
     })->setName('logout');
+
+    $app->get('/contacts', function ($request, $response)
+    {
+        return $this->get('view')->render($response, 'contact');
+    })->setName('contact');
 
     $app->get('/', function ($request, $response, $args)
     {

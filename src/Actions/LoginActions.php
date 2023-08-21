@@ -2,7 +2,9 @@
 
 namespace Actions;
 
+use Models\Session;
 use Models\User;
+use NGSOFT\Cookies\CookieAttributes;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -37,9 +39,19 @@ class LoginActions extends BaseAction
                 $errors[] = 'login';
             } else
             {
-                if (isset($params['remember']))
-                {
-                    // create session
+                if (
+                    isset($params['remember'])
+                    && $session = Session::createSession($user)
+                ) {
+                    $cookies = $request->getAttribute('cookies');
+
+                    $cookies->addCookie(
+                        $cookies->createCookie(
+                            'usersession',
+                            $session->getSession(),
+                            new CookieAttributes(7)
+                        )
+                    );
                 }
 
                 $request->getAttribute('session')->setItem('user', $user->getId());

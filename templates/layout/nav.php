@@ -2,7 +2,7 @@
     <div class="container">
       <!-- Logo -->
       
-          <a class="navbar-brand" href="/">
+          <a class="navbar-brand" href="<?= urlFor('home'); ?>">
             <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="60" height="60" class="p-0">
             DailySitter
           </a>
@@ -16,22 +16,22 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-lg-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Accueil </a>
+            <a class="nav-link" href="<?= urlFor('home'); ?>">Accueil</a>
           </li>
           <?php if( ! isLoggedIn()):?>
           <li class="nav-item">
-            <a class="nav-link" href="./login">Connexion</a>
+            <a class="nav-link" href="<?= urlFor('login'); ?>">Connexion</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./register">S'enregister</a>
+            <a class="nav-link" href="<?= urlFor('register'); ?>">S'enregister</a>
           </li>
           <?php else: ?>
             <li class="nav-item">
-              <a class="nav-link" href="/logout">Se déconnecter</a>
+              <a class="nav-link" href="<?= urlFor('logout'); ?>">Se déconnecter</a>
             </li>
           <?php endif; ?>
           <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="<?= urlFor('contact'); ?>">Contact</a>
           </li>
         </ul>
       </div>
