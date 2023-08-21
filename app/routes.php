@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Actions\LoginActions;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
+use Models\Session;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -79,7 +80,13 @@ return function (App $app)
     $app->get('/logout', function ($request, $response)
     {
         $request->getAttribute('session')->removeItem('user');
-        $request->getAttribute('cookies')->removeCookie('usersession');
+
+        if ($session = $request->getAttribute('cookies')->readCookie('usersession'))
+        {
+            $request->getAttribute('cookies')->removeCookie('usersession');
+
+            Session::removeSession($session);
+        }
 
         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
     })->setName('logout');

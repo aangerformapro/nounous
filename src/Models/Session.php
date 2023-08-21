@@ -72,6 +72,27 @@ class Session extends BaseModel
         return static::findOne('session = ? AND expires > NOW()', [$session]);
     }
 
+    public static function removeSession(string $session)
+    {
+        $stmt = static::getConnection()->prepare(
+            sprintf(
+                'DELETE FROM %s WHERE session = ?',
+                static::getTable()
+            )
+        );
+        return $stmt->execute([$session]);
+    }
+
+    public static function cleanUp()
+    {
+        static::getConnection()->query(
+            sprintf(
+                'DELETE FROM %s WHERE expire < NOW()',
+                static::getTable()
+            )
+        );
+    }
+
     public static function getTable(): string
     {
         return 'sessions';
