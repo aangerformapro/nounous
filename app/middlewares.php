@@ -5,7 +5,12 @@ declare(strict_types=1);
 use App\Application\Handlers\HttpErrorHandler;
 use App\Application\Handlers\ShutdownHandler;
 use App\Application\Middlewares\ValidationMiddleware;
+use Models\User;
+use NGSOFT\Facades\Container;
 use NGSOFT\Middlewares\CookieMiddleware;
+use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
+use Psr\Http\Server\RequestHandlerInterface;
 use Psr\Log\LoggerInterface;
 use Selective\BasePath\BasePathMiddleware;
 use Slim\App;
@@ -21,6 +26,27 @@ return function (App $app): ServerRequest
     /*
      * Put other middlewares there.
      */
+
+    // user session middleware
+
+    $app->add(function (ServerRequestInterface $request, RequestHandlerInterface $next): ResponseInterface
+    {
+        $session = $request->getAttribute('session');
+
+        if ($userId = $session->getItem('user'))
+        {
+            if ($user = User::findById($userId))
+            {
+                $request = $request->withAttribute('user', $user);
+                Container::set('user', $user);
+            } else
+            {
+                $session->removeItem('user');
+            }
+        }
+
+        return $next->handle($request);
+    });
 
     $app->add(new CookieMiddleware());
     $app->add(new BasePathMiddleware($app));

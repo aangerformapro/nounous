@@ -14,9 +14,9 @@ use function NGSOFT\Tools\some;
 
 class RegisterActions extends BaseAction
 {
-    public function displayRegister(ServerRequest $request, Response $response): ResponseInterface
+    public function display(ServerRequest $request, Response $response): ResponseInterface
     {
-        return $this->phpRenderer->render($response, 'register', ['errors' => []]);
+        return $this->phpRenderer->render($response, 'register', ['pagetitle' => 'Créer un compte']);
     }
 
     public function createUser(ServerRequest $request, Response $response, array $params): ResponseInterface
@@ -30,10 +30,16 @@ class RegisterActions extends BaseAction
                 return $this->redirectRenderer->redirectFor($response, 'home');
             }
 
-            return $this->phpRenderer->render($response, 'register', ['errors' => ['user']]);
+            return $this->phpRenderer->render($response, 'register', [
+                'errors'    => ['user'],
+                'pagetitle' => 'Créer un compte',
+            ]);
         } catch (ValidationException $error)
         {
-            return $this->phpRenderer->render($response, 'register', ['errors' => $error->getErrors()]);
+            return $this->phpRenderer->render($response, 'register', [
+                'errors'    => $error->getErrors(),
+                'pagetitle' => 'Créer un compte',
+            ]);
         }
     }
 

@@ -9,8 +9,6 @@
                     Une erreur est survenue lors de la création du compte utilisateur:
                     Email ou téléphone déjà enregistrés
                 </div>
-
-
             <?php endif; ?>
             <div class="form-floating mb-3 px-lg-1">
                 <input type="email" class="form-control <?= in_array('email', $errors) ? 'is-invalid' : ''; ?>" name="email" id="email" placeholder="Email" placeholder="Votre adresse Email" required>

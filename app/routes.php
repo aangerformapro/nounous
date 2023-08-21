@@ -2,7 +2,9 @@
 
 declare(strict_types=1);
 
+use Actions\LoginActions;
 use Actions\RegisterActions;
+use App\Application\Renderers\RedirectRenderer;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -35,40 +37,33 @@ return function (App $app)
     {
         if ($request->getAttribute('user'))
         {
-            return $response
-                ->withStatus(302)
-                ->withHeader('Location', '/')
-            ;
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
         }
+
+        $controller = $this->get(LoginActions::class);
 
         if ('POST' === $request->getMethod())
         {
-            $params = $request->getParams();
+            return $controller->connectUser($request, $response, $request->getParams());
         }
 
-        return $this->get('view')->render($response, 'login');
+        return $controller->display($request, $response);
     });
 
-    $app->map(['GET', 'POST'], '/login/recover', function ($request, $response)
-    {
-        if ($request->getAttribute('user'))
-        {
-            return $response
-                ->withStatus(302)
-                ->withHeader('Location', '/')
-            ;
-        }
-        return $this->get('view')->render($response, 'login');
-    })->setName('recover_password');
+    // $app->map(['GET', 'POST'], '/login/recover', function ($request, $response)
+    // {
+    //     if ($request->getAttribute('user'))
+    //     {
+    //         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
+    //     }
+    //     return $this->get('view')->render($response, 'login');
+    // })->setName('recover_password');
 
     $app->map(['GET', 'POST'], '/register', function ($request, $response, $args)
     {
         if ($request->getAttribute('user'))
         {
-            return $response
-                ->withStatus(302)
-                ->withHeader('Location', '/')
-            ;
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
         }
 
         $controller = $this->get(RegisterActions::class);
@@ -78,8 +73,15 @@ return function (App $app)
             return $controller->createUser($request, $response, $request->getParams());
         }
 
-        return $controller->displayRegister($request, $response);
+        return $controller->display($request, $response);
     })->setName('register');
+
+    $app->get('/logout', function ($request, $response)
+    {
+        $request->getAttribute('session')->removeItem('user');
+
+        return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
+    })->setName('logout');
 
     $app->get('/', function ($request, $response, $args)
     {

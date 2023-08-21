@@ -25,6 +25,10 @@
           <li class="nav-item">
             <a class="nav-link" href="./register">S'enregister</a>
           </li>
+          <?php else: ?>
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">Se déconnecter</a>
+            </li>
           <?php endif; ?>
           <li class="nav-item">
             <a class="nav-link" href="#">Contact</a>
