@@ -48,7 +48,7 @@ return function (App $app): ServerRequest
         } elseif ($sessid = $cookies->readCookie('usersession'))
         {
             if (
-                $session = Session::loadSession($sessid)
+                ($session = Session::loadSession($sessid))
                 && $user = $session->getUser()
             ) {
                 $request = $request->withAttribute('user', $user);

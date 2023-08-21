@@ -79,6 +79,7 @@ return function (App $app)
     $app->get('/logout', function ($request, $response)
     {
         $request->getAttribute('session')->removeItem('user');
+        $request->getAttribute('cookies')->removeCookie('usersession');
 
         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
     })->setName('logout');
