@@ -36,5 +36,8 @@
         }
     </script>
 </head>
-<body><?= $content; ?></body>
+<body>
+    <?= $content; ?>
+    <?php include __DIR__ . '/sprite.svg'; ?>
+</body>
 </html>

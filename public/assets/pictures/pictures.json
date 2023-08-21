@@ -3,6 +3,10 @@
         "alt": "favicon.png",
         "src": "favicon.webp"
     },
+    "home-resized": {
+        "alt": "home-resized.png",
+        "src": "home-resized.webp"
+    },
     "home": {
         "alt": "home.png",
         "src": "home.webp"
