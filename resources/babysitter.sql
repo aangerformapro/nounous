@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 18 août 2023 à 10:40
+-- Généré le : lun. 21 août 2023 à 15:10
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.1.12
 
@@ -89,6 +89,15 @@ CREATE TABLE `sessions` (
   `expires` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `sessions`
+--
+
+INSERT INTO `sessions` (`id`, `id_user`, `session`, `expires`) VALUES
+(1, 1, '583c6714ff53af84e9256a0e8817000fba668d61', '2023-08-28 14:16:20'),
+(2, 1, 'a4ad4985eac50384b11e7f2e75b99db93e04fa4c', '2023-08-28 14:21:32'),
+(3, 1, '6adb9d04eda4d98a56a4d280be21a16050466c57', '2023-08-28 15:04:08');
+
 -- --------------------------------------------------------
 
 --
@@ -110,6 +119,13 @@ CREATE TABLE `users` (
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `type`, `nom`, `prenom`, `address`, `zip`, `city`, `phone`, `gender`, `created_at`, `updated_at`) VALUES
+(1, 'fkjgkfgjf@gmail.com', '$2y$10$ojCZMYCsyFyesVR3Flr/DurqX2X6b9CkH0JM/Hdi.PEFo5GP1cH36', 'PARENT', 'Nom', 'Prénom', '5 rue de la vache', '71120', 'Charolles', '0123456789', 'FEMALE', '2023-08-21 11:29:00', '2023-08-21 11:29:00');
 
 --
 -- Index pour les tables déchargées
@@ -155,7 +171,9 @@ ALTER TABLE `sessions`
 -- Index pour la table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `email` (`email`),
+  ADD UNIQUE KEY `phone` (`phone`);
 
 --
 -- AUTO_INCREMENT pour les tables déchargées
@@ -189,13 +207,13 @@ ALTER TABLE `planing_enfants`
 -- AUTO_INCREMENT pour la table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Contraintes pour les tables déchargées

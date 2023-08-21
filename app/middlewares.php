@@ -35,6 +35,18 @@ return function (App $app): ServerRequest
         $session = $request->getAttribute('session');
         $cookies = $request->getAttribute('cookies');
 
+        if (
+            ! $session->getItem('user')
+            && $sessid = $cookies->readCookie('usersession')
+        ) {
+            if (
+                ($usersession = Session::loadSession($sessid))
+                && $user = $usersession->getUser()
+            ) {
+                $session->setItem('user', $user->getId());
+            }
+        }
+
         if ($userId = $session->getItem('user'))
         {
             if ($user = User::findById($userId))
@@ -44,15 +56,6 @@ return function (App $app): ServerRequest
             } else
             {
                 $session->removeItem('user');
-            }
-        } elseif ($sessid = $cookies->readCookie('usersession'))
-        {
-            if (
-                ($session = Session::loadSession($sessid))
-                && $user = $session->getUser()
-            ) {
-                $request = $request->withAttribute('user', $user);
-                Container::set('user', $user);
             }
         }
 

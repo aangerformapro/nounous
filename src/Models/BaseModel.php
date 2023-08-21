@@ -73,6 +73,18 @@ abstract class BaseModel
         return null;
     }
 
+    public static function removeEntry(self $model)
+    {
+        $stmt = static::getConnection()->prepare(
+            sprintf(
+                'DELETE FROM %s WHERE id = ?',
+                static::getTable()
+            )
+        );
+
+        return $stmt->execute([$model->getId()]);
+    }
+
     /**
      * Get the value of id.
      */

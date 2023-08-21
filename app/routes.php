@@ -2,9 +2,11 @@
 
 declare(strict_types=1);
 
+use Actions\EspaceUtilisateur;
 use Actions\LoginActions;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
+use Models\Session;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -79,7 +81,13 @@ return function (App $app)
     $app->get('/logout', function ($request, $response)
     {
         $request->getAttribute('session')->removeItem('user');
-        $request->getAttribute('cookies')->removeCookie('usersession');
+
+        if ($session = $request->getAttribute('cookies')->readCookie('usersession'))
+        {
+            $request->getAttribute('cookies')->removeCookie('usersession');
+
+            Session::removeSession($session);
+        }
 
         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
     })->setName('logout');
@@ -88,6 +96,18 @@ return function (App $app)
     {
         return $this->get('view')->render($response, 'contact');
     })->setName('contact');
+
+    $app->get('/espace-utilisateur', function (ServerRequest $request, Response $response)
+    {
+        if ( ! $request->getAttribute('user'))
+        {
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+        }
+
+        $controller = $this->get(EspaceUtilisateur::class);
+
+        return $controller->display($request, $response);
+    })->setName('espace-utilisateur');
 
     $app->get('/', function ($request, $response, $args)
     {
