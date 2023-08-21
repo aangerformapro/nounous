@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<nav class="navbar navbar-expand-lg flex-nowrap">
     <div class="container">
       <!-- Logo -->
       

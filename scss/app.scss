@@ -105,7 +105,14 @@ body {
 }
 .home-img{
     img{
-            width: 572px;
-            height: 456px; 
+            max-width: 572px;
+            max-height: 456px; 
+            aspect-ratio: 572/456;
+            margin: auto;
+            object-fit: cover;
+            // object-position: -10% 0%;
+            @media (max-width(640px)) {
+                max-width: 320px;
+            }
         }
     }
