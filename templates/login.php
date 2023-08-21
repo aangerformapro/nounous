@@ -3,7 +3,7 @@
   <?php include 'layout/nav.php'; ?>
 
   <div class="page d-flex justify-content-center align-items-center">
-    <form method="post" action="/login" class="form-login">
+    <form method="post" action="<?= urlFor('login'); ?>" class="form-login">
         <h1 class="p-3 text-white">Connection</h1>
         <?php if(in_array('login', $errors)): ?>
             <div class="alert alert-danger" role="alert">
@@ -35,7 +35,7 @@
       </div>
 
       <div class="link">
-        <a href="/register" title="Créer un compte" class="text-white">Créer un compte</a><br>
+        <a href="<?= urlFor('register'); ?>" title="Créer un compte" class="text-white">Créer un compte</a><br>
         <a href="/login/recover" title="Mot de passe oublié?" class="text-white">Mot de passe oublié?</a>
 
       </div>
