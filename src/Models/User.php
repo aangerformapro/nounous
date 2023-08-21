@@ -70,14 +70,14 @@ class User extends BaseModel
             $data['type'] = $data['type']->value;
         }
 
-        if ($data['sex'] instanceof Gender)
+        if ($data['gender'] instanceof Gender)
         {
-            $data['sex'] = $data['sex']->value;
+            $data['gender'] = $data['gender']->value;
         }
 
         $stmt               = static::getConnection()->prepare(
-            'INSERT INTO users (email, nom, prenom, address, zip, city, phone, sex, type, created_at, updated_at) ' .
-            'VALUES(:email, :nom, :prenom, :address, :zip, :city, :phone, :sex, :type, :created_at, :updated_at)'
+            'INSERT INTO users (email, nom, prenom, address, zip, city, phone, gender, type, password, created_at, updated_at) ' .
+            'VALUES(:email, :nom, :prenom, :address, :zip, :city, :phone, :gender, :type, :password, :created_at, :updated_at)'
         );
 
         try

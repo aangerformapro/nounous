@@ -3,15 +3,18 @@
 declare(strict_types=1);
 
 use App\Application\Renderers\PhpRenderer;
+use GuzzleHttp\Psr7\HttpFactory;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use NGSOFT\Container\ContainerInterface;
 use Psr\Container\ContainerInterface as PsrContainerInterface;
+use Psr\Http\Message\ResponseFactoryInterface;
 use Psr\Log\LoggerInterface;
 use Roots\WPConfig\Config;
 use Slim\App;
 use Slim\Factory\AppFactory;
+use Slim\Http\Factory\DecoratedResponseFactory;
 use Slim\Interfaces\RouteParserInterface;
 
 return function (ContainerInterface $container)
@@ -19,7 +22,7 @@ return function (ContainerInterface $container)
     $container->alias('view', PhpRenderer::class);
 
     $container->setMany([
-        LoggerInterface::class      => function (PsrContainerInterface $c)
+        LoggerInterface::class          => function (PsrContainerInterface $c)
         {
             $settings       = $c->get('settings');
             $loggerSettings = $settings['logger'];
@@ -33,13 +36,13 @@ return function (ContainerInterface $container)
             return $logger;
         },
 
-        PhpRenderer::class          => fn () => new PhpRenderer(
+        PhpRenderer::class              => fn () => new PhpRenderer(
             Config::get('TEMPLATE_PATH'),
             'layout/layout',
             $container->get('settings')['attributes']
         ),
 
-        \PDO::class                 => function ()
+        \PDO::class                     => function ()
         {
             return new PDO(
                 sprintf(
@@ -57,14 +60,22 @@ return function (ContainerInterface $container)
                 ]
             );
         },
-        App::class                  => function (PsrContainerInterface $container)
+        App::class                      => function (PsrContainerInterface $container)
         {
             AppFactory::setContainer($container);
             return AppFactory::create();
         },
-        RouteParserInterface::class => function (PsrContainerInterface $container)
+        RouteParserInterface::class     => function (PsrContainerInterface $container)
         {
             return $container->get(App::class)->getRouteCollector()->getRouteParser();
+        },
+
+        ResponseFactoryInterface::class => function (PsrContainerInterface $container)
+        {
+            return new DecoratedResponseFactory(
+                $container->get(HttpFactory::class),
+                $container->get(HttpFactory::class),
+            );
         },
     ]);
 };

@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Actions\RegisterActions;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -70,12 +71,14 @@ return function (App $app)
             ;
         }
 
+        $controller = $this->get(RegisterActions::class);
+
         if ('POST' === $request->getMethod())
         {
-            $params = $request->getParams();
+            return $controller->createUser($request, $response, $request->getParams());
         }
 
-        return $this->get('view')->render($response, 'register', $args);
+        return $controller->displayRegister($request, $response);
     })->setName('register');
 
     $app->get('/', function ($request, $response, $args)

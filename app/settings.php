@@ -19,6 +19,7 @@ return function (ContainerInterface $container)
         ],
         'attributes'          => [
             'sitename' => 'DailySitter',
+            'errors'   => [],
         ],
     ]);
 };
