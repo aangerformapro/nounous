@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Models\User;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -80,6 +81,8 @@ return function (App $app)
 
     $app->get('/', function ($request, $response, $args)
     {
+
+      
         return $this->get('view')->render($response, 'home', $args);
     })->setName('home');
 };
