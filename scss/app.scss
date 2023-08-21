@@ -97,6 +97,9 @@ body {
 }
 
 .navbar {
+    .nav-link{
+        color: $cpink;
+    }
     min-height: 96px;
     & + .page {
         min-height: calc(100vh - 96px);
