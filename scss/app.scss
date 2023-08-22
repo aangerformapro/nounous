@@ -96,12 +96,10 @@ body {
             width: 34px;
             height: 34px;
         }
-        // transform: scale(0.58);
     }
 }
-.navbar {
-    // background-color: #fcfcfc80;
 
+.navbar {
     backdrop-filter: blur(2px);
 
     .nav-link {
@@ -155,6 +153,16 @@ body {
             .btn {
                 margin-left: 2rem;
             }
+        }
+    }
+}
+
+.dashboard {
+    .navbar-brand {
+        font-size: 34px;
+        img {
+            width: 34px;
+            height: 34px;
         }
     }
 }

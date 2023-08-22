@@ -1,11 +1,7 @@
 <nav class="navbar navbar-expand-lg">
     <div class="container">
-      <!-- Logo -->
-      
-          <a class="navbar-brand" href="<?= urlFor('home'); ?>">
-            <img src="/assets/pictures/logo/logox64.webp" alt="Logo" width="60" height="60" class="p-0">
-            DailySitter
-          </a>
+     
+    <?php include __DIR__ . '/logo.php'; ?>
       
       <!-- Bouton d'hamburger pour les petits écrans -->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
