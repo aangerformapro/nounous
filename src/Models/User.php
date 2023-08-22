@@ -195,4 +195,12 @@ class User extends BaseModel
     {
         return $this->type;
     }
+
+    /**
+     * Get the value of address.
+     */
+    public function getAddress(): string
+    {
+        return $this->address;
+    }
 }
