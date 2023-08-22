@@ -25,8 +25,9 @@ class RegisterActions extends BaseAction
         {
             $data = $this->validateUser($params);
 
-            if (User::createUser($data))
+            if ($user = User::createUser($data))
             {
+                $request->getAttribute('session')->setItem('user', $user->getId());
                 return $this->redirectRenderer->redirectFor($response, 'home');
             }
 

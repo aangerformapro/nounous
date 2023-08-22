@@ -24,10 +24,6 @@ function isSecurePassword(string $password)
     return mb_strlen($password) >= 8;
 }
 
-function isLoggedIn(): bool
-{
-    return Container::has('user');
-}
 function isExpired(string $date)
 {
     return date_create('now')->getTimestamp() > date_create($date)->getTimestamp();
@@ -68,4 +64,9 @@ function urlFor(string $routeName, array $data = [], array $queryParams = []): s
     static $routeParser;
     $routeParser ??= Container::get(RouteParserInterface::class);
     return $routeParser->urlFor($routeName, $data, $queryParams);
+}
+
+function isLoggedIn(): bool
+{
+    return Container::has('user');
 }

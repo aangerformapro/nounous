@@ -44,9 +44,9 @@ return function (App $app)
 
         $controller = $this->get(LoginActions::class);
 
-        if ('POST' === $request->getMethod())
+        if ($data = $request->getAttribute('postdata'))
         {
-            return $controller->connectUser($request, $response, $request->getParams());
+            return $controller->connectUser($request, $response, $data);
         }
 
         return $controller->display($request, $response);
@@ -61,7 +61,7 @@ return function (App $app)
     //     return $this->get('view')->render($response, 'login');
     // })->setName('recover_password');
 
-    $app->map(['GET', 'POST'], '/register', function ($request, $response, $args)
+    $app->map(['GET', 'POST'], '/register', function (ServerRequest $request, $response, $args)
     {
         if ($request->getAttribute('user'))
         {
@@ -70,9 +70,9 @@ return function (App $app)
 
         $controller = $this->get(RegisterActions::class);
 
-        if ('POST' === $request->getMethod())
+        if ($data = $request->getAttribute('postdata'))
         {
-            return $controller->createUser($request, $response, $request->getParams());
+            return $controller->createUser($request, $response, $data);
         }
 
         return $controller->display($request, $response);
