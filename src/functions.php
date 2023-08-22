@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+use Models\User;
+use Models\UserType;
 use NGSOFT\Facades\Container;
 use Slim\Interfaces\RouteParserInterface;
 
@@ -69,4 +71,11 @@ function urlFor(string $routeName, array $data = [], array $queryParams = []): s
 function isLoggedIn(): bool
 {
     return Container::has('user');
+}
+
+function isBabySitter(): bool
+{
+    /** @var User $user */
+    $user = Container::get('user');
+    return UserType::BABYSITTER === $user->getType();
 }

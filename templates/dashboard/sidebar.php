@@ -3,33 +3,29 @@
     <hr>
     <ul class="nav nav-pills flex-column mb-auto">
       <li class="nav-item">
-        <a href="#" class="nav-link active" aria-current="page">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#home"></use></svg>
-          Home
+        <a href="<?= urlFor('espace-utilisateur'); ?>" class="nav-link active" aria-current="page">
+          Profil
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#speedometer2"></use></svg>
-          Dashboard
+        <a href="<?= urlFor('calendar'); ?>" class="nav-link link-body-emphasis">
+          Calendrier
         </a>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#table"></use></svg>
-          Orders
-        </a>
+        <?php if(isBabySitter()):?>
+            <a href="<?= urlFor('gardes'); ?>" class="nav-link link-body-emphasis">
+                Gestion des gardes
+            </a>
+        <?php else:?>
+            <a href="<?= urlFor('gardes'); ?>" class="nav-link link-body-emphasis">
+                Reserver une garde
+            </a>
+        <?php endif; ?>
       </li>
       <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"></use></svg>
-          Products
-        </a>
-      </li>
-      <li>
-        <a href="#" class="nav-link link-body-emphasis">
-          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#people-circle"></use></svg>
-          Customers
+        <a href="<?= urlFor('factures'); ?>" class="nav-link link-body-emphasis">
+          Factures
         </a>
       </li>
     </ul>
