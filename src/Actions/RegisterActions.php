@@ -37,8 +37,20 @@ class RegisterActions extends BaseAction
             ]);
         } catch (ValidationException $error)
         {
+            $errors   = $error->getErrors();
+            $postdata = [];
+
+            foreach ($params as $key => $value)
+            {
+                if ( ! in_array($key, $errors))
+                {
+                    $postdata[$key] = $value;
+                }
+            }
+
             return $this->phpRenderer->render($response, 'register', [
-                'errors'    => $error->getErrors(),
+                'errors'    => $errors,
+                'postdata'  => $postdata,
                 'pagetitle' => 'Créer un compte',
             ]);
         }

@@ -1,3 +1,7 @@
+<?php
+$postdata ??= [];
+?>
+
 <div class="app page-login">
     <?php include 'layout/nav.php'; ?>
 
