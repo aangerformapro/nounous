@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Models\User;
 use Models\UserType;
 use NGSOFT\Facades\Container;
+use Slim\Factory\ServerRequestCreatorFactory;
 use Slim\Interfaces\RouteParserInterface;
 
 require_once __DIR__ . '/constants.php';
@@ -66,6 +67,17 @@ function urlFor(string $routeName, array $data = [], array $queryParams = []): s
     static $routeParser;
     $routeParser ??= Container::get(RouteParserInterface::class);
     return $routeParser->urlFor($routeName, $data, $queryParams);
+}
+
+function isCurrentRoute(string $routeName, array $data = []): bool
+{
+    static $request, $routeParser;
+    $request     ??= ServerRequestCreatorFactory::create()->createServerRequestFromGlobals();
+    $routeParser ??= Container::get(RouteParserInterface::class);
+
+    $currentUrl = $request->getUri()->getPath();
+    $result     = $routeParser->urlFor($routeName, $data);
+    return $result === $currentUrl;
 }
 
 function isLoggedIn(): bool

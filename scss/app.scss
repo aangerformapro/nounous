@@ -7,6 +7,10 @@ $cpink: #ea523d;
     color: $cpink imo !important;
 }
 
+.bg-body-cpink {
+    background-color: $cpink !important;
+}
+
 *,
 ::before,
 ::after {
@@ -27,6 +31,8 @@ body {
 
 .app {
     min-height: 100vh;
+
+    position: relative;
 }
 
 .page-login {
@@ -160,10 +166,72 @@ body {
 .dashboard {
     .navbar-brand {
         font-size: 34px;
+        color: white;
         img {
             width: 34px;
             height: 34px;
         }
     }
-    
+
+    .nav {
+        a {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+            height: 64px;
+            display: flex;
+            align-items: center;
+
+            font-size: 18px;
+        }
+        .link-body-emphasis {
+            color: white !important;
+            background: rgba(224, 106, 90, 0.71);
+        }
+        .active {
+            color: $cpink;
+            background: white;
+        }
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 2000;
+
+        min-height: auto;
+
+        padding: 0;
+        margin: 0;
+        left: 16px;
+        top: 16px;
+    }
+
+    .sidebar {
+        width: 300px;
+
+        @media (max-width: 992px) {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+
+            height: 100vh;
+            right: -200vw;
+            transition-duration: 0.75s;
+            z-index: 1500;
+        }
+    }
+
+    &.menu-shown {
+        .sidebar {
+            @media (max-width: 992px) {
+                right: 0;
+            }
+        }
+        .navbar-toggler {
+            color: white;
+            border-color: white;
+        }
+    }
+
+    .main {
+        padding: 4rem 2rem;
+    }
 }
