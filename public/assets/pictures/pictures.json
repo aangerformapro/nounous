@@ -1,4 +1,8 @@
 {
+    "contact": {
+        "alt": "contact.jpg",
+        "src": "contact.webp"
+    },
     "favicon": {
         "alt": "favicon.png",
         "src": "favicon.webp"

@@ -161,6 +161,38 @@ body {
     }
 }
 
+.page-contact {
+    .home-img {
+        img {
+            width: 100%;
+            max-height: 590px;
+            aspect-ratio: 559/590;
+        }
+
+        @media (max-width: 992px) {
+            position: absolute;
+            z-index: -1;
+            max-width: 70vw;
+        }
+    }
+    .intro {
+        font-size: 25px;
+
+        color: $cpink;
+
+        h2 {
+            font-size: 36px;
+            @media (max-width: 992px) {
+                font-size: 30px;
+            }
+        }
+        a {
+            color: $cpink;
+            text-decoration: none;
+        }
+    }
+}
+
 .dashboard {
     .navbar-brand {
         font-size: 34px;
