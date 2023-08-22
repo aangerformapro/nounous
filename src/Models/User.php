@@ -59,7 +59,7 @@ class User extends BaseModel
         return null;
     }
 
-    public static function createUser(array $data): bool
+    public static function createUser(array $data): false|static
     {
         $data['password']   = password_hash($data['password'], PASSWORD_DEFAULT);
 
@@ -82,11 +82,14 @@ class User extends BaseModel
 
         try
         {
-            return $stmt->execute($data);
-        } catch (\Throwable $e)
+            if ($stmt->execute($data))
+            {
+                return static::findById(static::getConnection()->lastInsertId());
+            }
+        } catch (\Throwable)
         {
-            return false;
         }
+        return false;
     }
 
     public static function hasUser(int $id = null): bool

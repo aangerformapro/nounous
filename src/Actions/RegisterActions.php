@@ -25,8 +25,9 @@ class RegisterActions extends BaseAction
         {
             $data = $this->validateUser($params);
 
-            if (User::createUser($data))
+            if ($user = User::createUser($data))
             {
+                $request->getAttribute('session')->setItem('user', $user->getId());
                 return $this->redirectRenderer->redirectFor($response, 'home');
             }
 
@@ -36,8 +37,20 @@ class RegisterActions extends BaseAction
             ]);
         } catch (ValidationException $error)
         {
+            $errors   = $error->getErrors();
+            $postdata = [];
+
+            foreach ($params as $key => $value)
+            {
+                if ( ! in_array($key, $errors))
+                {
+                    $postdata[$key] = $value;
+                }
+            }
+
             return $this->phpRenderer->render($response, 'register', [
-                'errors'    => $error->getErrors(),
+                'errors'    => $errors,
+                'postdata'  => $postdata,
                 'pagetitle' => 'Créer un compte',
             ]);
         }

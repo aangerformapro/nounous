@@ -1,9 +1,13 @@
+<?php
+$postdata ??= [];
+?>
+
 <div class="app page-login">
     <?php include 'layout/nav.php'; ?>
 
     <div class="page d-flex justify-content-center align-items-center">
-        <form method="post" action="/register" class="form-register">
-            <h1 class="text-center mb-4">S'enregister</h1>
+        <form method="post" action="<?= urlFor('register'); ?>" class="form-register">
+            <h1 class="text-center mb-4 text-white">S'enregister</h1>
             <?php if(in_array('user', $errors)): ?>
                 <div class="alert alert-danger" role="alert">
                     Une erreur est survenue lors de la création du compte utilisateur:
@@ -130,7 +134,7 @@
             </div>
 
             <div class="">
-                <a href="/login" title="Créer un compte" class="text-white">Se connecter</a>
+                <a href="<?= urlFor('login'); ?>" title="Créer un compte" class="text-white">Se connecter</a>
 
             </div>
  
