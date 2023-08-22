@@ -109,6 +109,21 @@ return function (App $app)
         return $controller->display($request, $response);
     })->setName('espace-utilisateur');
 
+    $app->get('/espace-utilisateur/factures', function (ServerRequest $request, Response $response)
+    {
+        return $this->get('view')->render($response, 'factures');
+    })->setName('factures');
+
+    $app->get('/espace-utilisateur/calendar', function (ServerRequest $request, Response $response)
+    {
+        return $this->get('view')->render($response, 'calendar');
+    })->setName('calendar');
+
+    $app->get('/espace-utilisateur/gardes', function (ServerRequest $request, Response $response)
+    {
+        return $this->get('view')->render($response, 'gardes');
+    })->setName('gardes');
+
     $app->get('/', function ($request, $response, $args)
     {
         return $this->get('view')->render($response, 'home', $args);
