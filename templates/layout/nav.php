@@ -21,14 +21,14 @@
               Accueil
             </a>
           </li>
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="<?= urlFor('contact'); ?>">
               <svg fill="currentColor" class="ng-svg-icon" width="22" height="22">
                 <use xlink:href="#ng-contact"></use>
               </svg>
               Contact
             </a>
-          </li> -->
+          </li> 
           <?php if( ! isLoggedIn()):?>
           <li class="nav-item">
             <a class="nav-link" href="<?= urlFor('login'); ?>">
