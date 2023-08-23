@@ -1,5 +1,5 @@
 <div class="app page-home">
-  <?php include 'layout/nav.php'; ?>
+  <?php include 'components/nav.php'; ?>
   <div class="page container d-flex flex-nowrap flex-column flex-lg-row mx-auto">
 
       <div class="intro d-flex flex-column justify-content-center p-5 col-lg-6">

@@ -38,7 +38,7 @@ return function (ContainerInterface $container)
 
         PhpRenderer::class              => fn () => new PhpRenderer(
             Config::get('TEMPLATE_PATH'),
-            'layout/layout',
+            'components/layout',
             $container->get('settings')['attributes']
         ),
 
