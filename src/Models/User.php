@@ -108,7 +108,7 @@ class User extends BaseModel
         {
             if (property_exists(static::class, $key))
             {
-                $values[]      = sprintf('%s = :%s');
+                $values[]      = sprintf('%s = :%s', $key, $key);
 
                 $newdata[$key] = $data[$key];
             }

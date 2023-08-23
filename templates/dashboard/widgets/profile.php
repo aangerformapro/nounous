@@ -45,11 +45,6 @@
       <li class="list-group-item d-flex p-0">
 
         <div class="col-3 form-floating p-1">
-          <button class="btn edit" title="Editer">
-              <svg fill="currentColor" class="ng-svg-icon" width="32" height="32">
-                  <use xlink:href="#ng-edit"></use>
-                </svg>
-          </button>
           <input 
             type="text" 
             id="zip" 
@@ -63,7 +58,7 @@
         </div>
 
         <div class="col-9 form-floating p-1">
-          <button class="btn edit" title="Editer">
+          <button class="btn edit" title="Editer" data-fields="#city,#zip">
               <svg fill="currentColor" class="ng-svg-icon" width="32" height="32">
                   <use xlink:href="#ng-edit"></use>
                 </svg>
@@ -72,7 +67,7 @@
             type="text" 
             id="city" 
             name="city" 
-            maxlength="5"
+
             value="<?= $user->getCity(); ?>"
             class="form-control" disabled>
             <label for="city">

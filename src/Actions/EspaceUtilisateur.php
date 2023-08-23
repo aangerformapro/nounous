@@ -2,6 +2,7 @@
 
 namespace Actions;
 
+use Models\User;
 use NGSOFT\Facades\Container;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
@@ -19,6 +20,10 @@ class EspaceUtilisateur extends BaseAction
 
     public function modifyUser(ServerRequest $request, Response $response, array $data)
     {
-        $id = $data['id_user'];
+        $id = $data['user_id'];
+
+        User::modifyUser($id, $data);
+
+        return $this->redirectRenderer->redirectFor($response, 'espace-utilisateur');
     }
 }

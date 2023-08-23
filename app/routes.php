@@ -104,15 +104,17 @@ return function (App $app)
             return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
         }
 
-        if ($data = $request->getAttribute('postdata'))
-        {
-            var_dump($data);
-
-            exit;
-        }
-
         $controller = $this->get(EspaceUtilisateur::class);
 
+        if ($data = $request->getAttribute('postdata'))
+        {
+            $action = $data['action'] ?? '';
+
+            if ('mod_user' === $action)
+            {
+                return $controller->modifyUser($request, $response, $data);
+            }
+        }
         return $controller->display($request, $response);
     })->setName('espace-utilisateur');
 
