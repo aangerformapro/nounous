@@ -97,11 +97,18 @@ return function (App $app)
         return $this->get('view')->render($response, 'contact');
     })->setName('contact');
 
-    $app->get('/espace-utilisateur', function (ServerRequest $request, Response $response)
+    $app->map(['GET', 'POST'], '/espace-utilisateur', function (ServerRequest $request, Response $response)
     {
         if ( ! $request->getAttribute('user'))
         {
             return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+        }
+
+        if ($data = $request->getAttribute('postdata'))
+        {
+            var_dump($data);
+
+            exit;
         }
 
         $controller = $this->get(EspaceUtilisateur::class);

@@ -92,6 +92,38 @@ class User extends BaseModel
         return false;
     }
 
+    public static function modifyUser($id, array $data)
+    {
+        if ( ! count($data))
+        {
+            return false;
+        }
+
+        $query   = sprintf('UPDATE %s SET ', static::getTable());
+
+        $newdata = ['id' => $id];
+        $values  = [];
+
+        foreach (array_keys($data) as $key)
+        {
+            if (property_exists(static::class, $key))
+            {
+                $values[]      = sprintf('%s = :%s');
+
+                $newdata[$key] = $data[$key];
+            }
+        }
+
+        $query .= implode(', ', $values);
+        $query .= ' WHERE id = :id';
+
+        $stmt    = static::getConnection()->prepare($query);
+
+        return $stmt->execute(
+            $newdata
+        );
+    }
+
     public static function hasUser(int $id = null): bool
     {
         $query = 'SELECT COUNT(id) AS count FROM ' . static::getTable();
