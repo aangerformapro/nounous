@@ -25,7 +25,6 @@
       <div class="home-img d-none d-lg-flex flex-column justify-content-center align-items-center">
         <img src="/assets/pictures/contact.webp" alt="home-img">
       </div>
-
   </div>
 </div>
 
