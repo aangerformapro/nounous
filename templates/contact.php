@@ -1,5 +1,5 @@
 <div class="app page-contact">
-  <?php include 'layout/nav.php'; ?>
+  <?php include 'components/nav.php'; ?>
 
   <div class="page container d-flex flex-nowrap flex-column flex-lg-row mx-auto">
 

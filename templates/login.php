@@ -1,6 +1,6 @@
 
 <div class="app page-login">
-  <?php include 'layout/nav.php'; ?>
+  <?php include 'components/nav.php'; ?>
 
   <div class="page d-flex justify-content-center align-items-center">
     <form method="post" action="<?= urlFor('login'); ?>" class="form-login">
