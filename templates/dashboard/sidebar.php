@@ -8,7 +8,7 @@
 
 
 <div class="d-lg-flex flex-column flex-shrink-0 bg-body-cpink sidebar">
-    <div class="mx-auto mt-3 text-end pe-3">
+    <div class="mx-auto mt-3 ps-3">
         <?php include 'components/logo.php'; ?>
     </div>
    

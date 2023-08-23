@@ -16,4 +16,9 @@ class EspaceUtilisateur extends BaseAction
 
         ]);
     }
+
+    public function modifyUser(ServerRequest $request, Response $response, array $data)
+    {
+        $id = $data['id_user'];
+    }
 }

@@ -28,7 +28,7 @@ class RegisterActions extends BaseAction
             if ($user = User::createUser($data))
             {
                 $request->getAttribute('session')->setItem('user', $user->getId());
-                return $this->redirectRenderer->redirectFor($response, 'home');
+                return $this->redirectRenderer->redirectFor($response, 'espace-utilisateur');
             }
 
             return $this->phpRenderer->render($response, 'register', [
