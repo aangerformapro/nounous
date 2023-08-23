@@ -9,7 +9,7 @@
 
 <div class="d-lg-flex flex-column flex-shrink-0 bg-body-cpink sidebar">
     <div class="mx-auto mt-3 text-end pe-3">
-        <?php include 'layout/logo.php'; ?>
+        <?php include 'components/logo.php'; ?>
     </div>
    
    <div class="p-5"></div>
