@@ -32,7 +32,7 @@
     <div class="form-submit-btn text-end p-3 d-none">
       <input type="hidden" name="user_id" value="<?= $user->getId(); ?>">
 
-      <button type="submit" name="action" value="mod_pwd" class="btn btn-outline-success">
+      <button type="submit" name="action" value="mod_pwd" class="btn btn custom-btn btn-a">
           Valider
       </button>
     </div>
