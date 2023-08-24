@@ -10,6 +10,7 @@ $cpink: #ea523d;
 .bg-body-cpink {
     background-color: $cpink !important;
 }
+//**btn start**//
 .custom-btn {
     width: 130px;
     height: 40px;
@@ -29,22 +30,22 @@ $cpink: #ea523d;
     outline: none;
 }
 /* 5 */
-.btn-5 {
+.btn-a {
   width: 130px;
   height: 40px;
   line-height: 42px;
   padding: 0;
   border: none;
   background: $cpink;
-background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+  background: linear-gradient(0deg, $cpink 0%, $cpink 100%);
 }
-.btn-5:hover {
+.btn-a:hover {
   color: $cpink;
   background: transparent;
    box-shadow:none;
 }
-.btn-5:before,
-.btn-5:after{
+.btn-a:before,
+.btn-a:after{
   content:'';
   position:absolute;
   top:0;
@@ -58,18 +59,18 @@ background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
    4px 4px 5px 0px #0002;
   transition:400ms ease all;
 }
-.btn-5:after{
+.btn-a:after{
   right:inherit;
   top:inherit;
   left:0;
   bottom:0;
 }
-.btn-5:hover:before,
-.btn-5:hover:after{
+.btn-a:hover:before,
+.btn-a:hover:after{
   width:100%;
   transition:800ms ease all;
 }
-
+//** btn end**//
 
 *,
 ::before,

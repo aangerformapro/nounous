@@ -7,7 +7,7 @@
         <p class="d-none d-lg-flex">Garde périscolaire, baby-sitting ponctuel, assistante maternelle : nous sommes
            le meilleur site français de mise en relation parents / baby-sitters !</p>
         <div class="">
-          <a href="<?= urlFor('espace-utilisateur'); ?>" class="btn custom-btn btn-5" >Commencer</a>
+          <a href="<?= urlFor('espace-utilisateur'); ?>" class="btn custom-btn btn-a" >Commencer</a>
         </div>
       </div>
       <div class="home-img d-none d-lg-flex flex-column justify-content-center align-items-center">
