@@ -85,6 +85,42 @@ abstract class BaseModel
         return $stmt->execute([$model->getId()]);
     }
 
+    public static function updateEntry(self|int|string $id, array $data): ?self
+    {
+        if (is_object($id) && is_a($id, static::class))
+        {
+            $id = $id->getId();
+        }
+
+        $newdata = $values = [];
+
+        foreach ($data as $key => $value)
+        {
+            if (property_exists(static::class, $key))
+            {
+                if ('id' === $key)
+                {
+                    continue;
+                }
+                $newdata[$key] = $value;
+                $values[]      = sprintf('%s = :%s', $key, $key);
+            }
+        }
+
+        if ( ! empty($values))
+        {
+            static::getConnection()->prepare(
+                sprintf(
+                    'UPDATE %s SET %s WHERE id = :id',
+                    static::getTable(),
+                    implode(', ', $values)
+                )
+            )->execute($newdata + ['id' => $id]);
+        }
+
+        return static::findById($id);
+    }
+
     /**
      * Get the value of id.
      */
