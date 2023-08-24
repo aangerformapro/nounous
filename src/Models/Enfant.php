@@ -26,7 +26,7 @@ class Enfant extends BaseModel
 
     public function getParent(): User
     {
-        return User::findOne('id = ?', [$this->id_user]);
+        return User::findOne('id = ?', [$this->id_parent]);
     }
 
     /**
@@ -78,5 +78,41 @@ class Enfant extends BaseModel
         );
 
         return $stmt->execute($data);
+    }
+
+    public static function validateData(array $params, &$errors): array
+    {
+        $errors = $result = [];
+
+        if (empty($params['nom']))
+        {
+            $errors[] = 'nom';
+        }
+
+        if (empty($params['prenom']))
+        {
+            $errors[] = 'prenom';
+        }
+
+        if (
+            empty($params['birthday'])
+             || date_create('now')->getTimestamp() < date_create_from_format(FORMAT_DATE_INPUT, $params['birthday'])->getTimestamp())
+        {
+            $errors[] = 'birthday';
+        }
+
+        foreach (
+            [
+                'nom',
+                'prenom',
+                'birthday',
+            ] as $key
+        ) {
+            if ( ! in_array($key, $errors))
+            {
+                $result[$key] = $params[$key];
+            }
+        }
+        return $result;
     }
 }

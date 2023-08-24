@@ -7,6 +7,7 @@ use Actions\LoginActions;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Session;
+use Models\User;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -113,6 +114,16 @@ return function (App $app)
             if ('mod_user' === $action)
             {
                 return $controller->modifyUser($request, $response, $data);
+            }
+
+            if ('mod_pwd' === $action)
+            {
+                return $controller->modifyPassword($request, $response, $data);
+            }
+
+            if ('add_child' === $action)
+            {
+                return $controller->addChild($request, $response, $data);
             }
         }
         return $controller->display($request, $response);

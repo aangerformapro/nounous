@@ -2,6 +2,8 @@
 
 namespace Models;
 
+use function NGSOFT\Tools\some;
+
 class User extends BaseModel
 {
     protected string $email;
@@ -92,9 +94,19 @@ class User extends BaseModel
         return false;
     }
 
-    public static function modifyPassword(User $user, string $password): static
+    public static function modifyPassword(User $user, string $password): bool
     {
-        return static::updateEntry($user, ['password' => password_hash($password, PASSWORD_DEFAULT)]);
+        $id   = $user->getId();
+        $stmt = static::getConnection()->prepare(
+            sprintf('UPDATE %s SET password = :password WHERE id = :id', static::getTable())
+        );
+
+        return $stmt->execute(
+            [
+                'id'       => $id,
+                'password' => password_hash($password, PASSWORD_DEFAULT),
+            ]
+        );
     }
 
     public static function modifyUser($id, array $data): ?User
@@ -124,6 +136,89 @@ class User extends BaseModel
         }
 
         return false;
+    }
+
+    public static function validateData(array $params, &$errors): array
+    {
+        $errors = $result = [];
+
+        if ( ! filter_var($params['email'] ?? '', FILTER_VALIDATE_EMAIL))
+        {
+            $errors[] = 'email';
+        }
+
+        if (empty($params['type']) || ! some(fn ($case) => $case->value === $params['type'], UserType::cases()))
+        {
+            $errors[] = 'type';
+        }
+
+        if (empty($params['nom']))
+        {
+            $errors[] = 'nom';
+        }
+
+        if (empty($params['prenom']))
+        {
+            $errors[] = 'prenom';
+        }
+
+        if (empty($params['address']))
+        {
+            $errors[] = 'address';
+        }
+
+        if ( ! isset($params['zip']) || ! preg_match('#^\d{5}$#', $params['zip']))
+        {
+            $errors[] = 'zip';
+        }
+
+        if (empty($params['city']))
+        {
+            $errors[] = 'city';
+        }
+
+        if ( ! isset($params['phone']) || ! preg_match('#^0[1-7]\d{8}$#', $params['phone']))
+        {
+            $errors[] = 'phone';
+        }
+
+        if ( ! isset($params['gender']) || ! some(fn ($case) => $case->value === $params['gender'], Gender::cases()))
+        {
+            $errors[] = 'gender';
+        }
+
+        if ( ! isset($params['password']) || ! isSecurePassword($params['password']))
+        {
+            $errors[] = 'password';
+
+            $params['password'] ??= '';
+        }
+
+        if ( ! isset($params['confirmpassword']) || $params['confirmpassword'] !== $params['password'])
+        {
+            $errors[] = 'confirmpassword';
+        }
+
+        foreach (
+            [
+                'email',
+                'type',
+                'nom',
+                'prenom',
+                'address',
+                'zip',
+                'city',
+                'phone',
+                'gender',
+                'password',
+            ] as $key
+        ) {
+            if ( ! in_array($key, $errors))
+            {
+                $result[$key] = $params[$key];
+            }
+        }
+        return $result;
     }
 
     /**
