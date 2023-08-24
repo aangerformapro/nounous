@@ -22,10 +22,8 @@
 
     <!-- LibraryAOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>                        
-    <script>
-        AOS.init({ duration : 1500, easing: 'ease-in-out'});
-    </script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+ 
 
 
 
