@@ -3,7 +3,7 @@
 
   <div class="page container d-flex flex-nowrap flex-column flex-lg-row mx-auto">
 
-      <div class="intro d-flex flex-column justify-content-center mt-5 mt-lg-0 p-5 col-lg-6">
+      <div class="intro d-flex flex-column justify-content-center mt-5 mt-lg-0 p-5 col-lg-6" data-aos="fade-right">
         <h2 class="mb-3">Contactez-nous</h2>
         <p class="d-flex">Vous avez une demande d'informations ou une question?</p>
         <div class="d-flex flex-column">
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="home-img d-none d-lg-flex flex-column justify-content-center align-items-center">
-        <img src="/assets/pictures/contact.webp" alt="home-img">
+        <img src="/assets/pictures/contact.webp" alt="home-img" data-aos="zoom-in-up">
       </div>
   </div>
 </div>
