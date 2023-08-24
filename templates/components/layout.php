@@ -23,10 +23,7 @@
     <!-- LibraryAOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
- 
-
-
-
+    <!-- App -->
     <link rel="stylesheet" href="./assets/app.css">
     <script src="./assets/app.js" type="module" defer></script>
 
