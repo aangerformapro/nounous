@@ -5,9 +5,9 @@ $postdata ??= [];
 <div class="app page-login">
     <?php include 'components/nav.php'; ?>
 
-    <div class="page d-flex justify-content-center align-items-center">
+    <div class="page d-flex justify-content-center align-items-center" data-aos="zoom-in">
         <form method="post" action="<?= urlFor('register'); ?>" class="form-register">
-            <h1 class="text-center mb-4 text-white">S'enregister</h1>
+            <h1 class="text-center mb-4 text-white" data-aos="fade-up">S'enregister</h1>
             <?php if(in_array('user', $errors)): ?>
                 <div class="alert alert-danger" role="alert">
                     Une erreur est survenue lors de la création du compte utilisateur:

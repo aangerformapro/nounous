@@ -1,7 +1,7 @@
-<h3 class="text-capitalize mt-3">changer votre mot de passe</h3>
+<h3 class="text-capitalize mt-3" data-aos="fade-up">changer votre mot de passe</h3>
 
 
-<form method="post" class="change-password">
+<form method="post" class="change-password" data-aos="fade-up">
 
     <div class="form-floating mb-3 px-lg-1">
         <input type="password" class="form-control <?= in_array('old_password', $errors) ? 'is-invalid' : ''; ?>" name="old_password" placeholder="Votre ancient mot de passe" required>

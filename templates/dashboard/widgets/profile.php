@@ -1,7 +1,7 @@
-<h3 class="text-capitalize">Votre profil</h3>
+<h3 class="text-capitalize" data-aos="fade-down">Votre profil</h3>
 
 
-<div class="card widget w-100">
+<div class="card widget w-100" data-aos="fade-up">
   <form method="post">
     <ul class="list-group list-group-flush">
       <li class="list-group-item d-flex p-0">
