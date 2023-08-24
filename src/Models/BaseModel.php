@@ -116,9 +116,11 @@ abstract class BaseModel
                     implode(', ', $values)
                 )
             )->execute($newdata + ['id' => $id]);
+
+            return static::findById($id);
         }
 
-        return static::findById($id);
+        return null;
     }
 
     /**
