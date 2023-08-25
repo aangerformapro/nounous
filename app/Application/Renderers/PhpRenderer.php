@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Application\Renderers;
 
+use App\Facades\Settings;
+use NGSOFT\DataStructure\Collection;
 use Psr\Http\Message\ResponseInterface;
 
 use function NGSOFT\Filesystem\require_file;
@@ -12,14 +14,21 @@ class PhpRenderer
 {
     protected string $templatePath;
     protected string $layout;
+    protected array $attributes = [];
 
     public function __construct(
         string $templatePath,
         string $layout = '',
-        protected array $attributes = []
+        array|Collection $attributes = []
     ) {
         $this->setTemplatePath($templatePath);
         $this->setLayout($layout);
+
+        if ($attributes instanceof Collection)
+        {
+            $attributes = $attributes->toArray();
+        }
+        $this->attributes = $attributes;
     }
 
     public function render(ResponseInterface $response, string $template, array $data = []): ResponseInterface
@@ -46,6 +55,13 @@ class PhpRenderer
             throw new PhpTemplateNotFoundException('View cannot render "' . $template
                                                    . '" because the template does not exist');
         }
+
+        $data = array_replace(
+            Settings::get('attributes')->toArray(),
+            $this->attributes,
+            $data
+        );
+
         $data = array_merge($this->attributes, $data);
 
         try
@@ -104,6 +120,14 @@ class PhpRenderer
     public function addAttribute(string $key, $value): void
     {
         $this->attributes[$key] = $value;
+    }
+
+    public function addAttributes(array $attributes): void
+    {
+        foreach ($attributes as $key => $value)
+        {
+            $this->addAttribute($key, $value);
+        }
     }
 
     public function getAttribute(string $key)

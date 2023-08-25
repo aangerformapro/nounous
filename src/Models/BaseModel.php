@@ -73,6 +73,56 @@ abstract class BaseModel
         return null;
     }
 
+    public static function removeEntry(self $model)
+    {
+        $stmt = static::getConnection()->prepare(
+            sprintf(
+                'DELETE FROM %s WHERE id = ?',
+                static::getTable()
+            )
+        );
+
+        return $stmt->execute([$model->getId()]);
+    }
+
+    public static function updateEntry(self|int|string $id, array $data): ?static
+    {
+        if (is_object($id) && is_a($id, static::class))
+        {
+            $id = $id->getId();
+        }
+
+        $newdata = $values = [];
+
+        foreach ($data as $key => $value)
+        {
+            if (property_exists(static::class, $key))
+            {
+                if ('id' === $key)
+                {
+                    continue;
+                }
+                $newdata[$key] = $value;
+                $values[]      = sprintf('%s = :%s', $key, $key);
+            }
+        }
+
+        if ( ! empty($values))
+        {
+            static::getConnection()->prepare(
+                sprintf(
+                    'UPDATE %s SET %s WHERE id = :id',
+                    static::getTable(),
+                    implode(', ', $values)
+                )
+            )->execute($newdata + ['id' => $id]);
+
+            return static::findById($id);
+        }
+
+        return null;
+    }
+
     /**
      * Get the value of id.
      */

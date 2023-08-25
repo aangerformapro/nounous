@@ -7,6 +7,71 @@ $cpink: #ea523d;
     color: $cpink imo !important;
 }
 
+.bg-body-cpink {
+    background-color: $cpink !important;
+}
+//**btn start**//
+.custom-btn {
+    width: 130px;
+    height: 40px;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+}
+/* 5 */
+.btn-a {
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+  background: $cpink;
+  background: linear-gradient(0deg, $cpink 0%, $cpink 100%);
+}
+.btn-a:hover {
+  color: $cpink;
+  background: transparent;
+   box-shadow:none;
+}
+.btn-a:before,
+.btn-a:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: $cpink;
+  box-shadow:
+   -1px -1px 5px 0px #d43504,
+   7px 7px 20px 0px #0003,
+   4px 4px 5px 0px #0002;
+  transition:400ms ease all;
+}
+.btn-a:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+.btn-a:hover:before,
+.btn-a:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+//** btn end**//
+
 *,
 ::before,
 ::after {
@@ -27,6 +92,8 @@ body {
 
 .app {
     min-height: 100vh;
+
+    position: relative;
 }
 
 .page-login {
@@ -57,7 +124,6 @@ body {
     background: rgba(224, 106, 90, 0.71);
     padding: 4%;
     // margin: 4%;
-    border-radius: 20px;
 
     .btn {
         color: $cpink;
@@ -72,16 +138,14 @@ body {
     background: rgba(224, 106, 90, 0.71);
     padding: 3%;
     margin: 100px 4%;
-    border-radius: 20px;
 }
 
 //*****Home*****//
-
 .navbar-brand {
     color: $cpink;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: PoetsenOne;
-    font-size: 68px;
+    font-size: 60px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -92,13 +156,186 @@ body {
     }
 
     @media (max-width: 992px) {
-        transform: scale(0.58);
+        font-size: 34px;
+        img {
+            width: 34px;
+            height: 34px;
+        }
     }
 }
 
 .navbar {
+    backdrop-filter: blur(2px);
+
+    .nav-link {
+        color: $cpink;
+        font-size: 22px;
+    }
+    .navbar-toggler {
+        color: $cpink;
+        border-color: $cpink;
+    }
     min-height: 96px;
     & + .page {
         min-height: calc(100vh - 96px);
     }
+}
+
+.page-home {
+    .home-img {
+        img {
+            width: 100%;
+            max-height: 590px;
+            aspect-ratio: 559/590;
+        }
+
+        @media (max-width: 992px) {
+            position: absolute;
+            z-index: -1;
+            max-width: 70vw;
+        }
+    }
+    .intro {
+        @media (max-width: 992px) {
+            overflow: hidden;
+            aspect-ratio: 559/590;
+
+            font-size: 30px;
+            color: $cpink;
+
+            background: url(./pictures/home-resized.webp) no-repeat;
+            background-size: cover;
+
+            margin: {
+                left: auto;
+                right: auto;
+            }
+
+            h2 {
+                max-width: 50vw;
+                padding-left: 2rem;
+            }
+            .btn {
+                margin-left: 2rem;
+            }
+        }
+    }
+}
+
+.page-contact {
+    .home-img {
+        img {
+            width: 100%;
+            max-height: 590px;
+            aspect-ratio: 559/590;
+        }
+
+        @media (max-width: 992px) {
+            position: absolute;
+            z-index: -1;
+            max-width: 70vw;
+        }
+    }
+    .intro {
+        font-size: 25px;
+
+        color: $cpink;
+
+        h2 {
+            font-size: 36px;
+            @media (max-width: 992px) {
+                font-size: 30px;
+            }
+        }
+        a {
+            color: $cpink;
+            text-decoration: none;
+        }
+    }
+}
+
+.dashboard {
+    .navbar-brand {
+        font-size: 34px;
+        color: white;
+        img {
+            width: 34px;
+            height: 34px;
+        }
+    }
+
+    .nav {
+        a {
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+            height: 64px;
+            display: flex;
+            align-items: center;
+
+            font-size: 18px;
+        }
+        .link-body-emphasis {
+            color: white !important;
+            background: rgba(224, 106, 90, 0.71);
+        }
+        .active {
+            color: $cpink;
+            background: white;
+        }
+    }
+
+    .navbar {
+        position: fixed;
+        z-index: 2000;
+
+        min-height: auto;
+
+        padding: 0;
+        margin: 0;
+        right: 16px;
+        top: 16px;
+    }
+
+    .sidebar {
+        width: 300px;
+
+        @media (max-width: 992px) {
+            position: fixed;
+            top: 0;
+            width: 100vw;
+
+            height: 100vh;
+            right: -200vw;
+            transition-duration: 0.75s;
+            z-index: 1500;
+        }
+    }
+
+    &.menu-shown {
+        .sidebar {
+            @media (max-width: 992px) {
+                right: 0;
+            }
+        }
+        .navbar-toggler {
+            color: white;
+            border-color: white;
+        }
+    }
+
+    .main {
+        padding: 4rem 2rem;
+    }
+}
+
+.form-floating .edit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: 12px 4px 0 0;
+}
+//page 404
+.page-404{
+    background: url(./pictures/404.webp)no-repeat center center;
+    background-color:#ffffeb;
+    color:#e47444fe;
 }

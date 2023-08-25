@@ -24,9 +24,9 @@ class Enfant extends BaseModel
         return 'enfants';
     }
 
-    public function getParent(): User
+    public function getParent(): ? User
     {
-        return User::findOne('id = ?', [$this->id_user]);
+        return User::findOne('id = ?', [$this->id_parent]);
     }
 
     /**
@@ -61,6 +61,14 @@ class Enfant extends BaseModel
         return $this->birthday;
     }
 
+    public function getAge(): int
+    {
+        return max(1, date_diff(
+            $this->getBirthday(),
+            date_create('now')
+        )->y);
+    }
+
     public static function generateChild(User $parent, array $data)
     {
         $data['id_parent'] = $parent->getId();
@@ -78,5 +86,45 @@ class Enfant extends BaseModel
         );
 
         return $stmt->execute($data);
+    }
+
+    public static function validateData(array $params, &$errors): array
+    {
+        $errors = $result = [];
+
+        if (empty($params['nom']))
+        {
+            $errors[] = 'nom';
+        }
+
+        if (empty($params['prenom']))
+        {
+            $errors[] = 'prenom';
+        }
+
+        if (
+            empty($params['birthday'])
+             || (date_create('now')->getTimestamp() < date_create_from_format(FORMAT_DATE_INPUT, $params['birthday'])->getTimestamp())
+             || (date_diff(
+                 date_create_from_format(FORMAT_DATE_INPUT, $params['birthday']),
+                 date_create('now')
+             )->y >= 15)
+        ) {
+            $errors[] = 'birthday';
+        }
+
+        foreach (
+            [
+                'nom',
+                'prenom',
+                'birthday',
+            ] as $key
+        ) {
+            if ( ! in_array($key, $errors))
+            {
+                $result[$key] = $params[$key];
+            }
+        }
+        return $result;
     }
 }

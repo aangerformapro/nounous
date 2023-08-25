@@ -1,10 +1,22 @@
 {
+    "404": {
+        "alt": "404.jpg",
+        "src": "404.webp"
+    },
+    "contact": {
+        "alt": "contact.jpg",
+        "src": "contact.webp"
+    },
     "favicon": {
         "alt": "favicon.png",
         "src": "favicon.webp"
     },
+    "home-resized": {
+        "alt": "home-resized.png",
+        "src": "home-resized.webp"
+    },
     "home": {
-        "alt": "home.jpg",
+        "alt": "home.png",
         "src": "home.webp"
     },
     "login": {

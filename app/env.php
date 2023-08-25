@@ -51,9 +51,10 @@ Config::define('DB_PORT', env('DB_PORT') ?: 3306);
 Config::define('DB_CHARSET', 'utf8mb4');
 Config::define('DB_COLLATE', 'utf8mb4_general_ci');
 Config::define('TZ_ID', env('TZ_ID') ?: 'Europe/Paris');
+Config::define('SITE_NAME', env('SITE_NAME') ?: 'My New Website');
 Config::apply();
 
 date_default_timezone_set(Config::get('TZ_ID'));
 
-(require_file(__DIR__ . '/settings.php'))(Container::getFacadeRoot());
+// (require_file(__DIR__ . '/settings.php'))(Container::getFacadeRoot());
 (require_file(__DIR__ . '/dependencies.php'))(Container::getFacadeRoot());

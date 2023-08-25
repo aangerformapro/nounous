@@ -31,7 +31,7 @@ class PlaningEnfant extends BaseModel
         return $this->id_enfant;
     }
 
-    public function getEnfant(): Enfant
+    public function getEnfant(): ?Enfant
     {
         return Enfant::findOne('id = ?', [$this->id_enfant]);
     }
