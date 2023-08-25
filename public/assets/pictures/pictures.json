@@ -1,4 +1,8 @@
 {
+    "404": {
+        "alt": "404.jpg",
+        "src": "404.webp"
+    },
     "contact": {
         "alt": "contact.jpg",
         "src": "contact.webp"
