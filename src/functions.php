@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use App\Facades\Settings;
 use Models\User;
 use Models\UserType;
 use NGSOFT\Facades\Container;
@@ -90,4 +91,9 @@ function isBabySitter(): bool
     /** @var User $user */
     $user = Container::get('user');
     return UserType::BABYSITTER === $user->getType();
+}
+
+function setPageTitle(string $title)
+{
+    Settings::setAttribute('pagetitle', $title);
 }

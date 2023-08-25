@@ -13,16 +13,7 @@ class EspaceUtilisateur extends BaseAction
 {
     public function display(ServerRequest $request, Response $response): ResponseInterface
     {
-        return $this->phpRenderer->render($response, 'dashboard', [
-
-            'pagetitle' => 'Espace Utilisateur',
-            'user'      => Container::get('user'),
-
-            'children'  => Enfant::find('id_parent = ?', [
-                $request->getAttribute('user')->getId(),
-            ]),
-
-        ]);
+        return $this->phpRenderer->render($response, 'dashboard');
     }
 
     public function modifyUser(ServerRequest $request, Response $response, array $data)
@@ -63,12 +54,7 @@ class EspaceUtilisateur extends BaseAction
         }
 
         return $this->phpRenderer->render($response, 'dashboard', [
-            'pagetitle' => 'Espace Utilisateur',
-            'user'      => Container::get('user'),
-            'errors'    => $errors,
-            'children'  => Enfant::find('id_parent = ?', [
-                $request->getAttribute('user')->getId(),
-            ]),
+            'errors' => $errors,
         ]);
     }
 
@@ -79,12 +65,7 @@ class EspaceUtilisateur extends BaseAction
         if (count($errors))
         {
             return $this->phpRenderer->render($response, 'dashboard', [
-                'pagetitle' => 'Espace Utilisateur',
-                'user'      => Container::get('user'),
-                'errors'    => ['children' => $errors],
-                'children'  => Enfant::find('id_parent = ?', [
-                    $request->getAttribute('user')->getId(),
-                ]),
+                'errors' => ['children' => $errors],
             ]);
         }
 
@@ -96,5 +77,19 @@ class EspaceUtilisateur extends BaseAction
         Enfant::generateChild($request->getAttribute('user'), $data);
 
         return $this->redirectRenderer->redirectFor($response, 'espace-utilisateur');
+    }
+
+    protected function initialize()
+    {
+        $user = Container::get('user');
+
+        $this->phpRenderer->addAttributes([
+            'user'      => $user,
+            'children'  => Enfant::find('id_parent = ?', [
+                $user->getId(),
+            ]),
+            'pagetitle' => 'Espace Utilisateur',
+
+        ]);
     }
 }

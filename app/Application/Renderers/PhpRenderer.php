@@ -122,6 +122,14 @@ class PhpRenderer
         $this->attributes[$key] = $value;
     }
 
+    public function addAttributes(array $attributes): void
+    {
+        foreach ($attributes as $key => $value)
+        {
+            $this->addAttribute($key, $value);
+        }
+    }
+
     public function getAttribute(string $key)
     {
         if ( ! isset($this->attributes[$key]))

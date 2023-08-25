@@ -43,9 +43,34 @@ class Settings extends Facade
         }
     }
 
+    public static function addAttributes(array $attributes): void
+    {
+        foreach ($attributes as $key => $value)
+        {
+            static::addAttribute($key, $value);
+        }
+    }
+
     public static function setAttribute(string $name, mixed $value): void
     {
-        static::get('attributes')[$name] = $value;
+        $segments   = explode('.', $name);
+
+        $attributes = static::get('attributes');
+
+        while ($segment = array_shift($segments))
+        {
+            if ( ! count($segments))
+            {
+                $attributes[$segment] = value($value);
+            } else
+            {
+                if ($attributes[$segment] instanceof Collection === false)
+                {
+                    $attributes[$segment] = [];
+                }
+                $attributes = $attributes[$segment];
+            }
+        }
     }
 
     public static function removeAttribute(string $name): void

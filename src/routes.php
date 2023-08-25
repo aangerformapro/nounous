@@ -7,7 +7,6 @@ use Actions\LoginActions;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Session;
-use Models\User;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;

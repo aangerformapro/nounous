@@ -13,6 +13,7 @@ abstract class BaseAction
         protected JsonRenderer $jsonRenderer,
         protected RedirectRenderer $redirectRenderer
     ) {
+        $this->initialize();
     }
 
     public function getPhpRenderer(): PhpRenderer
@@ -28,5 +29,9 @@ abstract class BaseAction
     public function getRedirectRenderer(): RedirectRenderer
     {
         return $this->redirectRenderer;
+    }
+
+    protected function initialize()
+    {
     }
 }

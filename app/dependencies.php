@@ -80,7 +80,7 @@ return function (Container $container)
         },
     ]);
 
-    foreach (require_all_once(__DIR__ . DIRECTORY_SEPARATOR . 'Dependencies') as $fn)
+    foreach (require_all_once(__DIR__ . DIRECTORY_SEPARATOR . 'definitions') as $fn)
     {
         if (is_callable($fn))
         {
