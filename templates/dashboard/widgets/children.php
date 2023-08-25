@@ -27,7 +27,7 @@ $childrenHasErrors = ! empty($errors['children']);
         <button class="btn custom-btn btn-a" id="add-child-toggle">
             Ajouter
         </button>
-    </div>btn custom-btn btn-a
+    </div>
 
     <form method="post" id="add-child-form" class=" <?= ! $childrenHasErrors ? 'd-none' : ''; ?>">
         <div class="d-flex flex-column flex-lg-row justify-content-lg-between">
