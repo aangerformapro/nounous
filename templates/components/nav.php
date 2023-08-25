@@ -29,6 +29,7 @@
               Contact
             </a>
           </li> 
+          <?php if( ! isset($hideLogin)): ?>
           <?php if( ! isLoggedIn()):?>
           <li class="nav-item">
             <a class="nav-link" href="<?= urlFor('login'); ?>">
@@ -38,14 +39,7 @@
               Connexion
             </a>
           </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="<?= urlFor('register'); ?>">
-            <svg fill="currentColor" class="ng-svg-icon" width="22" height="22">
-                <use xlink:href="#ng-reg"></use>
-              </svg>
-              S'enregister
-            </a>
-          </li> -->
+       
           <?php else: ?>
             <li class="nav-item">
               <a class="nav-link" href="<?= urlFor('espace-utilisateur'); ?>">
@@ -63,7 +57,7 @@
                 Déconnection
               </a>
             </li>
-          <?php endif; ?>
+          <?php endif; endif; ?>
          
         </ul>
       </div>
