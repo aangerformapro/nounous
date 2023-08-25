@@ -24,10 +24,10 @@ $childrenHasErrors = ! empty($errors['children']);
     <?php endif; ?>
 
     <div class="text-center mb-3 add-child-widget <?= $childrenHasErrors ? 'd-none' : ''; ?>">
-        <button class="btn btn-primary" id="add-child-toggle">
+        <button class="btn custom-btn btn-a" id="add-child-toggle">
             Ajouter
         </button>
-    </div>
+    </div>btn custom-btn btn-a
 
     <form method="post" id="add-child-form" class=" <?= ! $childrenHasErrors ? 'd-none' : ''; ?>">
         <div class="d-flex flex-column flex-lg-row justify-content-lg-between">
@@ -59,7 +59,7 @@ $childrenHasErrors = ! empty($errors['children']);
 
         <div class="form-submit-btn text-end p-3 d-none">
             <input type="hidden" name="user_id" value="<?= $user->getId(); ?>">
-            <button type="submit" name="action" value="add_child" class="btn btn-outline-success">
+            <button type="submit" name="action" value="add_child" class="btn custom-btn btn-a">
                 Valider
             </button>
         </div>
