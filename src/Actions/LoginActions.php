@@ -32,7 +32,7 @@ class LoginActions extends BaseAction
 
         if ( ! count($errors))
         {
-            $user = User::connectUser($params['email'], $params['password']);
+            $user = User::connectUser($params['email'], $params['password'] ?? '');
 
             if ( ! $user)
             {

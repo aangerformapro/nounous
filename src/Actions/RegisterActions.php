@@ -10,8 +10,6 @@ use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
 
-use function NGSOFT\Tools\some;
-
 class RegisterActions extends BaseAction
 {
     public function display(ServerRequest $request, Response $response): ResponseInterface

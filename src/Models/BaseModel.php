@@ -85,7 +85,7 @@ abstract class BaseModel
         return $stmt->execute([$model->getId()]);
     }
 
-    public static function updateEntry(self|int|string $id, array $data): ?self
+    public static function updateEntry(self|int|string $id, array $data): ?static
     {
         if (is_object($id) && is_a($id, static::class))
         {

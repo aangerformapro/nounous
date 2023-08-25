@@ -1,7 +1,4 @@
 
-<?php
-$hideLogin = true;
-?>
 
 <div class="app page-404">
   <?php include 'nav.php'; ?>

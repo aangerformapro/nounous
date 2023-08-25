@@ -38,11 +38,10 @@ class HttpErrorHandler extends SlimErrorHandler
             {
                 if ($exception instanceof HttpNotFoundException)
                 {
-                    return
-                    Container::get(PhpRenderer::class)->render(
+                    return Container::get(PhpRenderer::class)->render(
                         $this->responseFactory->createResponse(404),
                         'components/404',
-                        []
+                        ['pagetitle' => '404 Not Found']
                     );
                 }
 

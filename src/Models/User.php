@@ -86,7 +86,7 @@ class User extends BaseModel
         {
             if ($stmt->execute($data))
             {
-                return static::findById(static::getConnection()->lastInsertId());
+                return static::findById(static::getConnection()->lastInsertId()) ?? false;
             }
         } catch (\Throwable)
         {

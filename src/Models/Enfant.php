@@ -24,7 +24,7 @@ class Enfant extends BaseModel
         return 'enfants';
     }
 
-    public function getParent(): User
+    public function getParent(): ? User
     {
         return User::findOne('id = ?', [$this->id_parent]);
     }

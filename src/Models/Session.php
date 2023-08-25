@@ -65,6 +65,8 @@ class Session extends BaseModel
         {
             return static::findById(static::getConnection()->lastInsertId());
         }
+
+        return null;
     }
 
     public static function loadSession(string $session): ?static

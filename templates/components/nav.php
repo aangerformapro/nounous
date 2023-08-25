@@ -29,7 +29,7 @@
               Contact
             </a>
           </li> 
-          <?php if( ! isset($hideLogin)): ?>
+   
           <?php if( ! isLoggedIn()):?>
           <li class="nav-item">
             <a class="nav-link" href="<?= urlFor('login'); ?>">
@@ -57,7 +57,7 @@
                 Déconnection
               </a>
             </li>
-          <?php endif; endif; ?>
+          <?php endif; ?>
          
         </ul>
       </div>

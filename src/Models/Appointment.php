@@ -45,7 +45,7 @@ class Appointment extends BaseModel
         return null;
     }
 
-    public function getAvailability(): Availability
+    public function getAvailability(): ?Availability
     {
         return Availability::findOne('id = ?', [$this->id_availability]);
     }

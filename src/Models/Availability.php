@@ -26,7 +26,7 @@ class Availability extends BaseModel
         return 'availabilities';
     }
 
-    public function getNounou(): User
+    public function getNounou(): ? User
     {
         return User::findOne('id = ?', [$this->id_nounou]);
     }
