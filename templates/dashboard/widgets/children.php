@@ -14,10 +14,20 @@ $childrenHasErrors = ! empty($errors['children']);
     </div>
 
     <?php else:?>
-        <div class="mb-3 mb-3">
+        <div class="d-flex flex-wrap mb-3">
             <?php foreach ($children as $child):?>
-                <div class="child">
-                    <?= $child->getPrenom(); ?> <?= $child->getNom(); ?> 
+                <div class="col-lg-4 p-1">
+                    <div class="card child">
+                        <div class="card-header d-flex">
+                            <div class="prenom">
+                                <?= $child->getPrenom(); ?>
+                            </div>
+                             <div class="ms-auto">(<?= $child->getAge(); ?> ans)</div>
+                        </div>
+                        <div class="card-body">
+                            <a href="<?= urlFor('gardes', ['id_enfant' => $child->getId()]); ?>">Chercher une garde</a>
+                        </div>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>
@@ -50,7 +60,15 @@ $childrenHasErrors = ! empty($errors['children']);
             </div>
 
             <div class="form-floating mb-3 p-1">
-                <input type="date" class="form-control <?= in_array('birthday', $errors['children']) ? 'is-invalid' : ''; ?>" name="birthday" id="birthday" placeholder="Date de naissance" required>
+                <input 
+                type="date" 
+                class="form-control <?= in_array('birthday', $errors['children']) ? 'is-invalid' : ''; ?>" 
+                name="birthday" 
+                id="birthday" 
+                placeholder="Date de naissance" 
+                max="<?= formatDateInput(date_create('now')); ?>"
+                min="<?= date(FORMAT_DATE_INPUT, strtotime('-15 years')); ?>"
+                required>
                 <label for="prenom">Date de naissance</label>
                 <div class="invalid-feedback">
                     Veuillez entrer une date valide

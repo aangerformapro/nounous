@@ -139,10 +139,16 @@ return function (App $app)
         return $this->get('view')->render($response, 'calendar');
     })->setName('calendar');
 
-    $app->get('/espace-utilisateur/gardes', function (ServerRequest $request, Response $response)
+    $app->get('/espace-utilisateur/gardes[/{id:\d+}]', function (ServerRequest $request, Response $response, array $args)
     {
+        $id = $args['id'] ?? null;
         return $this->get('view')->render($response, 'gardes');
     })->setName('gardes');
+
+    $app->get('/espace-utilisateur/mes-gardes', function (ServerRequest $request, Response $response)
+    {
+        return $this->get('view')->render($response, 'mes-gardes', ['user' => $request->getAttribute('user')]);
+    })->setName('mes-gardes');
 
     $app->get('/', function ($request, $response, $args)
     {

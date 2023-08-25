@@ -27,7 +27,7 @@
       </li>
       <li>
         <?php if(isBabySitter()):?>
-            <a href="<?= urlFor('gardes'); ?>" class="nav-link <?= isCurrentRoute('gardes') ? 'active' : 'link-body-emphasis'; ?>">
+            <a href="<?= urlFor('mes-gardes'); ?>" class="nav-link <?= isCurrentRoute('mes-gardes') ? 'active' : 'link-body-emphasis'; ?>">
                 Gestion des gardes
             </a>
         <?php else:?>

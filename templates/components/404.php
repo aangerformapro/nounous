@@ -1,5 +1,10 @@
-<div class="page-404 container min-vh-100 d-flex flex-column justify-content-center align-items-center">
 
-    <!-- <h1>OOPS !</h1>
-    <p>Page Not Found!</p>  -->
+<?php
+$hideLogin = true;
+?>
+
+<div class="app page-404">
+  <?php include 'nav.php'; ?>
+  <div class="page"></div>
 </div>
+
