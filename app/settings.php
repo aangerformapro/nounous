@@ -12,7 +12,7 @@ $env = env('environment') ?: 'dev';
 return [
 
     'environment'         => $env,
-    'displayErrorDetails' => 'prod' === $env, // Should be set to false in production
+    'displayErrorDetails' => 'prod' !== $env, // Should be set to false in production
     'logError'            => true,
     'logErrorDetails'     => true,
     'logger'              => [
