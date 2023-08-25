@@ -6,8 +6,8 @@ $errors['children'] ??= [];
 $childrenHasErrors = ! empty($errors['children']);
 ?>
 
-<h3 class="text-capitalize mt-3">vos enfants</h3>
-<div class="d-flex flex-column">
+<h3 class="text-capitalize mt-3" data-aos="fade-up">vos enfants</h3>
+<div class="d-flex flex-column" data-aos="fade-up">
     <?php if( ! count($children)):?>
     <div class="mb-3 text-center">
         Vous n'avez pas d'enfants
