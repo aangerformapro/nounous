@@ -5,3 +5,4 @@ vendor
 dist
 .env
 .env.local
+.idea
