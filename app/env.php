@@ -56,5 +56,7 @@ Config::apply();
 
 date_default_timezone_set(Config::get('TZ_ID'));
 
+\Carbon\Carbon::setLocale('fr');
+
 // (require_file(__DIR__ . '/settings.php'))(Container::getFacadeRoot());
 (require_file(__DIR__ . '/dependencies.php'))(Container::getFacadeRoot());

@@ -11,9 +11,26 @@ class MesGardesAction extends BaseAction
 {
     public function display(ServerRequest $request, Response $response): ResponseInterface
     {
+        $nounou         = $request->getAttribute('user');
+
+        $disponibilites = Availability::find('id_nounou = ? AND date > NOW()', [
+            $nounou->getId(),
+        ]);
+
         return $this->phpRenderer->render($response, 'mes-gardes', [
-            'user'      => $request->getAttribute('user'),
+            'user'      => $nounou,
+            'disp'      => $disponibilites,
             'pagetitle' => 'Gestion des Gardes',
+        ]);
+    }
+
+    public function displayDisponibilite(ServerRequest $request, Response $response, int|string $id): ResponseInterface
+    {
+        return $this->phpRenderer->render($response, 'disponibilite', [
+            'user'      => $request->getAttribute('user'),
+            'idDispo'   => $id,
+            'pagetitle' => 'Mes Rendez-vous',
+
         ]);
     }
 

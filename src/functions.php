@@ -78,7 +78,8 @@ function isCurrentRoute(string $routeName, array $data = []): bool
 
     $currentUrl = $request->getUri()->getPath();
     $result     = $routeParser->urlFor($routeName, $data);
-    return $result === $currentUrl;
+
+    return $currentUrl === $result;
 }
 
 function isLoggedIn(): bool

@@ -14,7 +14,9 @@ class Availability extends BaseModel
 
     public function __construct(array $data = [])
     {
-        $this->id          = $data['id'];
+        $this->id          = (int) $data['id'];
+
+        $this->id_nounou   = (int) $data['id_nounou'];
         $this->hourly_rate = $data['hourly_rate'];
         $this->date        = date_create_from_format('Y-m-d', $data['date']);
         $this->start       = date_create_from_format('G:i:s', $data['start']);
@@ -55,6 +57,11 @@ class Availability extends BaseModel
     public static function getTable(): string
     {
         return 'availabilities';
+    }
+
+    public function getAppointments(): array
+    {
+        return Appointment::find('id_availability = ?', [$this->id]);
     }
 
     public function getNounou(): ? User

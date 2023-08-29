@@ -145,23 +145,32 @@ return function (App $app)
         return $this->get('view')->render($response, 'gardes');
     })->setName('gardes');
 
-    $app->map(['GET', 'POST'], '/espace-utilisateur/mes-gardes', function (ServerRequest $request, Response $response)
-    {
-        $controller = $this->get(MesGardesAction::class);
-
-        if ($data = $request->getAttribute('postdata'))
+    $app->map(
+        ['GET', 'POST'],
+        '/espace-utilisateur/mes-gardes[/{id:\d+}]',
+        function (ServerRequest $request, Response $response, array $args)
         {
-            $action = $data['action'];
-            unset($data['action']);
+            $controller = $this->get(MesGardesAction::class);
 
-            if ('add_availability' === $action)
+            if ($data = $request->getAttribute('postdata'))
             {
-                return $controller->addAvailability($request, $response, $data);
-            }
-        }
+                $action = $data['action'];
+                unset($data['action']);
 
-        return $controller->display($request, $response);
-    })->setName('mes-gardes');
+                if ('add_availability' === $action)
+                {
+                    return $controller->addAvailability($request, $response, $data);
+                }
+            }
+
+            if ( ! isset($args['id']))
+            {
+                return $controller->display($request, $response);
+            }
+
+            return $controller->displayDisponibilite($request, $response, $args['id']);
+        }
+    )->setName('mes-gardes');
 
     $app->get('/', function ($request, $response, $args)
     {

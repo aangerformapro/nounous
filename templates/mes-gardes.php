@@ -1,5 +1,9 @@
 <div class="d-flex flex-nowrap app dashboard ">
-    <?php include 'dashboard/sidebar.php'; ?>
+    <?php
+
+use Carbon\Carbon;
+
+    include 'dashboard/sidebar.php'; ?>
 
     <div class="main col">
         <h3 class="text-capitalize" data-aos="fade-down">Vos Disponibilités</h3>
@@ -80,8 +84,36 @@
 
 
 
+        <div class="my-availabilities d-lg-flex flex-lg-nowrap"  data-aos="fade-up">
+            <?php foreach ($disp as $item):?>
+
+                <div class="col-lg-4 p-1">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><?=  (new Carbon($item->getDate()))->translatedFormat('D d M,Y'); ?></h5>
+                            <p class="card-text">
+                                De <?= formatTimeInput($item->getStart()); ?> à <?= formatTimeInput($item->getEnd()); ?>
+                            </p>
+                            <a href="<?= urlFor('mes-gardes', ['id' => $item->getId()]); ?>" class="card-link">Voir Rendez-vous</a>
+                        </div>
+                    </div>
+                </div>
+
+               
 
 
+
+                <?php // var_dump($item->getAppointments());?>
+                
+
+
+                
+            <?php endforeach; ?>
+
+
+
+
+        </div>
 
         
     </div>
