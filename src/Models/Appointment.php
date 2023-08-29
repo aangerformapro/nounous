@@ -22,6 +22,23 @@ class Appointment extends BaseModel
         $this->status          = Status::from($data['status']);
     }
 
+    public static function addAppointment(Availability $availability): ?self
+    {
+        $stmt = static::getConnection()->prepare(
+            sprintf(
+                'INSERT INTO %s (id_availability) VALUES (?)',
+                static::getTable()
+            )
+        );
+
+        if ($stmt->execute([$availability->getId()]))
+        {
+            return static::findById(static::getConnection()->lastInsertId());
+        }
+
+        return null;
+    }
+
     public static function getTable(): string
     {
         return 'appointments';

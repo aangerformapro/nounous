@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 21 août 2023 à 15:10
+-- Généré le : mar. 29 août 2023 à 10:45
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.1.12
 
@@ -31,8 +31,20 @@ CREATE TABLE `appointments` (
   `id` int(11) NOT NULL,
   `id_enfant` int(11) DEFAULT NULL,
   `id_availability` int(11) NOT NULL,
-  `status` enum('PENDING','ACCEPTED','DECLINED','DONE') NOT NULL
+  `status` enum('PENDING','ACCEPTED','DECLINED','DONE') NOT NULL DEFAULT 'PENDING'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `appointments`
+--
+
+INSERT INTO `appointments` (`id`, `id_enfant`, `id_availability`, `status`) VALUES
+(1, NULL, 2, 'PENDING'),
+(2, NULL, 3, 'PENDING'),
+(3, NULL, 3, 'PENDING'),
+(4, NULL, 3, 'PENDING'),
+(5, NULL, 3, 'PENDING'),
+(6, NULL, 3, 'PENDING');
 
 -- --------------------------------------------------------
 
@@ -49,6 +61,15 @@ CREATE TABLE `availabilities` (
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Déchargement des données de la table `availabilities`
+--
+
+INSERT INTO `availabilities` (`id`, `id_nounou`, `start`, `end`, `hourly_rate`, `date`) VALUES
+(1, 5, '07:50:00', '15:50:00', 3.57, '2023-08-30'),
+(2, 5, '07:20:00', '18:50:00', 3.57, '2023-08-31'),
+(3, 5, '07:00:00', '18:00:00', 3.78, '2023-09-01');
+
 -- --------------------------------------------------------
 
 --
@@ -62,6 +83,15 @@ CREATE TABLE `enfants` (
   `prenom` varchar(255) NOT NULL,
   `birthday` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `enfants`
+--
+
+INSERT INTO `enfants` (`id`, `id_parent`, `nom`, `prenom`, `birthday`) VALUES
+(1, 4, 'Bear', 'Baby', '2023-08-08'),
+(3, 4, 'Bear', 'Enfant Dix', '2023-08-01'),
+(4, 4, 'Bear', 'gffgfg', '2008-08-26');
 
 -- --------------------------------------------------------
 
@@ -96,7 +126,9 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`id`, `id_user`, `session`, `expires`) VALUES
 (1, 1, '583c6714ff53af84e9256a0e8817000fba668d61', '2023-08-28 14:16:20'),
 (2, 1, 'a4ad4985eac50384b11e7f2e75b99db93e04fa4c', '2023-08-28 14:21:32'),
-(3, 1, '6adb9d04eda4d98a56a4d280be21a16050466c57', '2023-08-28 15:04:08');
+(3, 1, '6adb9d04eda4d98a56a4d280be21a16050466c57', '2023-08-28 15:04:08'),
+(6, 3, 'b5fa13e0c747ca6cfbbc02098082df359d53a2cf', '2023-08-29 13:38:41'),
+(11, 5, '920e2c5a6ba0084cef7f6f82422dc1ae2cddcc6f', '2023-09-01 16:15:18');
 
 -- --------------------------------------------------------
 
@@ -125,7 +157,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `email`, `password`, `type`, `nom`, `prenom`, `address`, `zip`, `city`, `phone`, `gender`, `created_at`, `updated_at`) VALUES
-(1, 'fkjgkfgjf@gmail.com', '$2y$10$ojCZMYCsyFyesVR3Flr/DurqX2X6b9CkH0JM/Hdi.PEFo5GP1cH36', 'PARENT', 'Nom', 'Prénom', '5 rue de la vache', '71120', 'Charolles', '0123456789', 'FEMALE', '2023-08-21 11:29:00', '2023-08-21 11:29:00');
+(1, 'fkjgkfgjf@gmail.com', '$2y$10$ojCZMYCsyFyesVR3Flr/DurqX2X6b9CkH0JM/Hdi.PEFo5GP1cH36', 'PARENT', 'Nom', 'Prénom', '5 rue de la vachette', '71100', 'Chalon-sur-Saône', '0123456789', 'FEMALE', '2023-08-21 11:29:00', '2023-08-21 11:29:00'),
+(3, 'fkjgkfgjfdfdff@gmail.com', '$2y$10$DFCxqr5r/TCATZ33OZpG9.5r70SeYPtTnIN9XHnjBrwuLoJHZCLYG', 'BABYSITTER', 'yuyu', 'yuyu', '50 rue de la boue', '80080', 'Amiens', '0234567890', 'MALE', '2023-08-22 09:48:50', '2023-08-22 09:48:50'),
+(4, 'maman@famille.com', '$2y$10$S0VGmhbsr.J8Q7usEbylTeZNJl7oU/fToGJPpkTsGc0D2TzTTa8dC', 'PARENT', 'Bear', 'Mama', '30 rue de bercy', '33000', 'Bordeaux', '0234567891', 'FEMALE', '2023-08-24 14:10:28', '2023-08-24 14:10:28'),
+(5, 'nourice@dailysitter.com', '$2y$10$aldwcFf7pVub8EhZDlzXhur8g.n4LQlMNkZyZop3YI7tfKWKaBQyC', 'BABYSITTER', 'Poppins', 'Mary', '5 Rue du chateau', '69100', 'Villeurbanne', '0312456789', 'FEMALE', '2023-08-24 16:12:02', '2023-08-24 16:12:02');
 
 --
 -- Index pour les tables déchargées
@@ -183,19 +218,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT pour la table `appointments`
 --
 ALTER TABLE `appointments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `availabilities`
 --
 ALTER TABLE `availabilities`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT pour la table `enfants`
 --
 ALTER TABLE `enfants`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT pour la table `planing_enfants`
@@ -207,13 +242,13 @@ ALTER TABLE `planing_enfants`
 -- AUTO_INCREMENT pour la table `sessions`
 --
 ALTER TABLE `sessions`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Contraintes pour les tables déchargées

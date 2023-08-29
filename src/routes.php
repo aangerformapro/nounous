@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Actions\EspaceUtilisateur;
 use Actions\LoginActions;
+use Actions\MesGardesAction;
 use Actions\RegisterActions;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Session;
@@ -144,9 +145,22 @@ return function (App $app)
         return $this->get('view')->render($response, 'gardes');
     })->setName('gardes');
 
-    $app->get('/espace-utilisateur/mes-gardes', function (ServerRequest $request, Response $response)
+    $app->map(['GET', 'POST'], '/espace-utilisateur/mes-gardes', function (ServerRequest $request, Response $response)
     {
-        return $this->get('view')->render($response, 'mes-gardes', ['user' => $request->getAttribute('user')]);
+        $controller = $this->get(MesGardesAction::class);
+
+        if ($data = $request->getAttribute('postdata'))
+        {
+            $action = $data['action'];
+            unset($data['action']);
+
+            if ('add_availability' === $action)
+            {
+                return $controller->addAvailability($request, $response, $data);
+            }
+        }
+
+        return $controller->display($request, $response);
     })->setName('mes-gardes');
 
     $app->get('/', function ($request, $response, $args)

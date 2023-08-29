@@ -7,9 +7,8 @@
 
         <form method="post" action="<?= urlFor('mes-gardes'); ?>"   data-aos="fade-up">
 
-
-            <div class="form-floating mb-3 p-1">
-
+        <div class="d-lg-flex flex-lg-nowrap mb-3">
+            <div class="form-floating  col-lg-8 p-1">
                 <select class="form-select" aria-label="Nombre d'enfants" name="slots" id="slots" required>
                     <option value="1">1 Enfant</option>
                     <option value="2">2 Enfants</option>
@@ -22,8 +21,23 @@
 
             </div>
 
-            <div class="d-flex flex-nowrap">
-                <div class="form-floating col-4 p-1">
+            <div class="form-floating  col-lg-4 p-1">
+
+                    <input 
+                        type="number" 
+                        id="hourly_rate" 
+                        name="hourly_rate" 
+                        max="5.76"
+                        min="3.57"
+                        value="3.57"
+                        step="0.01"
+                        class="form-control" required>
+                    <label for="hourly_rate">Taux Horaire</label>
+            </div>
+        </div>
+
+            <div class="d-lg-flex flex-lg-nowrap mb-3">
+                <div class="form-floating col-lg-4 p-1">
                     <input 
                         type="date" 
                         id="date" 
@@ -32,7 +46,7 @@
                         class="form-control" required>
                     <label for="date">Jour</label>
                 </div>
-                <div class="form-floating col-4 p-1">
+                <div class="form-floating col-lg-4 p-1">
                     <input 
                         type="time" 
                         id="start" 
@@ -43,7 +57,7 @@
                     <label for="date">Début</label>
                 </div>
 
-                <div class="form-floating col-4 p-1">
+                <div class="form-floating col-lg-4 p-1">
                     <input 
                         type="time" 
                         id="end" 
@@ -58,9 +72,7 @@
 
 
             <div class="form-submit-btn text-end p-3 d-none">
-                <input type="hidden" name="user_id" value="<?= $user->getId(); ?>">
-
-                <button type="submit" name="action" value="mod_user" class="btn custom-btn btn-a">
+                <button type="submit" name="action" value="add_availability" class="btn custom-btn btn-a">
                     Valider
                 </button>
             </div>
