@@ -21,6 +21,37 @@ class Availability extends BaseModel
         $this->end         = date_create_from_format('G:i:s', $data['end']);
     }
 
+    public static function addAvailability(User $nounou, array $data, int $slots = 1): ?self
+    {
+        $data['id_nounou'] = $nounou->getId();
+        $data['start']     = formatTimeSQL(date_create_from_format(FORMAT_TIME_INPUT, $data['start']));
+        $data['end']       = formatTimeSQL(date_create_from_format(FORMAT_TIME_INPUT, $data['end']));
+        $data['date']      = formatDateSQL(date_create_from_format(FORMAT_DATE_INPUT, $data['date']));
+
+        $stmt              = static::getConnection()->prepare(
+            sprintf(
+                'INSERT INTO %s (id_nounou, start, end, date, hourly_rate) ' .
+                'VALUES (:id_nounou, :start, :end, :date, :hourly_rate)',
+                static::getTable()
+            )
+        );
+
+        if ($stmt->execute($data))
+        {
+            $result = static::findById(static::getConnection()->lastInsertId());
+
+            while ($slots > 0)
+            {
+                Appointment::addAppointment($result);
+                --$slots;
+            }
+
+            return $result;
+        }
+
+        return null;
+    }
+
     public static function getTable(): string
     {
         return 'availabilities';
