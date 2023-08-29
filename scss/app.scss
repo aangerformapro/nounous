@@ -1,12 +1,9 @@
 @use 'components/fonts';
-
 // https://www.color-name.com/hex/ea523d
 $cpink: #ea523d;
-
 .text-cpink {
     color: $cpink imo !important;
 }
-
 .bg-body-cpink {
     background-color: $cpink !important;
 }
@@ -71,7 +68,6 @@ $cpink: #ea523d;
   transition:800ms ease all;
 }
 //** btn end**//
-
 *,
 ::before,
 ::after {
@@ -85,24 +81,20 @@ html {
     line-height: 1.2;
     scroll-behavior: smooth;
 }
-
 body {
     min-height: 100vh;
 }
-
 .app {
     min-height: 100vh;
 
     position: relative;
 }
-
 .page-login {
     background-image: url(./pictures/login.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
-
 .page {
     min-height: 100vh;
     & > form {
@@ -117,29 +109,24 @@ body {
         }
     }
 }
-
 //***** form-login*****//
 .form-login {
     min-width: 50vw;
     background: rgba(224, 106, 90, 0.71);
     padding: 4%;
     // margin: 4%;
-
     .btn {
         color: $cpink;
         width: 158px;
         height: 46px;
     }
 }
-
 //***** form-register*****//
-
 .form-register {
     background: rgba(224, 106, 90, 0.71);
     padding: 3%;
     margin: 100px 4%;
 }
-
 //*****Home*****//
 .navbar-brand {
     color: $cpink;
@@ -154,7 +141,6 @@ body {
     &:focus {
         color: $cpink;
     }
-
     @media (max-width: 992px) {
         font-size: 34px;
         img {
@@ -163,7 +149,6 @@ body {
         }
     }
 }
-
 .navbar {
     backdrop-filter: blur(2px);
 
@@ -180,7 +165,6 @@ body {
         min-height: calc(100vh - 96px);
     }
 }
-
 .page-home {
     .home-img {
         img {
@@ -221,7 +205,6 @@ body {
         }
     }
 }
-
 .page-contact {
     .home-img {
         img {
@@ -253,7 +236,6 @@ body {
         }
     }
 }
-
 .dashboard {
     .navbar-brand {
         font-size: 34px;
@@ -263,7 +245,6 @@ body {
             height: 34px;
         }
     }
-
     .nav {
         a {
             box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -282,7 +263,6 @@ body {
             background: white;
         }
     }
-
     .navbar {
         position: fixed;
         z-index: 2000;
@@ -294,10 +274,8 @@ body {
         right: 16px;
         top: 16px;
     }
-
     .sidebar {
         width: 300px;
-
         @media (max-width: 992px) {
             position: fixed;
             top: 0;
@@ -309,7 +287,6 @@ body {
             z-index: 1500;
         }
     }
-
     &.menu-shown {
         .sidebar {
             @media (max-width: 992px) {
@@ -321,12 +298,10 @@ body {
             border-color: white;
         }
     }
-
     .main {
         padding: 4rem 2rem;
     }
 }
-
 .form-floating .edit {
     position: absolute;
     right: 0;
@@ -338,4 +313,35 @@ body {
     background: url(./pictures/404.webp)no-repeat center center;
     background-color:#ffffeb;
     color:#e47444fe;
+}
+#calendar{
+    // date
+    .fc-col-header-cell{
+        background:$cpink;
+        .fc-col-header-cell-cushion{
+            color:#fff;
+            text-decoration: none;
+        }
+}
+// evenement
+    .fc-event{
+        background:$cpink;
+        border:none; 
+}
+//h2
+.fc-toolbar-title{
+    color:$cpink;
+}
+//button
+.fc-button{
+    background:$cpink;
+    border:none; 
+}
+
+.fc-toolbar-chunk:nth-child(2){
+    @media (max-width:1200px) {
+        display: none;
+    }
+    
+}
 }
