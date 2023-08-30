@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Enfant extends BaseModel
+class Enfant extends BaseModel implements \Stringable
 {
     protected int $id_parent;
     protected string $nom;
@@ -17,6 +17,11 @@ class Enfant extends BaseModel
         $this->nom       = $data['nom'];
         $this->prenom    = $data['prenom'];
         $this->birthday  = date_create_from_format('Y-m-d', $data['birthday']);
+    }
+
+    public function __toString(): string
+    {
+        return $this->getFullName();
     }
 
     public static function getTable(): string
@@ -51,6 +56,11 @@ class Enfant extends BaseModel
     public function getPrenom()
     {
         return $this->prenom;
+    }
+
+    public function getFullName(): string
+    {
+        return sprintf('%s %s', $this->getPrenom(), $this->getNom());
     }
 
     /**

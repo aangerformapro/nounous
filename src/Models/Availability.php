@@ -2,7 +2,7 @@
 
 namespace Models;
 
-class Availability extends BaseModel
+class Availability extends BaseModel implements \Countable
 {
     protected int $id_nounou;
     protected \DateTime $start;
@@ -107,5 +107,10 @@ class Availability extends BaseModel
     public function getDate()
     {
         return $this->date;
+    }
+
+    public function count(): int
+    {
+        return count($this->getAppointments());
     }
 }

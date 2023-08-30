@@ -6,14 +6,65 @@ use Actions\EspaceUtilisateur;
 use Actions\LoginActions;
 use Actions\MesGardesAction;
 use Actions\RegisterActions;
+use App\Application\Renderers\JsonRenderer;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Session;
+use Models\User;
+use Models\UserType;
 use Slim\App;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
+use Slim\Interfaces\RouteCollectorProxyInterface;
 
 return function (App $app)
 {
+
+    $app->group('/api', function(RouteCollectorProxyInterface $group){
+
+        $group->get('/calendar', function(ServerRequest $request, Response $response){
+
+            $renderer = new JsonRenderer();
+
+            /** @var User $user */
+            $user = $request->getAttribute('user');
+
+            $data = [];
+            if($user->getType() === UserType::BABYSITTER){
+
+
+
+            }
+            else {
+                $data = [];
+            }
+
+
+
+            // events: [
+            //     {
+            //       title: 'BCH237',
+            //       start: '2019-08-12T10:30:00',
+            //       end: '2019-08-12T11:30:00',
+            //       extendedProps: {
+            //         department: 'BioChemistry'
+            //       },
+            //       description: 'Lecture'
+            //     }
+            //     // more events ...
+            //   ],
+
+
+
+
+            return $renderer->json($response, $data);
+
+
+
+
+        });
+
+    });
+
     // $app->group('/api', function () use ($app)
     // {
     //     // Library group
@@ -160,6 +211,28 @@ return function (App $app)
                 if ('add_availability' === $action)
                 {
                     return $controller->addAvailability($request, $response, $data);
+                }
+
+                if('set_declined' === $action && isset($data['id_disp'])){
+
+                    return $controller->setGardeStatus(
+                        $request,
+                        $response,
+                        $args['id'],
+                        $data['id_disp'],
+                        false
+                    );
+
+                }
+
+                if('set_accepted' === $action && isset($data['id_disp'])){
+                    return $controller->setGardeStatus(
+                        $request,
+                        $response,
+                        $args['id'],
+                        $data['id_disp'],
+                        true
+                    );
                 }
             }
 

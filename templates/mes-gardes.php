@@ -90,7 +90,14 @@ use Carbon\Carbon;
                 <div class="col-lg-4 p-1">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title"><?=  (new Carbon($item->getDate()))->translatedFormat('D d M,Y'); ?></h5>
+                            <div class="card-title d-flex">
+                                <h5 class="col-10">
+                                    <?=  (new Carbon($item->getDate()))->translatedFormat('D d M,Y'); ?>
+
+                                </h5>
+                                <div class="badge rounded-pill text-bg-secondary ms-auto fs-5"><?= count($item); ?></div>
+                            </div>
+                           
                             <p class="card-text">
                                 De <?= formatTimeInput($item->getStart()); ?> à <?= formatTimeInput($item->getEnd()); ?>
                             </p>
@@ -99,23 +106,21 @@ use Carbon\Carbon;
                     </div>
                 </div>
 
-               
-
-
-
-                <?php // var_dump($item->getAppointments());?>
-                
-
-
-                
             <?php endforeach; ?>
 
-
+          
 
 
         </div>
 
+     
+
+        <?php if(isset($slots))
+        {
+            include 'disponibilite.php';
+        } ?>
         
     </div>
+
 </div>
 

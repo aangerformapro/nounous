@@ -2,7 +2,9 @@
 
 namespace Actions;
 
+use Models\Appointment;
 use Models\Availability;
+use Models\Status;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
 use Slim\Http\ServerRequest;
@@ -26,12 +28,38 @@ class MesGardesAction extends BaseAction
 
     public function displayDisponibilite(ServerRequest $request, Response $response, int|string $id): ResponseInterface
     {
-        return $this->phpRenderer->render($response, 'disponibilite', [
-            'user'      => $request->getAttribute('user'),
-            'idDispo'   => $id,
-            'pagetitle' => 'Mes Rendez-vous',
+        // $this->phpRenderer->addAttribute(
 
+        // )
+
+        $this->phpRenderer->addAttribute('idDispo', $id);
+
+        $this->phpRenderer->addAttribute('slots', Appointment::find(
+            'id_availability = ?',
+            [$id]
+        ));
+
+        return $this->display($request, $response);
+    }
+
+    public function setGardeStatus(
+        ServerRequest $request,
+        Response $response,
+        int|string $id,
+        int|string $idDisp, bool $accepted ): ResponseInterface
+    {
+
+
+        Appointment::updateEntry($idDisp, [
+            'status' => $accepted ? Status::ACCEPTED->value : Status::DECLINED->value
         ]);
+
+       return $this->redirectRenderer->redirectFor(
+           $response,
+           'mes-gardes',
+           ['id'=>$id]
+       );
+
     }
 
     public function addAvailability(ServerRequest $request, Response $response, array $data): ResponseInterface

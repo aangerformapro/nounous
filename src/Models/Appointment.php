@@ -82,4 +82,18 @@ class Appointment extends BaseModel
     {
         return $this->status;
     }
+
+
+    public function setStatus(Status $status): void
+    {
+        $value = $status->value;
+
+
+        static::updateEntry($this,[
+            'status' => $value
+        ]);
+
+        $this->status = $status;
+
+    }
 }
