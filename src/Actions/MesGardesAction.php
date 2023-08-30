@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Actions;
 
 use Models\Appointment;
@@ -28,10 +30,6 @@ class MesGardesAction extends BaseAction
 
     public function displayDisponibilite(ServerRequest $request, Response $response, int|string $id): ResponseInterface
     {
-        // $this->phpRenderer->addAttribute(
-
-        // )
-
         $this->phpRenderer->addAttribute('idDispo', $id);
 
         $this->phpRenderer->addAttribute('slots', Appointment::find(
@@ -46,20 +44,18 @@ class MesGardesAction extends BaseAction
         ServerRequest $request,
         Response $response,
         int|string $id,
-        int|string $idDisp, bool $accepted ): ResponseInterface
-    {
-
-
+        int|string $idDisp,
+        bool $accepted
+    ): ResponseInterface {
         Appointment::updateEntry($idDisp, [
-            'status' => $accepted ? Status::ACCEPTED->value : Status::DECLINED->value
+            'status' => $accepted ? Status::ACCEPTED->value : Status::DECLINED->value,
         ]);
 
-       return $this->redirectRenderer->redirectFor(
-           $response,
-           'mes-gardes',
-           ['id'=>$id]
-       );
-
+        return $this->redirectRenderer->redirectFor(
+            $response,
+            'mes-gardes',
+            ['id' => $id]
+        );
     }
 
     public function addAvailability(ServerRequest $request, Response $response, array $data): ResponseInterface

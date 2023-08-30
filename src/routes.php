@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Actions\EspaceUtilisateur;
+use Actions\GardesParents;
 use Actions\LoginActions;
 use Actions\MesGardesAction;
 use Actions\RegisterActions;
@@ -197,29 +198,34 @@ return function (App $app)
         return $this->get('view')->render($response, 'calendar');
     })->setName('calendar');
 
-    $app->get('/espace-utilisateur/gardes[/{id:\d+}]', function (ServerRequest $request, Response $response, array $args)
-    {
-        if ( ! $request->getAttribute('user'))
+    $app->map(
+        ['GET', 'POST'],
+        '/espace-utilisateur/gardes[/{id:\d+}]',
+        function (ServerRequest $request, Response $response, array $args)
         {
-            return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
-        }
+            if ( ! $request->getAttribute('user'))
+            {
+                return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+            }
 
-        $id = $args['id'] ?? null;
-        return $this->get('view')->render($response, 'gardes');
-    })->setName('gardes');
+            $id         = $args['id'] ?? null;
+
+            /** @var GardesParents $controller */
+            $controller = $this->get(GardesParents::class);
+
+            return $controller->display($request, $response);
+        }
+    )->setName('gardes');
 
     $app->map(
         ['GET', 'POST'],
         '/espace-utilisateur/mes-gardes[/{id:\d+}]',
         function (ServerRequest $request, Response $response, array $args)
         {
-
             if ( ! $request->getAttribute('user'))
             {
                 return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
             }
-
-
 
             $controller = $this->get(MesGardesAction::class);
 
@@ -267,7 +273,6 @@ return function (App $app)
 
     $app->get('/', function ($request, $response, $args)
     {
-
         return $this->get('view')->render($response, 'home', $args);
     })->setName('home');
 };

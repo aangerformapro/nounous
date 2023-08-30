@@ -23,6 +23,21 @@ class Availability extends BaseModel implements \Countable
         $this->end         = date_create_from_format('G:i:s', $data['end']);
     }
 
+
+    public static function findPendingAvailabilities():array{
+        $stmt = static::getConnection()->prepare(
+          'SELECT * FROM %s INNER JOIN id_nounou on %s.id',
+            static::getTable(),
+            User::getTable()
+
+
+        );
+
+
+
+        return [];
+    }
+
     public static function addAvailability(User $nounou, array $data, int $slots = 1): ?self
     {
         $data['id_nounou'] = $nounou->getId();
