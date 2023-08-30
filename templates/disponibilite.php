@@ -1,9 +1,15 @@
 <div data-aos="fade-up" >
     <?php
 
-use Models\Status;
+    use Models\Appointment;
+    use Models\Availability;
+    use Models\Status;
 
-    foreach ($slots as $disp) :?>
+/** @var Appointment $disp */
+
+    foreach ($slots as $disp) :
+        $date ??= $disp->getAvailability()->getDate();
+        ?>
 
         <form class="p-1" method="post" action="<?= urlFor('mes-gardes' , ['id' => $idDispo])?>">
         <input type="hidden" name="id_disp" value="<?= $disp->getId();?>">
@@ -11,7 +17,7 @@ use Models\Status;
             <div class="card-body">
                 <div class="card-title d-flex justify-content-between align-items-center">
                     <h5>
-                        <?=  (new Carbon\Carbon($item->getDate()))->translatedFormat('D d M,Y'); ?>
+                        <?=  (new Carbon\Carbon($date))->translatedFormat('D d M,Y'); ?>
                     </h5>
                     <h6>
                      De <?= formatTimeInput($item->getStart()); ?> à <?= formatTimeInput($item->getEnd()); ?>

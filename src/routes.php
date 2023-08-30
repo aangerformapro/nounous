@@ -8,7 +8,11 @@ use Actions\MesGardesAction;
 use Actions\RegisterActions;
 use App\Application\Renderers\JsonRenderer;
 use App\Application\Renderers\RedirectRenderer;
+use Models\Appointment;
+use Models\Availability;
+use Models\Enfant;
 use Models\Session;
+use Models\Status;
 use Models\User;
 use Models\UserType;
 use Slim\App;
@@ -18,51 +22,50 @@ use Slim\Interfaces\RouteCollectorProxyInterface;
 
 return function (App $app)
 {
-
-    $app->group('/api', function(RouteCollectorProxyInterface $group){
-
-        $group->get('/calendar', function(ServerRequest $request, Response $response){
-
+    $app->group('/api', function (RouteCollectorProxyInterface $group)
+    {
+        $group->get('/calendar', function (ServerRequest $request, Response $response)
+        {
             $renderer = new JsonRenderer();
 
             /** @var User $user */
-            $user = $request->getAttribute('user');
+            $user     = $request->getAttribute('user');
 
-            $data = [];
-            if($user->getType() === UserType::BABYSITTER){
+            $data     = [];
 
+            if (UserType::BABYSITTER === $user->getType())
+            {
+                $availabilities = Availability::find('id_nounou = ?', [$user->getId()]);
 
+                /** @var Availability $av */
+                /* @var Appointment $appointment */
+                /* @var Enfant $child */
+                foreach ($availabilities as $av)
+                {
+                    foreach ($av->getAppointments() as $appointment)
+                    {
+                        if (Status::ACCEPTED === $appointment->getStatus())
+                        {
+                            $day    = formatDateInput($av->getDate()) . 'T';
+                            $start  = $day . formatTimeInput($av->getStart());
+                            $end    = $day . formatTimeInput($av->getEnd());
 
-            }
-            else {
+                            $child  = $appointment->getEnfant();
+                            $data[] = [
+                                'title' => $child->getFullName(),
+                                'start' => $start,
+                                'end'   => $end,
+                            ];
+                        }
+                    }
+                }
+            } else
+            {
                 $data = [];
             }
 
-
-
-            // events: [
-            //     {
-            //       title: 'BCH237',
-            //       start: '2019-08-12T10:30:00',
-            //       end: '2019-08-12T11:30:00',
-            //       extendedProps: {
-            //         department: 'BioChemistry'
-            //       },
-            //       description: 'Lecture'
-            //     }
-            //     // more events ...
-            //   ],
-
-
-
-
             return $renderer->json($response, $data);
-
-
-
-
         });
-
     });
 
     // $app->group('/api', function () use ($app)
@@ -187,11 +190,20 @@ return function (App $app)
 
     $app->get('/espace-utilisateur/calendar', function (ServerRequest $request, Response $response)
     {
+        if ( ! $request->getAttribute('user'))
+        {
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+        }
         return $this->get('view')->render($response, 'calendar');
     })->setName('calendar');
 
     $app->get('/espace-utilisateur/gardes[/{id:\d+}]', function (ServerRequest $request, Response $response, array $args)
     {
+        if ( ! $request->getAttribute('user'))
+        {
+            return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+        }
+
         $id = $args['id'] ?? null;
         return $this->get('view')->render($response, 'gardes');
     })->setName('gardes');
@@ -201,6 +213,14 @@ return function (App $app)
         '/espace-utilisateur/mes-gardes[/{id:\d+}]',
         function (ServerRequest $request, Response $response, array $args)
         {
+
+            if ( ! $request->getAttribute('user'))
+            {
+                return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+            }
+
+
+
             $controller = $this->get(MesGardesAction::class);
 
             if ($data = $request->getAttribute('postdata'))
@@ -213,8 +233,8 @@ return function (App $app)
                     return $controller->addAvailability($request, $response, $data);
                 }
 
-                if('set_declined' === $action && isset($data['id_disp'])){
-
+                if ('set_declined' === $action && isset($data['id_disp']))
+                {
                     return $controller->setGardeStatus(
                         $request,
                         $response,
@@ -222,10 +242,10 @@ return function (App $app)
                         $data['id_disp'],
                         false
                     );
-
                 }
 
-                if('set_accepted' === $action && isset($data['id_disp'])){
+                if ('set_accepted' === $action && isset($data['id_disp']))
+                {
                     return $controller->setGardeStatus(
                         $request,
                         $response,
@@ -247,6 +267,7 @@ return function (App $app)
 
     $app->get('/', function ($request, $response, $args)
     {
+
         return $this->get('view')->render($response, 'home', $args);
     })->setName('home');
 };
