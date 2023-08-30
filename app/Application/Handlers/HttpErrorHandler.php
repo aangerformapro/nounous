@@ -7,6 +7,7 @@ namespace App\Application\Handlers;
 use App\Application\Actions\ActionError;
 use App\Application\Actions\ActionPayload;
 use App\Application\Renderers\PhpRenderer;
+use App\Application\Renderers\PhpTemplateNotFoundException;
 use NGSOFT\Facades\Container;
 use Psr\Http\Message\ResponseInterface as Response;
 use Slim\Exception\HttpBadRequestException;
@@ -70,6 +71,24 @@ class HttpErrorHandler extends SlimErrorHandler
             {
                 $error->setType(ActionError::NOT_IMPLEMENTED);
             }
+
+            if ( ! str_contains($exception->getRequest()->getHeaderLine('accept'), 'json'))
+            {
+                try
+                {
+                    return Container::get(PhpRenderer::class)->render(
+                        $this->responseFactory->createResponse($exception->getCode()),
+                        'errors/' . $exception->getCode(),
+                        ['pagetitle' => $exception->getTitle()]
+                    );
+                } catch (PhpTemplateNotFoundException)
+                {
+                    return parent::respond();
+                }
+            }
+        } elseif ( ! str_contains($this->request->getHeaderLine('accept'), 'json'))
+        {
+            return parent::respond();
         }
 
         if (
