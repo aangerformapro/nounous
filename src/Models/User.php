@@ -2,9 +2,10 @@
 
 namespace Models;
 
+use Stringable;
 use function NGSOFT\Tools\some;
 
-class User extends BaseModel
+class User extends BaseModel implements \Stringable
 {
     protected string $email;
     protected string $nom;
@@ -307,5 +308,10 @@ class User extends BaseModel
     public function getAddress(): string
     {
         return $this->address;
+    }
+
+    public function __toString():string
+    {
+        return sprintf('%s %s', $this->getPrenom(), $this->getNom());
     }
 }

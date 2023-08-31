@@ -7,6 +7,7 @@ use Actions\GardesParents;
 use Actions\LoginActions;
 use Actions\MesGardesAction;
 use Actions\RegisterActions;
+use Actions\ValidationGardes;
 use App\Application\Renderers\JsonRenderer;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Appointment;
@@ -271,13 +272,18 @@ return function (App $app)
         }
     )->setName('mes-gardes');
 
-
     $app->map(
         ['GET', 'POST'],
         '/espace-utilisateur/validation-gardes',
-        function(ServerRequest $request, Response $response){
+        function (ServerRequest $request, Response $response)
+        {
+            if ( ! $request->getAttribute('user'))
+            {
+                return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+            }
 
-            return $this->get('view')->render($response, 'validation-gardes');
+            $controller = $this->get(ValidationGardes::class);
+            return $controller->display($request, $response);
         }
     )->setName('validation-gardes');
 

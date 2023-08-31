@@ -17,8 +17,9 @@ class MesGardesAction extends BaseAction
     {
         $nounou         = $request->getAttribute('user');
 
-        $disponibilites = Availability::find('id_nounou = ? AND date > NOW()', [
+        $disponibilites = Availability::find('id_nounou = ? AND date >= ? ORDER BY date ASC', [
             $nounou->getId(),
+            formatDateSQL(date_create('now')),
         ]);
 
         return $this->phpRenderer->render($response, 'mes-gardes', [
@@ -30,6 +31,7 @@ class MesGardesAction extends BaseAction
 
     public function displayDisponibilite(ServerRequest $request, Response $response, int|string $id): ResponseInterface
     {
+        $user = $request->getAttribute('user');
         $this->phpRenderer->addAttribute('idDispo', $id);
 
         $this->phpRenderer->addAttribute('slots', Appointment::find(

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Models;
 
 use NGSOFT\Facades\Container;
@@ -54,10 +56,10 @@ abstract class BaseModel
         return $result;
     }
 
-   public static function findById(int|string $id): ?static
-   {
-       return static::findOne('id = ?', [$id]);
-   }
+    public static function findById(int|string $id): ?static
+    {
+        return static::findOne('id = ?', [$id]);
+    }
 
     public static function findOne(string $where = '1', array $bindings = []): ?static
     {
@@ -67,7 +69,10 @@ abstract class BaseModel
 
         if ($stmt->execute($bindings))
         {
-            return new static($stmt->fetch(\PDO::FETCH_ASSOC));
+            if (is_array($data = $stmt->fetch(\PDO::FETCH_ASSOC)))
+            {
+                return new static($data);
+            }
         }
 
         return null;

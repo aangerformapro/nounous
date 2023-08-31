@@ -2,17 +2,15 @@
     <?php
 
     use Models\Appointment;
-    use Models\Availability;
     use Models\Status;
 
-/** @var Appointment $disp */
-
+    /** @var Appointment $disp */
     foreach ($slots as $disp) :
         $date ??= $disp->getAvailability()->getDate();
         ?>
 
-        <form class="p-1" method="post" action="<?= urlFor('mes-gardes' , ['id' => $idDispo])?>">
-        <input type="hidden" name="id_disp" value="<?= $disp->getId();?>">
+        <form class="p-1" method="post" action="<?= urlFor('mes-gardes', ['id' => $idDispo]); ?>">
+        <input type="hidden" name="id_disp" value="<?= $disp->getId(); ?>">
         <div class="card">
             <div class="card-body">
                 <div class="card-title d-flex justify-content-between align-items-center">
@@ -28,7 +26,7 @@
 
                     <div class="mb-3 d-flex">
 
-                            <?php if($child = $disp->getEnfant() ) :?>
+                            <?php if($child = $disp->getEnfant()) :?>
                                 <div class="child-name">
                                     <?= $child; ?>
                                 </div>
@@ -54,22 +52,25 @@
                                         </button>
 
                                     <?php    break;
-                                    case Status::ACCEPTED:?>
+                                        case Status::ACCEPTED:?>
                                         <div class="text-success">
                                             Garde Acceptée
                                         </div>
                                         <?php
-                                        break;
+                                            break;
 
-                                    case Status::DECLINED: ?>
+                                        case Status::DECLINED: ?>
                                         <div class="text-danger">
                                             Garde Refusée
                                         </div>
                                         <?php
-                                        break;
-                                    default:
-                                        # code...
-                                        break;
+                                            break;
+                                        case Status::CANCEL: ?>
+                                        <div class="text-danger">
+                                            Garde Annulée
+                                        </div>
+                                        <?php
+                                            break;
                                     } ?>
                                 </div>
 

@@ -84,7 +84,7 @@ use Carbon\Carbon;
 
 
 
-        <div class="my-availabilities d-lg-flex flex-lg-nowrap"  data-aos="fade-up">
+        <div class="my-availabilities d-lg-flex flex-lg-wrap"  data-aos="fade-up">
             <?php foreach ($disp as $item):?>
 
                 <div class="col-lg-4 p-1">

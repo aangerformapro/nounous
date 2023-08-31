@@ -28,6 +28,20 @@ class Appointment extends BaseModel
         $this->valid           = (bool) $data['valid'];
     }
 
+    public function getValid(): bool
+    {
+        return $this->valid;
+    }
+
+    public function setValid(bool $valid)
+    {
+        $this->valid = $valid;
+
+        static::updateEntry($this->getId(), [
+            'valid' => (int) $valid,
+        ]);
+    }
+
     public static function addAppointment(Availability $availability): ?self
     {
         $stmt = static::getConnection()->prepare(
