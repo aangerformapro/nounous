@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Models;
 
 class Appointment extends BaseModel
@@ -8,6 +10,8 @@ class Appointment extends BaseModel
 
     protected int $id_availability;
     protected Status $status;
+
+    protected bool $valid;
 
     public function __construct(array $data = [])
     {
@@ -20,6 +24,8 @@ class Appointment extends BaseModel
 
         $this->id_availability = $data['id_availability'];
         $this->status          = Status::from($data['status']);
+
+        $this->valid           = (bool) $data['valid'];
     }
 
     public static function addAppointment(Availability $availability): ?self
@@ -83,17 +89,14 @@ class Appointment extends BaseModel
         return $this->status;
     }
 
-
     public function setStatus(Status $status): void
     {
-        $value = $status->value;
+        $value        = $status->value;
 
-
-        static::updateEntry($this,[
-            'status' => $value
+        static::updateEntry($this, [
+            'status' => $value,
         ]);
 
         $this->status = $status;
-
     }
 }

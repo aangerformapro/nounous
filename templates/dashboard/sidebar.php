@@ -36,6 +36,11 @@
             </a>
         <?php endif; ?>
       </li>
+    <li>
+        <a href="<?= urlFor('validation-gardes'); ?>" class="nav-link <?= isCurrentRoute('validation-gardes') ? 'active' : 'link-body-emphasis'; ?>">
+            Validation des gardes
+        </a>
+    </li>
       <li>
         <a href="<?= urlFor('factures'); ?>" class="nav-link <?= isCurrentRoute('factures') ? 'active' : 'link-body-emphasis'; ?>">
           Factures

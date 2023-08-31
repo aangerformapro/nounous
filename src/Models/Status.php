@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Models;
 
 enum Status: string
@@ -8,4 +10,5 @@ enum Status: string
     case ACCEPTED = 'ACCEPTED';
     case DECLINED = 'DECLINED';
     case DONE     = 'DONE';
+    case CANCEL   = 'CANCEL';
 }

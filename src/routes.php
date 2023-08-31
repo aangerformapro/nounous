@@ -271,6 +271,16 @@ return function (App $app)
         }
     )->setName('mes-gardes');
 
+
+    $app->map(
+        ['GET', 'POST'],
+        '/espace-utilisateur/validation-gardes',
+        function(ServerRequest $request, Response $response){
+
+            return $this->get('view')->render($response, 'validation-gardes');
+        }
+    )->setName('validation-gardes');
+
     $app->get('/', function ($request, $response, $args)
     {
         return $this->get('view')->render($response, 'home', $args);
