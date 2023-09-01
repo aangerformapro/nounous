@@ -12,6 +12,7 @@ use App\Application\Renderers\JsonRenderer;
 use App\Application\Renderers\RedirectRenderer;
 use Models\Appointment;
 use Models\Availability;
+use Models\AvailableAppointments;
 use Models\Enfant;
 use Models\Session;
 use Models\Status;
@@ -37,7 +38,7 @@ return function (App $app)
 
             if (UserType::BABYSITTER === $user->getType())
             {
-                $availabilities = Availability::find('id_nounou = ?', [$user->getId()]);
+                $availabilities = Availability::find('id_nounou = ? AND ', [$user->getId()]);
 
                 /** @var Availability $av */
                 /* @var Appointment $appointment */
@@ -63,7 +64,38 @@ return function (App $app)
                 }
             } else
             {
-                $data = [];
+
+                $enfants = Enfant::find('id_parent = ?', [$user->getId()]);
+
+                /** @var Enfant $child */
+                foreach ($enfants as $child){
+
+                    $rdvs = AvailableAppointments::find(
+                        'id_enfant = ? AND status IN ("ACCEPTED")',
+                        [$child->getId()]
+                    );
+                    /** @var AvailableAppointments $rdv */
+                    foreach ($rdvs as $rdv){
+                        $day    = formatDateInput($rdv->getDate()) . 'T';
+                        $start  = $day . formatTimeInput($rdv->getStart());
+                        $end    = $day . formatTimeInput($rdv->getEnd());
+                        $data [] = [
+                            'start' => $start,
+                            'end' => $end,
+                            'title'=>sprintf(
+                                '%s chez %s',
+                                $child->getPrenom(),
+                                $rdv->getNounou()
+                            )
+                        ];
+
+                    }
+
+                }
+
+
+
+
             }
 
             return $renderer->json($response, $data);
@@ -209,12 +241,10 @@ return function (App $app)
                 return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
             }
 
-            $id         = $args['id'] ?? null;
-
             /** @var GardesParents $controller */
             $controller = $this->get(GardesParents::class);
 
-            return $controller->display($request, $response);
+            return $controller->display($request, $response, $args['id'] ?? null);
         }
     )->setName('gardes');
 

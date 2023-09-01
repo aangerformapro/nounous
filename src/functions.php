@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Facades\Settings;
+use Carbon\Carbon;
 use Models\User;
 use Models\UserType;
 use NGSOFT\Facades\Container;
@@ -97,4 +98,9 @@ function isBabySitter(): bool
 function setPageTitle(string $title)
 {
     Settings::setAttribute('pagetitle', $title);
+}
+
+function translateDate(DateTime $date, string $format = 'D d M Y'): string
+{
+    return (new Carbon($date))->translatedFormat($format);
 }

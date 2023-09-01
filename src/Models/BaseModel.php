@@ -12,9 +12,8 @@ abstract class BaseModel
 {
     protected int $id;
 
-    public function __construct(array $data = [])
-    {
-    }
+    abstract public function __construct(array $data = []);
+
 
     /**
      * Entry point.

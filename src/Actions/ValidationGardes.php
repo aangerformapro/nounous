@@ -42,13 +42,13 @@ class ValidationGardes extends BaseAction
                     {
                         $rdv->setValid(true);
                     }
-                    return $this->redirectRenderer->redirectFor('validation-gardes');
+                    return $this->redirectRenderer->redirectFor($response, 'validation-gardes');
                 }
 
                 if ('set_valid' === $action && UserType::PARENT === $user->getType())
                 {
                     $rdv->setValid(true);
-                    return $this->redirectRenderer->redirectFor('validation-gardes');
+                    return $this->redirectRenderer->redirectFor($response, 'validation-gardes');
                 }
             }
         }
