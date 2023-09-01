@@ -77,7 +77,7 @@ use Carbon\Carbon;
 
             <div class="form-submit-btn text-end p-3 d-none">
                 <button type="submit" name="action" value="add_availability" class="btn custom-btn btn-a">
-                    Valider
+                <span>valider</span><span>valider</span>
                 </button>
             </div>
         </form>

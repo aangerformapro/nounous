@@ -33,7 +33,7 @@
       <input type="hidden" name="user_id" value="<?= $user->getId(); ?>">
 
       <button type="submit" name="action" value="mod_pwd" class="btn btn custom-btn btn-a">
-          Valider
+        <span>Valider</span><span>Valider</span>
       </button>
     </div>
 
