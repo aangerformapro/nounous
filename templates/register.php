@@ -130,7 +130,7 @@ $postdata ??= [];
         
 
             <div class="text-center">
-                <button type="submit" class="btn custom-btn btn-a text-white">S'enregistrer</button>
+                <button type="submit" class="btn custom-btn btn-a text-white"><span>S'enregistrer</span><span>S'enregistrer</span></button>
             </div>
 
             <div class="">

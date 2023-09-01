@@ -31,7 +31,7 @@
       </div>
 
       <div class="text-center">
-        <button type="submit" class="btn custom-btn btn-a text-white">Se connecter</button>
+        <button type="submit" class="btn custom-btn btn-a text-white"><span>Se connecter</span><span>Se connecter</span></button>
       </div>
 
       <div class="link">
