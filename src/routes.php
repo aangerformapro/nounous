@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+use Actions\Api\CalendarAction;
 use Actions\EspaceUtilisateur;
 use Actions\GardesParents;
 use Actions\LoginActions;
@@ -27,102 +28,10 @@ return function (App $app)
 {
     $app->group('/api', function (RouteCollectorProxyInterface $group)
     {
-        $group->get('/calendar', function (ServerRequest $request, Response $response)
-        {
-            $renderer = new JsonRenderer();
-
-            /** @var User $user */
-            $user     = $request->getAttribute('user');
-
-            $data     = [];
-
-            if (UserType::BABYSITTER === $user->getType())
-            {
-                $availabilities = Availability::find('id_nounou = ? AND ', [$user->getId()]);
-
-                /** @var Availability $av */
-                /* @var Appointment $appointment */
-                /* @var Enfant $child */
-                foreach ($availabilities as $av)
-                {
-                    foreach ($av->getAppointments() as $appointment)
-                    {
-                        if (Status::ACCEPTED === $appointment->getStatus())
-                        {
-                            $day    = formatDateInput($av->getDate()) . 'T';
-                            $start  = $day . formatTimeInput($av->getStart());
-                            $end    = $day . formatTimeInput($av->getEnd());
-
-                            $child  = $appointment->getEnfant();
-                            $data[] = [
-                                'title' => $child->getFullName(),
-                                'start' => $start,
-                                'end'   => $end,
-                            ];
-                        }
-                    }
-                }
-            } else
-            {
-
-                $enfants = Enfant::find('id_parent = ?', [$user->getId()]);
-
-                /** @var Enfant $child */
-                foreach ($enfants as $child){
-
-                    $rdvs = AvailableAppointments::find(
-                        'id_enfant = ? AND status IN ("ACCEPTED")',
-                        [$child->getId()]
-                    );
-                    /** @var AvailableAppointments $rdv */
-                    foreach ($rdvs as $rdv){
-                        $day    = formatDateInput($rdv->getDate()) . 'T';
-                        $start  = $day . formatTimeInput($rdv->getStart());
-                        $end    = $day . formatTimeInput($rdv->getEnd());
-                        $data [] = [
-                            'start' => $start,
-                            'end' => $end,
-                            'title'=>sprintf(
-                                '%s chez %s',
-                                $child->getPrenom(),
-                                $rdv->getNounou()
-                            )
-                        ];
-
-                    }
-
-                }
-
-
-
-
-            }
-
-            return $renderer->json($response, $data);
-        });
+        $group->get('/calendar', CalendarAction::class);
     });
 
-    // $app->group('/api', function () use ($app)
-    // {
-    //     // Library group
-    //     $app->group('/library', function () use ($app)
-    //     {
-    //         // Get book with ID
-    //         $app->get('/books/:id', function ($id)
-    //         {
-    //         });
 
-    //         // Update book with ID
-    //         $app->put('/books/:id', function ($id)
-    //         {
-    //         });
-
-    //         // Delete book with ID
-    //         $app->delete('/books/:id', function ($id)
-    //         {
-    //         });
-    //     });
-    // });
 
     $app->map(['GET', 'POST'], '/login', function (ServerRequest $request, Response $response)
     {
@@ -141,14 +50,7 @@ return function (App $app)
         return $controller->display($request, $response);
     })->setName('login');
 
-    // $app->map(['GET', 'POST'], '/login/recover', function ($request, $response)
-    // {
-    //     if ($request->getAttribute('user'))
-    //     {
-    //         return $this->get(RedirectRenderer::class)->redirectFor($response, 'home');
-    //     }
-    //     return $this->get('view')->render($response, 'login');
-    // })->setName('recover_password');
+
 
     $app->map(['GET', 'POST'], '/register', function (ServerRequest $request, $response, $args)
     {

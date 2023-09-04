@@ -14,7 +14,6 @@ abstract class BaseModel
 
     abstract public function __construct(array $data = []);
 
-
     /**
      * Entry point.
      */
@@ -25,10 +24,14 @@ abstract class BaseModel
 
     abstract public static function getTable(): string;
 
-    public static function find(string $where = '1', array $bindings = []): array
+    public static function find(string $where = '', array $bindings = []): array
     {
+        if (!empty($where))
+        {
+            $where = sprintf(' WHERE %s', $where);
+        }
         $stmt = static::getConnection()->prepare(
-            sprintf('SELECT * FROM %s WHERE %s', static::getTable(), $where)
+            sprintf('SELECT * FROM %s%s', static::getTable(), $where)
         );
 
         if ($stmt->execute($bindings))
@@ -60,10 +63,15 @@ abstract class BaseModel
         return static::findOne('id = ?', [$id]);
     }
 
-    public static function findOne(string $where = '1', array $bindings = []): ?static
+    public static function findOne(string $where = '', array $bindings = []): ?static
     {
+        if (!empty($where))
+        {
+            $where = sprintf(' WHERE %s', $where);
+        }
+
         $stmt = static::getConnection()->prepare(
-            sprintf('SELECT * FROM %s WHERE %s', static::getTable(), $where)
+            sprintf('SELECT * FROM %s%s', static::getTable(), $where)
         );
 
         if ($stmt->execute($bindings))

@@ -71,6 +71,17 @@
                                         </div>
                                         <?php
                                             break;
+                                        case Status::DONE: ?>
+                                    <?php if($disp->getValid()):?>
+                                        <div class="text-success">
+                                            Garde Effectuée
+                                        </div>
+                                    <?php else: ?>
+                                        <div class="text-secondary">
+                                            En attente de validation parent
+                                        </div>
+                                    <?php endif;
+                                            break;
                                     } ?>
                                 </div>
 
