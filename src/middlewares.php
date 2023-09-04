@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Application\Renderers\RedirectRenderer;
 use Models\Session;
 use Models\User;
@@ -57,8 +59,10 @@ return function (App $app)
         /** @var SessionMiddleware $session */
         $session = $request->getAttribute('session');
 
-        if ('POST' === $request->getMethod() && ! str_contains($request->getHeaderLine('accept'), 'application/json'))
-        {
+        if (
+            'POST' === $request->getMethod()
+            && ! str_contains($request->getHeaderLine('accept'), 'application/json')
+        ) {
             $uri         = $request->getUri();
             $destination = $uri->getPath();
             $query       = $request->getQueryParams();

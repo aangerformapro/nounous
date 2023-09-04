@@ -7,6 +7,7 @@ namespace Actions;
 use Models\Appointment;
 use Models\AvailableAppointments;
 use Models\Enfant;
+use Models\Status;
 use Models\User;
 use Psr\Http\Message\ResponseInterface;
 use Slim\Http\Response;
@@ -41,15 +42,32 @@ class GardesParents extends BaseAction
                     return $this->redirectRenderer->redirectFor($response, 'gardes');
                 }
             }
+
+            if ('set_cancel' === $action)
+            {
+                if ($id_appointment = $postdata['id_appointment'])
+                {
+                    Appointment::updateEntry($id_appointment, [
+                        'status' => Status::CANCEL->value,
+                    ]);
+                }
+            }
         }
 
         // get availabilities
 
         $slots   = AvailableAppointments::find(
-            'status = "PENDING" AND date > NOW() AND id_enfant IS NULL ORDER BY date ASC'
+            'status IN ("PENDING") AND date >= ? AND id_enfant IS NULL ORDER BY date ASC',
+            [formatDateSQL(date_create('now'))]
         );
 
-        $gardes  = [];
+        $gardes  = AvailableAppointments::find(
+            'status IN ("PENDING", "ACCEPTED") AND date >= ? AND id_enfant IN ( SELECT id as id_enfant from enfants WHERE id_parent = ? ) ORDER BY date ASC',
+            [
+                formatDateSQL(date_create('now')),
+                $user->getId(),
+            ]
+        );
 
         return $this->phpRenderer->render($response, 'gardes', [
             'user'      => $request->getAttribute('user'),

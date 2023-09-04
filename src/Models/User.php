@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Models;
 
-use Stringable;
 use function NGSOFT\Tools\some;
 
 class User extends BaseModel implements \Stringable
@@ -35,6 +36,11 @@ class User extends BaseModel implements \Stringable
         $this->updated_at = date_create_from_format('Y-m-d G:i:s', $data['updated_at']);
         $this->gender     = Gender::from($data['gender']);
         $this->type       = UserType::from($data['type']);
+    }
+
+    public function __toString(): string
+    {
+        return sprintf('%s %s', $this->getPrenom(), $this->getNom());
     }
 
     public static function getTable(): string
@@ -247,6 +253,19 @@ class User extends BaseModel implements \Stringable
     }
 
     /**
+     * @return Enfant[]
+     */
+    public function getChildren(): array
+    {
+        if (UserType::BABYSITTER === $this->getType())
+        {
+            return [];
+        }
+
+        return Enfant::find('id_parent = ?', [$this->getId()]);
+    }
+
+    /**
      * Get the value of zip.
      */
     public function getZip()
@@ -308,10 +327,5 @@ class User extends BaseModel implements \Stringable
     public function getAddress(): string
     {
         return $this->address;
-    }
-
-    public function __toString():string
-    {
-        return sprintf('%s %s', $this->getPrenom(), $this->getNom());
     }
 }

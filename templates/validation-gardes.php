@@ -75,7 +75,10 @@
                                 <?php else:?>
                                     <div class="text-success">
                                         Garde Validée<br>
+                                        <?php if(! $item['rdv']->getValid()): ?>
                                         <small class="text-secondary">En attente validation parent</small>
+
+                                        <?php endif;?>
                                     </div>
 
                                 <?php endif; ?>
