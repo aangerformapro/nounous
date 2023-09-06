@@ -184,7 +184,7 @@ class User extends BaseModel implements \Stringable
             $errors[] = 'city';
         }
 
-        if ( ! isset($params['phone']) || ! preg_match('#^0[1-7]\d{8}$#', $params['phone']))
+        if ( ! isset($params['phone']) || ! preg_match('#^0[12345679]\d{8}$#', $params['phone']))
         {
             $errors[] = 'phone';
         }

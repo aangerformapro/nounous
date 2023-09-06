@@ -130,6 +130,33 @@ class AvailableAppointments
         return [];
     }
 
+    public static function findForParents(User $parent, string $where = '', array $bindings = []): array
+    {
+        $children   = $parent->getChildren();
+
+        if ( ! count($children))
+        {
+            return [];
+        }
+
+        $idChildren = array_map(fn ($item) => $item->getId(), $children);
+
+        if ( ! empty($where))
+        {
+            $where = ' AND ' . $where;
+        }
+
+        $bindings   = array_merge([
+           implode(', ',$idChildren)
+        ], $bindings);
+
+
+        return static::find(
+            'id_enfant IN (?)' . $where,
+            $bindings
+        );
+    }
+
     protected static function getSelect(): string
     {
         return implode(

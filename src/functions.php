@@ -100,6 +100,17 @@ function setPageTitle(string $title)
     Settings::setAttribute('pagetitle', $title);
 }
 
+function getCurrentYear(): int
+{
+    return (int) date_create('now')->format('Y');
+}
+
+function getCurrentMonth(): int
+{
+    return (int) date_create('now')->format('m');
+}
+
+
 function translateDate(DateTime $date, string $format = 'D d M Y'): string
 {
     return (new Carbon($date))->translatedFormat($format);

@@ -9,15 +9,10 @@ use Actions\LoginActions;
 use Actions\MesGardesAction;
 use Actions\RegisterActions;
 use Actions\ValidationGardes;
-use App\Application\Renderers\JsonRenderer;
 use App\Application\Renderers\RedirectRenderer;
-use Models\Appointment;
-use Models\Availability;
-use Models\AvailableAppointments;
-use Models\Enfant;
+use Models\FacturesNounous;
+use Models\FacturesParents;
 use Models\Session;
-use Models\Status;
-use Models\User;
 use Models\UserType;
 use Slim\App;
 use Slim\Http\Response;
@@ -30,8 +25,6 @@ return function (App $app)
     {
         $group->get('/calendar', CalendarAction::class);
     });
-
-
 
     $app->map(['GET', 'POST'], '/login', function (ServerRequest $request, Response $response)
     {
@@ -49,8 +42,6 @@ return function (App $app)
 
         return $controller->display($request, $response);
     })->setName('login');
-
-
 
     $app->map(['GET', 'POST'], '/register', function (ServerRequest $request, $response, $args)
     {
@@ -119,10 +110,26 @@ return function (App $app)
         return $controller->display($request, $response);
     })->setName('espace-utilisateur');
 
-    $app->get('/espace-utilisateur/factures', function (ServerRequest $request, Response $response)
-    {
-        return $this->get('view')->render($response, 'factures');
-    })->setName('factures');
+    $app->get(
+        '/espace-utilisateur/factures[/{slug:.+}]',
+        function (ServerRequest $request, Response $response, array $args)
+        {
+            if ( ! $request->getAttribute('user'))
+            {
+                return $this->get(RedirectRenderer::class)->redirectFor($response, 'login');
+            }
+
+            if (UserType::BABYSITTER === $request->getAttribute('user')->getType())
+            {
+                $controller = $this->get(FacturesNounous::class);
+            } else
+            {
+                $controller = $this->get(FacturesParents::class);
+            }
+
+            return $controller($request, $response, $args);
+        }
+    )->setName('factures');
 
     $app->get('/espace-utilisateur/calendar', function (ServerRequest $request, Response $response)
     {
