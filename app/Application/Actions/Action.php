@@ -114,6 +114,18 @@ abstract class Action
         return $this->args[$name];
     }
 
+    protected function tryResolveArg(string $name)
+    {
+        try
+        {
+            return $this->resolveArg($name);
+        } catch (HttpBadRequestException)
+        {
+        }
+
+        return null;
+    }
+
     protected function getUser(): ?User
     {
         return $this->request->getAttribute('user');
