@@ -42,7 +42,7 @@
         </a>
     </li>
       <li>
-        <a href="<?= urlFor('factures'); ?>" class="nav-link <?= isCurrentRoute('factures') ? 'active' : 'link-body-emphasis'; ?>">
+        <a href="<?= urlFor('factures'); ?>" class="nav-link <?= isCurrentRoute('factures', isset($slug) ? ['slug' => $slug] : []) ? 'active' : 'link-body-emphasis'; ?>">
           Factures
         </a>
       </li>

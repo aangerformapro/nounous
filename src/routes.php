@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 use Actions\Api\CalendarAction;
 use Actions\EspaceUtilisateur;
+use Actions\FacturesNounous;
+use Actions\FacturesParents;
 use Actions\GardesParents;
 use Actions\LoginActions;
 use Actions\MesGardesAction;
 use Actions\RegisterActions;
 use Actions\ValidationGardes;
 use App\Application\Renderers\RedirectRenderer;
-use Models\FacturesNounous;
-use Models\FacturesParents;
 use Models\Session;
 use Models\UserType;
 use Slim\App;

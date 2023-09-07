@@ -24,12 +24,14 @@ abstract class Action
 
     protected array $args;
 
+
     public function __construct(
         protected LoggerInterface $logger,
         protected PhpRenderer $phpRenderer,
         protected JsonRenderer $jsonRenderer,
         protected RedirectRenderer $redirectRenderer
     ) {
+
     }
 
     /**
@@ -41,6 +43,7 @@ abstract class Action
         $this->request  = $request;
         $this->response = $response;
         $this->args     = $args;
+        $this->initialize();
 
         try
         {
@@ -83,6 +86,10 @@ abstract class Action
         return $this->redirectRenderer
             ->redirect($this->response, $path, $query)
         ;
+    }
+
+    protected function initialize(): void
+    {
     }
 
     /**

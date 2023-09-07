@@ -23,6 +23,11 @@
     <!-- LibraryAOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <!-- PDF-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+
     <!-- App -->
     <link rel="stylesheet" href="./assets/app.css">
     <script src="./assets/app.js" type="module" defer></script>
