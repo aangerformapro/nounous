@@ -11,6 +11,8 @@ class AvailableAppointments
 
     protected User $nounou;
 
+    protected int $nounou_id;
+
     protected string $start;
     protected string $end;
     protected string $date;
@@ -19,6 +21,8 @@ class AvailableAppointments
     // appointments
 
     protected int $id_appointment;
+
+    protected null|int $enfant_id = null;
     protected null|Enfant $enfant = null;
     protected Status $status;
     protected bool $valid;
@@ -28,6 +32,7 @@ class AvailableAppointments
         $this->id             = (int) $data['id'];
 
         $this->id_appointment = (int) $data['id_appointment'];
+        $this->nounou_id      = (int) $data['id_nounou'];
         $this->nounou         = User::findById($data['id_nounou']);
         $this->start          = $data['start'];
         $this->end            = $data['end'];
@@ -39,7 +44,8 @@ class AvailableAppointments
 
         if ( ! is_null($data['id_enfant']))
         {
-            $this->enfant = Enfant::findById($data['id_enfant']);
+            $this->enfant    = Enfant::findById($data['id_enfant']);
+            $this->enfant_id = (int) $data['id_enfant'];
         }
     }
 
@@ -95,6 +101,16 @@ class AvailableAppointments
         return $this->id_appointment;
     }
 
+    public function getNounouId(): int
+    {
+        return $this->nounou_id;
+    }
+
+    public function getEnfantId(): ?int
+    {
+        return $this->enfant_id;
+    }
+
     public function getEnfant(): ?Enfant
     {
         return $this->enfant;
@@ -147,9 +163,8 @@ class AvailableAppointments
         }
 
         $bindings   = array_merge([
-           implode(', ',$idChildren)
+            implode(', ', $idChildren),
         ], $bindings);
-
 
         return static::find(
             'id_enfant IN (?)' . $where,

@@ -1,5 +1,8 @@
 <?php
 declare(strict_types=1);
+
+use Models\Enfant;
+
 $annee ??= getCurrentYear();
 
 if( ! isset($mois) && $annee === getCurrentYear())
@@ -26,7 +29,7 @@ if( ! isset($mois) && $annee === getCurrentYear())
                 action="<?= urlFor('factures'); ?>"
                 method="post" class="d-lg-flex align-lg-items-center"
                 data-aos="fade-up">
-                    <div class="form-floating p-1 mb-3 col-lg-4">
+                    <div class="form-floating p-1 mb-3 col-lg-3">
                         <select class="form-select" name="year" id="year">
                             <?php for ($year = getCurrentYear(); $year >= getCurrentYear() - 2; --$year): ?>
 
@@ -37,7 +40,7 @@ if( ! isset($mois) && $annee === getCurrentYear())
                         </select>
                         <label for="year">Année:</label>
                     </div>
-                    <div class="form-floating p-1 mb-3 col-lg-4">
+                    <div class="form-floating p-1 mb-3 col-lg-3">
                         <select class="form-select" name="month" id="month">
                         <?php foreach (reversed($mapMonth) as $num => $str):?>
                             <option
@@ -52,7 +55,30 @@ if( ! isset($mois) && $annee === getCurrentYear())
                             Mois:
                         </label>
                     </div>
-            <div class="form-submit-btn mb-3 d-flex  justify-content-end justify-content-lg-start col-lg p-2">
+
+            <?php if(!isBabySitter()):
+
+                /** @var Enfant $child */
+                $enfants = $user->getChildren();
+
+                ?>
+            <div class="form-floating p-1 mb-3 col-lg-3">
+
+                <select name="enfant" id="enfant" class="form-select">
+                    <?php foreach ($enfants as $child):?>
+                        <option value="<?= $child->getId() ?>">
+                            <?= $child?>
+                        </option>
+                    <?php endforeach;?>
+                </select>
+                <label for="enfant">
+                    Enfant:
+                </label>
+
+
+            </div>
+            <?php endif;?>
+            <div class="form-submit-btn mb-3 d-flex  justify-content-end justify-content-lg-start p-2 col-lg">
                 <button
                         name="action"
                         value="facture_date"
@@ -64,12 +90,14 @@ if( ! isset($mois) && $annee === getCurrentYear())
             </div>
         </form>
 
-        <?php if(empty($rdvs)):?>
+        <?php if(!count($rdvs)):?>
             <div data-aos="fade-up" class="alert alert-dark text-center">
                 Vous n'avez pas de factures pour ce mois.
             </div>
-
-        <?php endif; ?>
+        <?php else:
+            include isBabySitter() ? 'facture-nounou.php' : 'facture-parent.php';
+            //dump($rdvs);
+        endif; ?>
     </div>
 </div>
 
